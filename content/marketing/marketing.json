@@ -1,0 +1,52 @@
+{
+    "marketingCards": [
+      {
+        "category": "Daily Mix",
+        "title": "FRONTEND",
+        "tracks": "63",
+        "image": "/image/IMG_7653.jpg"
+      },
+      {
+        "category": "New",
+        "title": "2024 WAVE",
+        "tracks": "42",
+        "image": "/image/IMG_7652 2.jpg"
+      },
+      {
+        "category": "Rap",
+        "title": "Underground4",
+        "tracks": "12",
+        "image": "/image/IMG_7654 2.jpg"
+      },
+      {
+        "category": "Synth wave",
+        "title": "STOIK",
+        "tracks": "59",
+        "image": "/image/IMG_7655.jpg"
+      },
+      {
+        "category": "electro",
+        "title": "Study",
+        "tracks": "9",
+        "image": "/image/IMG_7657.jpg"
+      },
+      {
+        "category": "Ambient",
+        "title": "Late night drivevbbbb",
+        "tracks": "23",
+        "image": "/image/IMG_7658.jpg"
+      },
+      {
+        "category": "Phonk",
+        "title": "Gym",
+        "tracks": "77",
+        "image": "/image/IMG_7661.jpg"
+      },
+      {
+        "category": "romance",
+        "title": "Mood",
+        "tracks": "43",
+        "image": "/image/IMG_7662.jpg"
+      }
+    ]
+  }
