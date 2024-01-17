@@ -9,6 +9,7 @@ import AccordionCard from "./components/Next-Ui/Accordion"
 import ChipNews from "./components/Next-Ui/ChipNews"
 
 export default function Home() {
+
   return (
     <main>
       <div className="h-screen relative">
