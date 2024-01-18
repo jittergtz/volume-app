@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 import {marketingCards} from "@/content/marketing/marketing.json"
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 
 
@@ -13,17 +13,19 @@ const cards = marketingCards
 const ref = useRef<HTMLDivElement>(null)
 const { scrollYProgress } = useScroll({
   target: ref,
-  offset: ["0 3", "0.5 1"]
+  offset: ["0 4", "0.7 1"]
 })
 
+const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+const scale = useTransform(scrollYProgress, [0, 0], [0, 1])
   return (
 
     <>
     { cards.map((data) => {
       return (
         <>
-        <motion.div  style={{ scale: scrollYProgress, opacity: scrollYProgress, }} className="grid max-w-4xl ">
-        <Card ref={ref}  key={data.title} className="py-4 ">
+        <motion.div ref={ref} style={{ scale: scrollYProgress }} className="grid max-w-4xl ">
+        <Card  key={data.title} className="py-4 ">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
           <p className="text-tiny uppercase font-bold line-clamp-1">{data.category}</p>
           <small className="text-default-500 line-clamp-1 ">Tracks: {data.tracks}</small>
