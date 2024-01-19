@@ -19,7 +19,8 @@ const ButtonLogin = forwardRef<HTMLButtonElement, ButtonLoginProps>(({
         disabled={disabled}
         ref={ref}
         {...props}
-        color='primary'>
+        className='
+        bg-opacity-30 bg-neutral-300 hover:bg-neutral-800 transition'>
             Anmelden
         </Button>
     )

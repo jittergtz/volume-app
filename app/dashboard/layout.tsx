@@ -8,9 +8,11 @@ interface SidebarProps {
 export default function Layout({ children}: SidebarProps ) {
   return (
     <>
-    <Sidebar>
+     <main className="bg-black h-full w-full">
+    <Sidebar>     
      {children}
      </Sidebar>
+     </main>
     
     </>
   )

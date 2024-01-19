@@ -3,7 +3,7 @@ import React from 'react'
 
 function page() {
   return (
-    <main className='bg-neutral-900 rounded-lg h-full 
+    <main className='bg-white bg-opacity-5  rounded-lg h-full 
     w-full overflow-hidden overflow-y-auto'>
       <Header>
         Header
