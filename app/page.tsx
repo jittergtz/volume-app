@@ -1,17 +1,20 @@
 import { MissingStaticPage } from "next/dist/shared/lib/utils"
 import Image from "next/image"
-import Hero from "./components/Hero"
-import Navbar from "./components/Navbar"
+import Hero from "../components/Hero"
+import Navbar from "../components/Navbar"
 import { Button } from "@nextui-org/react"
-import CardLP from "./components/marketing/CardLP"
+import CardLP from "../components/marketing/CardLP"
 import { BsSoundwave } from "react-icons/bs"
-import AccordionCard from "./components/Next-Ui/Accordion"
-import ChipNews from "./components/Next-Ui/ChipNews"
+import AccordionCard from "../components/Next-Ui/Accordion"
+import ChipNews from "../components/Next-Ui/ChipNews"
+import Link from "next/link"
 
 export default function Home() {
-
   return (
     <main>
+      
+      <Navbar/>
+
       <div className="h-screen relative">
         <Image
           className="object-cover w-full h-full rotate-180"
@@ -22,9 +25,8 @@ export default function Home() {
         />
 
         <div className="absolute justify-center  opacity-80 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-        
           <div className="flex gap-5 flex-col items-center justify-center">
-            <ChipNews/>
+            <ChipNews />
             <BsSoundwave className="text-neutral-300 h-28 w-28 opacity-80" />
           </div>
           <h1 className="text-7xl text-center sm:text-8xl lg:text-9xl tracking-tighter sm:font-semibold text-transparent bg-clip-text bg-gradient-to-r from-neutral-100  to-neutral-300 ">
@@ -36,7 +38,9 @@ export default function Home() {
           </p>
           <div className="flex justify-center mt-5 gap-5 ">
             <Button variant="shadow" size="lg">
+              <Link href={"/dashboard"} >
               Starten
+              </Link>
             </Button>
             <Button variant="shadow" color="primary" size="lg">
               Premium
@@ -85,11 +89,10 @@ export default function Home() {
           <CardLP />
         </div>
       </div>
-        <div className="bg-[#080808] flex flex-col items-center justify-center text-neutral-200 gap-8 p-4">
-          <h1 className="text-center text-large">Alles über Volume</h1>
+      <div className="bg-[#080808] flex flex-col items-center justify-center text-neutral-200 gap-8 p-4">
+        <h1 className="text-center text-large">Alles über Volume</h1>
         <AccordionCard />
-        </div>
-      
+      </div>
 
       <footer className="h-96 bg-gradient-to-t from-blue-600 via-[#080808] to-[#080808]">
         <div></div>

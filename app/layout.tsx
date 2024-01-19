@@ -1,21 +1,25 @@
 import type { Metadata } from "next"
-import { Inter, Roboto, Nunito_Sans} from 'next/font/google'
+import { Inter, Roboto, Nunito_Sans } from "next/font/google"
 import "./globals.css"
 import { NextUIProvider } from "@nextui-org/system"
 import { Providers } from "./providers"
-import Hero from "./components/Hero"
-import Navbar from "./components/Navbar"
+import Hero from "../components/Hero"
+import Navbar from "../components/Navbar"
+import SupabaseProvider from "@/providers/SupabaseProvider"
+import UserProvider from "@/providers/UserProvider"
+import ModalProvider from "@/providers/ModalProvider"
+import Sidebar from "@/components/Sidebar"
 
 const inter = Inter({ subsets: ["latin"] })
 
 const roboto = Roboto({
-  subsets: ['latin'],
-  weight:   "400",
+  subsets: ["latin"],
+  weight: "400",
 })
 
 const nunito = Nunito_Sans({
-  subsets: ['latin'],
-  weight:   "400",
+  subsets: ["latin"],
+  weight: "400",
 })
 
 export const metadata: Metadata = {
@@ -29,12 +33,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='dark'>
+    <html lang="en" className="dark">
       <body className={nunito.className}>
         <Providers>
-          <Navbar/>
-          {children}
-          </Providers>
+          <SupabaseProvider>
+              {children}     
+          </SupabaseProvider> {/* maybe remove */}
+        </Providers>
       </body>
     </html>
   )
