@@ -29,13 +29,13 @@ function MobileNavbar() {
             label: "Bibliothek",
             icon: LuLibrary ,
             active: pathname === "/search",
-            href: "/search",
+            href: "/library",
         },
         {
             label: "Profil",
             icon: FaRegUser,
             active: pathname === "/search",
-            href: "/search",
+            href: "/profil",
         }
     ], [pathname])
 
