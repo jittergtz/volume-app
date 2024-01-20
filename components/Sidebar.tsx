@@ -21,7 +21,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             label: "Startseite",
             icon: HiHome,
             active: pathname !== "/search",
-            href: "/",
+            href: "/dashboard",
         },
         {
             label: "Suche",

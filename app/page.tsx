@@ -1,7 +1,7 @@
 import { MissingStaticPage } from "next/dist/shared/lib/utils"
 import Image from "next/image"
 import Hero from "../components/Hero"
-import Navbar from "../components/Navbar"
+import Navbar from "../components/marketing/NavbarLp"
 import { Button } from "@nextui-org/react"
 import CardLP from "../components/marketing/CardLP"
 import { BsSoundwave } from "react-icons/bs"
@@ -12,8 +12,7 @@ import Link from "next/link"
 export default function Home() {
   return (
     <main>
-      
-      <Navbar/>
+      <Navbar />
 
       <div className="h-screen relative">
         <Image
@@ -38,9 +37,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center mt-5 gap-5 ">
             <Button variant="shadow" size="lg">
-              <Link href={"/dashboard"} >
-              Starten
-              </Link>
+              <Link href={"/dashboard"}>Starten</Link>
             </Button>
             <Button variant="shadow" color="primary" size="lg">
               Premium

@@ -1,21 +1,56 @@
 "use client"
 import { Button } from "@nextui-org/react"
 import Link from "next/link"
-import React from "react"
+import { usePathname } from "next/navigation"
+import React, { useMemo } from "react"
+import { BiSearch } from "react-icons/bi"
+import { FaRegUser, FaUser } from "react-icons/fa"
+import { HiHome } from "react-icons/hi"
+import { LuLibrary } from "react-icons/lu"
+import MobileNavItem from "./MobileNavItem"
 
-function Navbar() {
+function MobileNavbar() {
+    const pathname = usePathname()
+
+    const routes = useMemo(() => [
+        {
+            label: "Startseite",
+            icon: HiHome,
+            active: pathname !== "/search",
+            href: "/dashboard",
+        },
+        {
+            label: "Suche",
+            icon: BiSearch,
+            active: pathname === "/search",
+            href: "/search",
+        },
+        {
+            label: "Bibliothek",
+            icon: LuLibrary ,
+            active: pathname === "/search",
+            href: "/search",
+        },
+        {
+            label: "Profil",
+            icon: FaRegUser,
+            active: pathname === "/search",
+            href: "/search",
+        }
+    ], [pathname])
+
   return (
-    <nav className="h-16 z-50 flex px-5 justify-between items-center fixed top-0 left-0 w-full bg-white bg-opacity-10 backdrop-blur-sm">
-      <span className="text-3xl tracking-tighter text-neutral-200 opacity-70">Volume</span>
+    <nav className="flex sm:hidden h-16 z-50  px-5 justify-around items-center fixed
+     bottom-0 left-0 w-full bg-neutral-900/30 backdrop-blur-xl">
+        {routes.map((item) => {
+            return (
+                <MobileNavItem key={item.label} {...item} />
+            )
+        })}
 
-      <Button color="primary">
-      <Link href={"/"}>
-      Anmelden
-      </Link>
-    </Button>
 
     </nav>
   )
 }
 
-export default Navbar
+export default MobileNavbar

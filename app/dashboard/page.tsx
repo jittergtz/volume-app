@@ -1,5 +1,8 @@
 import Header from '@/components/Header'
 import ListItem from '@/components/ListItem'
+import MobileNavbar from '@/components/MobileNav'
+
+
 
 import React from 'react'
 
@@ -35,8 +38,7 @@ function page() {
 
       </div>
       
-    
-     
+      <MobileNavbar/>
     </main>
   )
 }

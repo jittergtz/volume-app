@@ -4,7 +4,7 @@ import "./globals.css"
 import { NextUIProvider } from "@nextui-org/system"
 import { Providers } from "./providers"
 import Hero from "../components/Hero"
-import Navbar from "../components/Navbar"
+import Navbar from "../components/marketing/NavbarLp"
 import SupabaseProvider from "@/providers/SupabaseProvider"
 import UserProvider from "@/providers/UserProvider"
 import ModalProvider from "@/providers/ModalProvider"
@@ -36,9 +36,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={nunito.className}>
         <Providers>
-          <SupabaseProvider>
-              {children}     
-          </SupabaseProvider> {/* maybe remove */}
+          <SupabaseProvider>{children}</SupabaseProvider> {/* maybe remove */}
         </Providers>
       </body>
     </html>
