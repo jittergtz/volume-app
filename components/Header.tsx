@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 -top-20 z-50 transform-gpu overflow-hidden blur-3xl"
+          className="pointer-events-none absolute inset-x-0 -top-20 z-0 transform-gpu overflow-hidden blur-3xl"
         >
           <div
             style={{
@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 -top-20 z-50 transform-gpu overflow-hidden blur-3xl"
+          className="pointer-events-none absolute inset-x-0 -top-20 z-0 transform-gpu overflow-hidden blur-3xl"
         >
           <div
             style={{
@@ -69,10 +69,10 @@ const Header: React.FC<HeaderProps> = ({
 
             </div>
             <div className='md:hidden flex gap-x-2 items-center'>
-                <button className='rounded-full p-2 bg-white bg-opacity-10 hover:bg-neutral-800 transition'>
+                <button className='rounded-full p-2 bg-white bg-opacity-10 hover:bg-neutral-500 transition'>
                     <HiHome size={26} className='text-neutral-200'/>
                 </button>
-                <button className='rounded-full p-2 bg-white bg-opacity-10 hover:bg-neutral-800 transition'>
+                <button className='rounded-full p-2 bg-white bg-opacity-10 hover:bg-neutral-500 transition'>
                     <BiSearch size={26} className='text-neutral-200'/>
                 </button>
             

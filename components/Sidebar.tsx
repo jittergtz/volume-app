@@ -18,13 +18,13 @@ const Sidebar: React.FC<SidebarProps> = ({
 
     const routes = useMemo(() => [
         {
-            label: "Home",
+            label: "Startseite",
             icon: HiHome,
             active: pathname !== "/search",
             href: "/",
         },
         {
-            label: "Search",
+            label: "Suche",
             icon: BiSearch,
             active: pathname === "/search",
             href: "/search",
