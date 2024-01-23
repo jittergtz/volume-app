@@ -1,6 +1,6 @@
 "use client"
 
-import { useSearchQuery } from '@/lib/services/apiFetch';
+import { useDiscoverQuery, useSearchQuery } from '@/lib/services/apiFetch';
 import { Card, Skeleton } from '@nextui-org/react';
 import Image from 'next/image'
 import React, { useState } from 'react'
@@ -27,7 +27,9 @@ interface TrackProps {
 
 
  function TitleTest() {
-    const {data, isFetching, error} = useSearchQuery("clams")
+    const {data, isFetching, error} = useDiscoverQuery()
+
+    console.log(data)
 
 
     const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
@@ -79,7 +81,7 @@ interface TrackProps {
       }
     }
 
-    const newAudio = new Audio(data.data[index].preview);
+    const newAudio = new Audio(data.tracks.data[index].preview);
     setAudio(newAudio);
     setCurrentTrackIndex(index);
     newAudio.play();
@@ -100,7 +102,7 @@ interface TrackProps {
       gap-4 
       mt-4
       p-3'>
-       {data?.data.map((item: TrackProps, index: number) => (
+       {data?.tracks?.data?.map((item: TrackProps, index: number) => (
          <div key={item.id} className={twMerge(
             'bg-neutral-800 relative border border-neutral-700 p-2 rounded-xl flex flex-col justify-center animate-appearance-in ',
             isPlaying[index] && 'shadow-lg shadow-neutral-100/'
@@ -134,6 +136,9 @@ interface TrackProps {
           </button>
          </div>
        ))}
+
+
+      
      </div>
    );
  }

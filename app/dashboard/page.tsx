@@ -35,7 +35,7 @@ function page() {
         </div>
      
      </div>
-      <div className='px-5'>
+      <div className='px-5 pb-40'>
         <TitleTest />
     </div>
       
