@@ -1,3 +1,4 @@
+import Player from "@/components/Player";
 import Sidebar from "@/components/Sidebar";
 import { ReduxProvider } from "@/lib/provider";
 import ModalProvider from "@/providers/ModalProvider";
@@ -29,6 +30,7 @@ export default function Layout({ children}: SidebarProps ) {
             {children}
           
           </Sidebar>
+          <Player/>
       </UserProvider>
      </SupabaseProvider>
      </ReduxProvider>
