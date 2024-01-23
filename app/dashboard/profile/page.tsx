@@ -46,11 +46,7 @@ function page() {
         </Header>
 
 
-        <div className='border m-5 h-72'>
-       
-
-        </div>
-
+   
 
         
 
