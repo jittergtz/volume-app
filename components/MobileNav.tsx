@@ -22,7 +22,7 @@ function MobileNavbar() {
         {
             label: "Suche",
             icon: BiSearch,
-            active: pathname === "/dasboard/search",
+            active: pathname === "/dashboard/search",
             href: "/dashboard/search",
         },
         {

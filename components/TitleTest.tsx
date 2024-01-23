@@ -27,7 +27,7 @@ interface TrackProps {
 
 
  function TitleTest() {
-    const {data, isFetching, error} = useSearchQuery("rihanna")
+    const {data, isFetching, error} = useSearchQuery("clams")
 
 
     const [audio, setAudio] = useState<HTMLAudioElement | null>(null);

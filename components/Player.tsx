@@ -1,12 +1,11 @@
 "use client"
 
-import { Button, Card, CardBody, Slider } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { HeartIcon } from "./Next-Ui/HeartIcon";
-import { RepeatOneIcon } from "./Next-Ui/RepeatOneIcon";
+
 import { PreviousIcon } from "./Next-Ui/PreviousIcon";
 import { NextIcon } from "./Next-Ui/NextIcon";
 import { PauseCircleIcon } from "./Next-Ui/PauseCircleIcon";
-import { ShuffleIcon } from "./Next-Ui/ShuffleIcon";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -31,8 +30,8 @@ const Player = () => {
          alt="Album cover"
         className="object-cover rounded-lg "
         objectFit='cover'
-        height={40}
-        width={40}
+        height={45}
+        width={45}
         src="/image/IMG_7651.jpg"
                      
         
@@ -71,7 +70,7 @@ const Player = () => {
                 radius="full"
                 variant="light"
               >
-                <PauseCircleIcon size={40} />
+                <PauseCircleIcon size={45} />
               </Button>
               <Button
                 isIconOnly
