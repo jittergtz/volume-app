@@ -140,7 +140,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
           )}>
            <img
              className='rounded-xl '
-             objectFit='cover'
              height={270}
              width={270}
              alt='deezer-pic'
