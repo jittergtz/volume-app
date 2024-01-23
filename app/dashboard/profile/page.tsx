@@ -1,16 +1,16 @@
 "use client"
-import ButtonLogin from '@/components/ButtonLogin'
+
 import Header from '@/components/Header'
-import ListItem from '@/components/ListItem'
 import MobileNavbar from '@/components/MobileNav'
 import useAuthModal from '@/hooks/useAuthModal'
 import { useUser } from '@/hooks/useUser'
 import { Button } from '@nextui-org/react'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
+
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import toast from 'react-hot-toast'
-import { FaRegUser } from 'react-icons/fa'
+
 
 function page() {
     const router = useRouter()
@@ -44,6 +44,12 @@ function page() {
           </div>
            </div>
         </Header>
+
+
+        <div className='border m-5 h-72'>
+       
+
+        </div>
 
 
         

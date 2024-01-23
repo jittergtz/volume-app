@@ -27,24 +27,17 @@ function page() {
         </div>
         
       </Header>
-      <div className='mt-2 mb-7 px-6'>
+      <div className='mt-2 px-6'>
         <div className='flex justify-between items-center' >
           <h1 className='text-white text-2xl font-semibold'>
-            Neue Songs
+            Entdecken
           </h1>
         </div>
-        <div>
-          Liste der Songs!
-        </div>
-       
-
-      </div>
-      <div className='      
-        p-5'>
+     
+     </div>
+      <div className='px-5'>
         <TitleTest />
-  
-       
-      </div>
+    </div>
       
       <MobileNavbar/>
     </main>

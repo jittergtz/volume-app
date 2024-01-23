@@ -1,10 +1,12 @@
 "use client"
 
 import { useSearchQuery } from '@/lib/services/apiFetch';
+import { Card, Skeleton } from '@nextui-org/react';
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { FaPause, FaPlay } from 'react-icons/fa'
 import { twMerge } from 'tailwind-merge';
+import LoadingSkeleton from './Next-Ui/LoadingSkeleton';
 
 
 
@@ -24,9 +26,8 @@ interface TrackProps {
   
 
 
-
  function TitleTest() {
-    const {data, isFetching, error} = useSearchQuery("kollegah alphagene")
+    const {data, isFetching, error} = useSearchQuery("rihanna")
 
 
     const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
@@ -34,7 +35,28 @@ interface TrackProps {
     const [currentTrackIndex, setCurrentTrackIndex] = useState<number | null>(null);
 
 
-    if(isFetching) return <span>Laden</span>
+    if(isFetching) {
+      const index = 10
+      return (
+        <div className='    
+        grid 
+        grid-cols-2 
+        sm:grid-cols-3 
+        md:grid-cols-3 
+        lg:grid-cols-4
+        xl:grid-cols-5 
+        2xl:grid-cols-8 
+        gap-4 
+        mt-4
+        p-5'>
+         {Array.from({ length: index }, (_, index) => (
+        <LoadingSkeleton key={index} />
+        ))}
+
+        </div>
+  
+  
+    )}
 
 
     if(error) return <span>Ein Fehler ist aufgetreten</span>
@@ -77,11 +99,11 @@ interface TrackProps {
       2xl:grid-cols-8 
       gap-4 
       mt-4
-      p-5'>
+      p-3'>
        {data?.data.map((item: TrackProps, index: number) => (
          <div key={item.id} className={twMerge(
-            'bg-neutral-800 relative border border-neutral-700 p-2 rounded-xl flex flex-col justify-center',
-            isPlaying[index] && 'shadow-lg shadow-neutral-100/40'
+            'bg-neutral-800 relative border border-neutral-700 p-2 rounded-xl flex flex-col justify-center animate-appearance-in ',
+            isPlaying[index] && 'shadow-lg shadow-neutral-100/'
           )}>
            <Image
              className='rounded-xl '
