@@ -14,7 +14,7 @@ const ButtonLogin = forwardRef<HTMLButtonElement, ButtonLoginProps>(({
     ...props
 }, ref) => {
     return (
-        <Button 
+        <button 
         type={type}
         disabled={disabled}
         ref={ref}
@@ -22,7 +22,7 @@ const ButtonLogin = forwardRef<HTMLButtonElement, ButtonLoginProps>(({
         color='primary'
         className='rounded-full' >
             Anmelden
-        </Button>
+        </button>
     )
 })
 
