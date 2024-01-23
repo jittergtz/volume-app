@@ -35,7 +35,7 @@ const AuthModal = () => {
         isOpen={isOpen}
         onChange={onChange}>
           <Auth
-          theme="defualt"
+          theme="dark"
           providers={["google"]}
           supabaseClient={supabaseClient}
           localization={{
@@ -75,10 +75,9 @@ const AuthModal = () => {
             variables: {
                 default: {
                     colors:{
-                        brand: 'white',
-                        brandAccent: '#d6d6d6',
-                        brandButtonText: '#787878',
-                        inputText: "white"
+                        brand: '',
+                        brandAccent: '#303030',
+                        brandButtonText: 'black',
             
 
                     }

@@ -1,8 +1,12 @@
 import Sidebar from "@/components/Sidebar";
+import { ReduxProvider } from "@/lib/provider";
 import ModalProvider from "@/providers/ModalProvider";
 
 import SupabaseProvider from "@/providers/SupabaseProvider";
+import ToasterProvider from "@/providers/ToasterProvider";
 import UserProvider from "@/providers/UserProvider";
+
+
 
 
 
@@ -15,14 +19,19 @@ export default function Layout({ children}: SidebarProps ) {
   return (
     <>
      <main className="bg-black h-full w-full">
+      <ReduxProvider>
+    <ToasterProvider/>
     <SupabaseProvider>
       <UserProvider>
             <ModalProvider/>
-            <Sidebar>     
+            <Sidebar> 
+            
             {children}
+          
           </Sidebar>
       </UserProvider>
      </SupabaseProvider>
+     </ReduxProvider>
      </main>
     
     </>

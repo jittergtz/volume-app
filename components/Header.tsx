@@ -9,6 +9,10 @@ import { twMerge } from 'tailwind-merge'
 import ButtonLogin from './ButtonLogin'
 import useAuthModal from '@/hooks/useAuthModal'
 import AuthModal from './AuthModal'
+import { useSupabaseClient } from '@supabase/auth-helpers-react'
+import { useUser } from '@/hooks/useUser'
+import { FaRegUser, FaUserAlt } from 'react-icons/fa'
+import toast from 'react-hot-toast'
 
 interface HeaderProps {
     children: React.ReactNode
@@ -22,12 +26,23 @@ const Header: React.FC<HeaderProps> = ({
     const router = useRouter()
     const authModal = useAuthModal()
 
-    const handleLogour = () => {
+    const supabaseClient = useSupabaseClient()
+    const { user } = useUser()
 
+    const handleLogout = async () => {
+      const { error } = await supabaseClient.auth.signOut()
+        //Todo : reset any playing song
+      router.refresh()
+
+      if(error){
+        toast.error(error.message)
+      } else {
+        toast.success("Ausgeloggt")
+      }
     }
   return (
     <div className={twMerge(`
-    h-fit  p-6`, className)}>
+      h-fit  p-6`, className)}>
 
 
         <div
@@ -57,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({
         </div>
 
 
-        <div className='w-full flex mb-4 items-center justify-between'>
+        <div className=' hidden sm:flex  w-full sm:mb-4 items-center justify-between'>
             <div className='hidden md:flex gap-x-2 items-center'>
                 <button
                 onClick={() => router.back()} 
@@ -82,15 +97,34 @@ const Header: React.FC<HeaderProps> = ({
 
             </div>
             <div className='flex justify-between items-center gap-x-4'>
-                <>
+               
+               { user ? (
+                  <div className='flex gap-x-4 items-center'>
+                   <Button 
+                   onClick={handleLogout}
+                   className='rounded-full'>
+                    Ausloggen
+                   </Button>
+                   <button 
+                   onClick={() => router.push("/dashboard/profile")}
+                   className='bg-white/20 hover:bg-white/50 transition p-3 rounded-full'>
+                  
+                   <FaRegUser className='text-neutral-100' />
+                   </button>
+                  </div>
+               ): (
+               <>
                 <div>
-                    <ButtonLogin
-                    onClick={authModal.onOpen}>
-                        Anmelden
-                    </ButtonLogin>
-                </div>
-                
+                <ButtonLogin
+                onClick={authModal.onOpen}>
+                    Anmelden
+                </ButtonLogin>
+                 </div>
+            
                 </>
+               )}
+                
+            
             </div>
         </div>
         {children}

@@ -16,32 +16,32 @@ function MobileNavbar() {
         {
             label: "Startseite",
             icon: HiHome,
-            active: pathname !== "/search",
+            active: pathname === "/dashboard" ,
             href: "/dashboard",
         },
         {
             label: "Suche",
             icon: BiSearch,
-            active: pathname === "/search",
-            href: "/search",
+            active: pathname === "/dasboard/search",
+            href: "/dashboard/search",
         },
         {
             label: "Bibliothek",
             icon: LuLibrary ,
-            active: pathname === "/search",
-            href: "/library",
+            active: pathname === "/dashboard/library",
+            href: "/dashboard/library",
         },
         {
             label: "Profil",
             icon: FaRegUser,
-            active: pathname === "/search",
-            href: "/profil",
+            active: pathname === "/dashboard/profile",
+            href: "/dashboard/profile",
         }
     ], [pathname])
 
   return (
     <nav className="flex sm:hidden h-16 z-50  px-5 justify-around items-center fixed
-     bottom-0 left-0 w-full bg-neutral-900/30 backdrop-blur-xl">
+     bottom-0 left-0 w-full bg-neutral-900/70 backdrop-blur-xl">
         {routes.map((item) => {
             return (
                 <MobileNavItem key={item.label} {...item} />

@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import ListItem from '@/components/ListItem'
 import MobileNavbar from '@/components/MobileNav'
+import TitleTest from '@/components/TitleTest'
 
 
 
@@ -11,7 +12,7 @@ function page() {
     <main className='bg-white bg-opacity-5  rounded-lg h-full 
     w-full overflow-hidden overflow-y-auto'>
       <Header>
-        <div className='mb-2'>
+        <div className='sm:mb-2'>
           <h1 className='text-neutral-400 text-2xl font-semibold'>
             Willkommen 
           </h1>
@@ -35,7 +36,14 @@ function page() {
         <div>
           Liste der Songs!
         </div>
+       
 
+      </div>
+      <div className='      
+        p-5'>
+        <TitleTest />
+  
+       
       </div>
       
       <MobileNavbar/>
