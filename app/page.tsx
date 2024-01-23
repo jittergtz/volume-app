@@ -15,14 +15,7 @@ export default function Home() {
       <Navbar />
 
       <div className="h-screen relative">
-        <Image
-          className="object-cover w-full h-full rotate-180"
-          src={"/image/volume-lp-background-Ice.jpg"}
-          layout="fill"
-          quality={100}
-          alt="cover"
-        />
-
+   
         <div className="absolute justify-center  opacity-80 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <div className="flex gap-5 flex-col items-center justify-center">
             <ChipNews />
@@ -46,7 +39,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[#080808] flex justify-center pb-20">
+      <div className="bg-[#000000] flex justify-center pb-20">
         <h1
           className="text-4xl md:text-5xl font-semibold text-transparent bg-clip-text 
         bg-gradient-to-l from-blue-100 to-neutral-400 "
