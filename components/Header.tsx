@@ -13,6 +13,7 @@ import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useUser } from '@/hooks/useUser'
 import { FaRegUser, FaUserAlt } from 'react-icons/fa'
 import toast from 'react-hot-toast'
+import Link from 'next/link'
 
 interface HeaderProps {
     children: React.ReactNode
@@ -84,14 +85,20 @@ const Header: React.FC<HeaderProps> = ({
                  className='rounded-full bg-opacity-30 bg-neutral-200 flex items-center justify-center hover:bg-neutral-800 transition'>
                     <RxCaretRight size={26} className='text-white'/>
                 </button>
-
             </div>
             <div className='md:hidden flex gap-x-2 items-center'>
-                <button className='rounded-full p-2 bg-white bg-opacity-10 hover:bg-neutral-500 transition'>
+                <button
+                
+                 className='rounded-full p-2 bg-white bg-opacity-10 hover:bg-neutral-500 transition'>
+                   <Link href={"/dashboard"}>
                     <HiHome size={26} className='text-neutral-200'/>
+                    </Link>
                 </button>
-                <button className='rounded-full p-2 bg-white bg-opacity-10 hover:bg-neutral-500 transition'>
+                <button
+                 className='rounded-full p-2 bg-white bg-opacity-10 hover:bg-neutral-500 transition'>
+                  <Link href={"/dashboard/search"}>
                     <BiSearch size={26} className='text-neutral-200'/>
+                </Link>
                 </button>
             
 

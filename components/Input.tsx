@@ -4,6 +4,7 @@ import Image from "next/image";
 import { forwardRef, useState } from "react";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { twMerge } from "tailwind-merge"
+import LoadingSkeleton from "./Next-Ui/LoadingSkeleton";
 
 
 
@@ -79,7 +80,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
         setIsPlaying({ [index]: true });
       }
     
-
+      const index = 10
 
 
 
@@ -88,7 +89,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
 
 <div>
     <input
-     type="search" value={searchTerm} onChange={handleInputChange} placeholder="Suche nach einem Song"
+     type="search" autoComplete="off"  spellCheck="false" value={searchTerm} onChange={handleInputChange} placeholder="Suche nach einem Song"
       className={twMerge(
         `
         flex
@@ -118,7 +119,22 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
       ref={ref}
       {...props}
     />
-     {isFetching && <p>Lade Suchergebnisse...</p>}
+     {isFetching && <div className='    
+        grid 
+        grid-cols-2 
+        sm:grid-cols-3 
+        md:grid-cols-3 
+        lg:grid-cols-4
+        xl:grid-cols-5 
+        2xl:grid-cols-8 
+        gap-4 
+        mt-4
+        p-5'>
+         {Array.from({ length: index }, (_, index) => (
+        <LoadingSkeleton key={index} />
+        ))}
+
+        </div>}
                             
      <div className='      
      grid 
