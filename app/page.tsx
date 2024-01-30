@@ -10,7 +10,7 @@ import ChipNews from "../components/Next-Ui/ChipNews"
 import Link from "next/link"
 import GridImgLp from "@/components/Next-Ui/GridImgLp"
 
-import { Image}  from "@nextui-org/react";
+
 
 export default function Home() {
   return (
@@ -20,8 +20,7 @@ export default function Home() {
       <div className=" 
        h-screen relative">
         <div className="flex justify-center">
-        <Image
-        removeWrapper
+        <img
         alt="Landing page background"
         className=" z-0 backgroundLP mt-10 object-cover"
         src="/image/gif5.GIF"
