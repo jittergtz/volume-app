@@ -27,13 +27,7 @@ body {
 }
 
 
-.backgroundLP {
-
-
- 
-  /* resulting css */
-
- 
+.backgroundLP { 
   filter: contrast(160%) brightness(100%);
  
 
