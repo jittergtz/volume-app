@@ -26,3 +26,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
+.backgroundLP {
+
+
+ 
+  /* resulting css */
+
+ 
+  filter: contrast(160%) brightness(100%);
+ 
+
+}

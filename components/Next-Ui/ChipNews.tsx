@@ -6,7 +6,7 @@ function ChipNews() {
     <Chip
       variant="shadow"
       classNames={{
-        base: "bg-opacity-70  border-small border-white/50 ",
+        base: "bg-opacity-20  border-small border-white/50 ",
         content: "drop-shadow shadow-black text-white",
       }}
     >
