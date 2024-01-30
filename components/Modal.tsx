@@ -29,7 +29,7 @@ const Modal: React.FC<ModalProps> = ({
             inset-0" />
             <Dialog.Content className="fixed drop-shadow-md border border-neutral-700
             top-[50%] left-[50%] max-h-full h-full md:h-auto md:max-h-[85vh] w-full md:w-[90vw]
-            md:max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-xl bg-neutral-900
+            md:max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-xl bg-neutral-900/60
             backdrop-blur-xl p-[25px] focus:outline-none ">
                 <Dialog.Title className="text-xl text-center font-bold mb-4">
                     {title}

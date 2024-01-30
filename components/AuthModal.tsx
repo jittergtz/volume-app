@@ -30,7 +30,7 @@ const AuthModal = () => {
 
     return ( 
         <Modal 
-        title="Anmelden"
+        title="Volume"
         description="Logge dich mit deinen Account ein"
         isOpen={isOpen}
         onChange={onChange}>

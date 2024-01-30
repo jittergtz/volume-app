@@ -10,7 +10,7 @@ function ChipNews() {
         content: "drop-shadow shadow-black text-white",
       }}
     >
-      Neuigkeiten Volume 1.0 🎉
+      Neuigkeiten Volume 0.6 🎉
     </Chip>
   );
 }
