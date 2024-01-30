@@ -24,16 +24,12 @@ export default function Home() {
         alt="Landing page background"
         className=" z-0 backgroundLP mt-10 object-cover"
         src="/image/gif5.GIF"
-      />
+      /></div>
 
-        </div>
-        <div className="flex justify-center flex-col">
-        <section className="h-[80vh]  backgroundLP w-screen z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-700 from-10% to-black to-90%"></section>
-        <section className="w-full h-96 bg-black -mt-96 z-0 "></section>
-        </div>
+   
        
 
-        <div className="absolute justify-center  top-1/2 left-1/2 -mt-20 sm:mt-0 transform -translate-x-1/2 -translate-y-1/2 ">
+        <div className="absolute  justify-center top-40 z-20  left-1/2  transform -translate-x-1/2  ">
           <div className="flex flex-col items-center justify-center">
             <ChipNews/>
             <BsSoundwave className="text-neutral-100 w-28 h-28 " />
@@ -59,36 +55,45 @@ export default function Home() {
             </Button>
             <Button
             className="bg-white/10 backdrop-blur-md rounded-2xl p-3 px-5
-            shadow-md  ">
+            shadow-md">
              Premium
             </Button>
           </div>
         </div>
       </div>
 
+      <div className="flex absolute top-[30rem] justify-center  flex-col">
+        <section className="h-[30rem]  backgroundLP w-screen z-0  bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-700 from-10% to-black to-90%"></section>
+        <section className="w-full h-72  bg-black -mt-72 z-0 flex justify-center ">
+          <h1 className="text-4xl md:text-5xl tracking-tighter w-72 md:w-96  mt-28
+          text-transparent bg-clip-text bg-gradient-to-b text-center from-white to-neutral-500">
+            Musik finden war noch nie so leicht</h1>
+        </section>
 
-
-      <div className=" flex justify-center lg:mt-20 lg:pt-40 pb-20">
+        <div className="flex  justify-center">
         <h1 className="text-4xl md:text-5xl font-semibold text-neutral-300 ">
         <GridImgLp/>
         </h1>
       </div>
 
-  
 
-      <div className=" p-4 flex justify-center gap-4 pb-48">
+
+
+      <div className=" p-4 flex justify-center  gap-4 py-20">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:p-10 ">
           <CardLP />
         </div>
       </div>
-      <div className=" flex flex-col items-center justify-center text-neutral-200 gap-8 p-4">
-        <h1 className="text-center text-large">Alles über Volume</h1>
-        <AccordionCard />
-      </div>
 
-      <footer className="h-96 bg-gradient-to-t from-blue-600 via-black to-black">
-        <div></div>
-      </footer>
+        </div>
+
+        
+
+    
+  
+
+  
+
   
     </main>
   )
