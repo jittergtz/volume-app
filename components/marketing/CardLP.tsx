@@ -51,3 +51,38 @@ const scale = useTransform(scrollYProgress, [0, 0], [0, 1])
 }
 
 export default CardLP
+
+
+
+
+
+
+
+{/*
+
+     <div  className="bg-neutral-800 relative border border-neutral-700 p-2
+      rounded-xl flex flex-col justify-center animate-appearance-in">
+           <img
+             className='rounded-xl'
+             height={270}
+             width={270}
+             alt='cover'
+             src={data.image}
+           />
+ 
+           <span className='overflow-x-hidden line-clamp-1'>{data.title}</span>
+           <span className='text-xs overflow-x-hidden line-clamp-1'>{data.artist}</span>
+           
+           <button className=' w-full h-full absolute rounded-xl text-center text-black'>
+            <FaPlay className='h-3 sm:h-8' />
+          </button>
+         </div>
+
+
+
+
+
+
+
+
+*/}

@@ -4,49 +4,58 @@
         "category": "Daily Mix",
         "title": "FRONTEND",
         "tracks": "63",
-        "image": "/image/IMG_7653.jpg"
+        "image": "/image/IMG_7653.jpg",
+        "artist": "Travis Scott"
       },
       {
         "category": "New",
         "title": "2024 WAVE",
         "tracks": "42",
-        "image": "/image/IMG_7652 2.jpg"
+        "image": "/image/IMG_7652 2.jpg",
+        "artist": "Travis Scott"
       },
       {
         "category": "Rap",
         "title": "Underground4",
         "tracks": "12",
         "image": "/image/IMG_7654 2.jpg"
+        ,
+        "artist": "Travis Scott"
       },
       {
         "category": "Synth wave",
         "title": "STOIK",
         "tracks": "59",
-        "image": "/image/IMG_7655.jpg"
+        "image": "/image/IMG_7655.jpg",
+        "artist": "Travis Scott"
       },
       {
         "category": "electro",
         "title": "Study",
         "tracks": "9",
-        "image": "/image/IMG_7657.jpg"
+        "image": "/image/IMG_7657.jpg",
+        "artist": "Heido Manson"
       },
       {
         "category": "Ambient",
         "title": "Late night drivevbbbb",
         "tracks": "23",
-        "image": "/image/IMG_7658.jpg"
+        "image": "/image/IMG_7658.jpg",
+        "artist": "Kollegah"
       },
       {
         "category": "Phonk",
-        "title": "Gym",
+        "title": "Sleepwalker",
         "tracks": "77",
-        "image": "/image/IMG_7661.jpg"
+        "image": "/image/IMG_7661.jpg",
+        "artist": "Akiaura"
       },
       {
         "category": "romance",
-        "title": "Mood",
+        "title": "Fashion",
         "tracks": "43",
-        "image": "/image/IMG_7662.jpg"
+        "image": "/image/IMG_7662.jpg",
+        "artist": "Britney Manson"
       }
     ]
   }
