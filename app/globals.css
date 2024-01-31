@@ -32,3 +32,13 @@ body {
  
 
 }
+
+
+.searching {
+
+
+  background-color: rgb(0, 0, 0);
+  background-image: radial-gradient(at 0% 0%, rgb(63, 51, 238) 0, transparent 67%);
+
+
+}

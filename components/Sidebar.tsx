@@ -33,7 +33,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
 
   return (
-    <div className='flex h-screen'>
+    <div className='flex h-screen '>
        <div className='hidden md:flex flex-col gap-y-2
          h-full w-[300px] p-2'>
         <Box>

@@ -6,7 +6,6 @@ const SearchInput = () => {
     return ( 
         <Input
         
-        
 
         />
     );

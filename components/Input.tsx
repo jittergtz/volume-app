@@ -5,6 +5,7 @@ import { forwardRef, useState } from "react";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { twMerge } from "tailwind-merge"
 import LoadingSkeleton from "./Next-Ui/LoadingSkeleton";
+import { IoSearchOutline } from "react-icons/io5";
 
 
 
@@ -88,26 +89,26 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   return (
 
 <div>
+    
+    <div className="flex items-center px-2 rounded-xl bg-neutral-900">
+    <IoSearchOutline size={20} />
     <input
-     type="search" autoComplete="off"  spellCheck="false" value={searchTerm} onChange={handleInputChange} placeholder="Suche nach einem Song"
+     type="search" autoComplete="off"  spellCheck="false" value={searchTerm} onChange={handleInputChange} placeholder="Tippen zum suchen..."
       className={twMerge(
         `
         flex
         w-full 
         lg:w-96
         text-md
-        rounded-md 
-        bg-neutral-700
-        border
-        border-transparent
+        bg-transparent
         px-2 
         py-3 
         
         file:border-0 
-        file:bg-transparent 
+        
         file:text-sm 
         file:font-medium 
-        placeholder:text-neutral-400 
+        placeholder:text-neutral-300 
         disabled:cursor-not-allowed 
         disabled:opacity-50
         focus:outline-none
@@ -119,6 +120,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
       ref={ref}
       {...props}
     />
+    </div>
+
+
      {isFetching && <div className='    
         grid 
         grid-cols-2 

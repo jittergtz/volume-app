@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import ListItem from '@/components/ListItem'
 import MobileNavbar from '@/components/MobileNav'
+import DashboardAmbientLight from '@/components/Next-Ui/dashboardAmbientLight'
 import TitleTest from '@/components/TitleTest'
 
 
@@ -11,6 +12,8 @@ function page() {
   return (
     <main className='bg-white bg-opacity-5  rounded-lg h-full 
     w-full overflow-hidden overflow-y-auto'>
+   
+      <DashboardAmbientLight/>
       <Header>
         <div className='sm:mb-2'>
           <h1 className='text-neutral-400 text-2xl font-semibold'>
@@ -30,7 +33,7 @@ function page() {
       <div className='mt-2 px-6'>
         <div className='flex justify-between items-center' >
           <h1 className='text-white text-2xl font-semibold'>
-            Entdecke Neues
+            Entdecken
           </h1>
         </div>
      
