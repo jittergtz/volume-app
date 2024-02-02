@@ -5,7 +5,7 @@ import React, { useRef, useEffect } from 'react';
 
 
 function PlayLogic({ isPlaying, activeSong, volume, seekTime,
-repeat, onEnded, onTimeUpdate, onLoadedData}: {
+repeat, onEnded,}: {
     isPlaying: any,
     activeSong: any,
     volume: number,
