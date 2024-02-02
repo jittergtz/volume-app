@@ -16,8 +16,8 @@ function page() {
       <DashboardAmbientLight/>
       <Header>
         <div className='sm:mb-2'>
-          <h1 className='text-neutral-400 text-2xl font-semibold'>
-            Startseite
+          <h1 className='text-neutral-200/60 text-2xl font-semibold'>
+            Guten Abend, Sandro
           </h1>
           <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4
           gap-3 mt-4'>
@@ -33,7 +33,7 @@ function page() {
       <div className='mt-2 px-6'>
         <div className='flex justify-between items-center' >
           <h1 className='text-white text-2xl font-semibold'>
-            Entdecken
+            Entdecke Neues
           </h1>
         </div>
      

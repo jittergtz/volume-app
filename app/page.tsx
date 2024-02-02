@@ -62,8 +62,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex absolute top-[30rem] justify-center  flex-col">
-        <section className="h-[33rem]  backgroundLP w-screen z-0  bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-700 from-10% to-black to-90%"></section>
+      <div className="flex absolute top-[30rem] w-full justify-center  flex-col">
+        <section className="h-[33rem] overflow-hidden backgroundLP w-full z-0  bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-700 from-10% to-black to-90%"></section>
         <section className="w-full h-60 lg:h-96  bg-black -mt-64 z-0  flex items-end justify-center ">
           <h1 className="text-4xl md:text-5xl lg:text-7xl tracking-tighter w-72 md:w-96
           text-transparent bg-clip-text bg-gradient-to-b text-center from-white to-neutral-500 ">

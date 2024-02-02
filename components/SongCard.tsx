@@ -1,7 +1,12 @@
 "use client"
-import React, { useState } from 'react'
-import { FaPause, FaPlay } from 'react-icons/fa'
+
+import React from 'react'
+import { useDispatch } from 'react-redux';
 import { twMerge } from 'tailwind-merge';
+
+
+import { playPause, setActiveSong } from '@/lib/features/playerSlice';
+import PlayPause from './PlayPause';
 
 
 
@@ -19,37 +24,24 @@ interface TrackProps {
 
 
 
-function SongCard ({ item, index, data }: { item: TrackProps, index: number, data: any }) {
+function SongCard ({ item, index, data, isPlaying, activeSong }: {
+    item: TrackProps,
+    index: number,
+    data: any,
+    isPlaying: any,
+    activeSong: any }) {
+   
+    const dispatch = useDispatch()
 
-    const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-    const [isPlaying, setIsPlaying] = useState<{ [key: number]: boolean }>({});
-    const [currentTrackIndex, setCurrentTrackIndex] = useState<number | null>(null);
-
-
-
-    function playPauseHandler(index: number) {
-        if (audio && currentTrackIndex !== null) {
-          if (currentTrackIndex === index) {
-            if (isPlaying[index]) {
-              audio.pause();
-            } else {
-              audio.play();
-            }
-            setIsPlaying((prevIsPlaying) => ({ ...prevIsPlaying, [index]: !prevIsPlaying[index] }));
-            return;
-          } else {
-            audio.pause();
-            audio.currentTime = 0;
-            setIsPlaying({});
-          }
-        }
+    const handlePauseClick = () => {
+        dispatch(playPause(false));
+      };
     
-        const newAudio = new Audio(data.tracks.data[index].preview);
-        setAudio(newAudio);
-        setCurrentTrackIndex(index);
-        newAudio.play();
-        setIsPlaying({ [index]: true });
-      }
+      const handlePlayClick = () => {
+        dispatch(setActiveSong({ item, data, index }));
+        dispatch(playPause(true));
+      };
+
 
       
   return (
@@ -68,20 +60,12 @@ function SongCard ({ item, index, data }: { item: TrackProps, index: number, dat
        <span className='overflow-x-hidden line-clamp-1'>{item.title}</span>
        <span className='text-xs overflow-x-hidden line-clamp-1'>{item.artist.name}</span>
        
-       <button className=' w-full h-full absolute rounded-xl text-center text-black' 
-        onClick={() => playPauseHandler(index)}>
-        {isPlaying[index] ? (
-        <div className=' absolute bottom-14 right-5
-         flex justify-center  items-center rounded-full w-8 h-8 sm:w-12 sm:h-12 bg-white/90'>
-        <FaPause  className='h-3 sm:h-8'/>
-        </div>
-        ): (
-        <div className='flex absolute bottom-14 right-5
-         justify-center items-center rounded-full w-8 h-8 sm:w-12 sm:h-12 bg-white/80'>
-        <FaPlay className='h-3 sm:h-8' />
-        </div>
-        )}
-      </button>
+       <PlayPause
+              isPlaying={isPlaying}
+              activeSong={activeSong}
+              item={item}
+              handlePause={handlePauseClick}
+              handlePlay={handlePlayClick}/>
      </div>
   )
 }

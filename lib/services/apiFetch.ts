@@ -17,7 +17,7 @@ export const deezerApi = createApi({
     }),
     discover: builder.query<any, void>({
       // Für einen statischen Endpoint ohne Parameter
-      query: () => `playlist/12131355551`,
+      query: () => `playlist/11940510061`,
     }),
   }),
 });
