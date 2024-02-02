@@ -15,7 +15,7 @@ import { playPause } from "@/lib/features/playerSlice"
 import PlayLogic from "./PlayLogic"
 import { BsArrowRepeat, BsFillPauseFill, BsFillPlayFill, BsShuffle } from "react-icons/bs"
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md"
-import Controls from "./Controls"
+
 
 
 const Player = () => {
@@ -95,18 +95,16 @@ const Player = () => {
            <div className="flex md:gap-4 items-center justify-between ">
              <div className="gap-2 flex">
                {activeSong?.album?.cover_big ? 
-               <Image
+               <img
                  alt="Album cover"
                  className="object-cover rounded-lg "
-                 objectFit="cover"
                  height={45}
                  width={45}
                  src={activeSong?.album?.cover_big}
                /> 
-               : <Image
+               : <img
                alt="Album cover"
                className="object-cover rounded-lg "
-               objectFit="cover"
                height={45}
                width={45}
                src="/image/IMG_7651.jpg"
