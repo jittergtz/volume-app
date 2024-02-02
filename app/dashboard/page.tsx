@@ -8,6 +8,7 @@ import DashboardAmbientLight from '@/components/Next-Ui/dashboardAmbientLight'
 import React from 'react'
 import Discover from '@/components/Discover'
 import { FaFireFlameCurved } from 'react-icons/fa6'
+import Greeting from '@/components/Greeting'
 
 function page() {
   return (
@@ -17,9 +18,8 @@ function page() {
       <DashboardAmbientLight/>
       <Header>
         <div className='sm:mb-2'>
-          <h1 className='text-neutral-200/60 tracking-tight text-2xl font-semibold'>
-            Guten Abend, Sandro
-          </h1>
+        <Greeting/>
+         
           <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4
           gap-3 mt-4'>
             <ListItem 
