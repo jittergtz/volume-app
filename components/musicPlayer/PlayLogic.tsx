@@ -1,52 +1,49 @@
 import React, { useRef, useEffect } from 'react';
 
-
-
-
-
-function PlayLogic({ isPlaying, activeSong, volume, seekTime,
-repeat, onEnded,}: {
+function PlayLogic({ isPlaying, activeSong, volume, seekTime, repeat, onEnded}: {
     isPlaying: any,
     activeSong: any,
     volume: number,
     seekTime: number,
     repeat: boolean,
-    onEnded: () => void,
-    onTimeUpdate: (event: {
-      target: {
-        currentTime: number;
-      };
-    }) => void;
-    onLoadedData: (event: {
-      target: {
-        duration: number;
-      };
-    }) => void;
-    }) 
-    {
-   
-   
-      const ref = useRef<HTMLAudioElement>(null);
-    // eslint-disable-next-line no-unused-expressions
-    if (ref.current) {
-      if (isPlaying) {
-        ref.current.play();
-      } else {
-        ref.current.pause();
-      }
-    }
-    console.log(activeSong)
+    onEnded: () => void
+}) {
+    const audioRef = useRef<HTMLAudioElement>(null);
 
+    useEffect(() => {
+        if (audioRef.current && isPlaying) {
+            const playPromise = audioRef.current.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Audio has started playing
+                }).catch(error => {
+                    // Handle play error
+                    console.error('Error playing audio:', error);
+                });
+            }
+        } else if (audioRef.current && !isPlaying) {
+            audioRef.current.pause();
+        }
+    }, [isPlaying, activeSong]);
 
-  return (
-    <audio
-    src={activeSong?.preview}
-    ref={ref}
-    loop={repeat}
-    onEnded={onEnded}
-   
-  />
-  )
+    const handlePlayPause = () => {
+        if (isPlaying) {
+            audioRef.current?.pause();
+        } else {
+            audioRef.current?.play();
+        }
+    };
+
+    return (
+        <div onClick={handlePlayPause}>
+            <audio
+                src={activeSong?.preview}
+                ref={audioRef}
+                loop={repeat}
+                onEnded={onEnded}
+            />
+        </div>
+    );
 }
 
-export default PlayLogic
+export default PlayLogic;

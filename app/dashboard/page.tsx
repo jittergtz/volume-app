@@ -2,11 +2,12 @@ import Header from '@/components/Header'
 import ListItem from '@/components/ListItem'
 import MobileNavbar from '@/components/MobileNav'
 import DashboardAmbientLight from '@/components/Next-Ui/dashboardAmbientLight'
-import TitleTest from '@/components/TitleTest'
 
 
 
 import React from 'react'
+import Discover from '@/components/Discover'
+import { FaFireFlameCurved } from 'react-icons/fa6'
 
 function page() {
   return (
@@ -32,14 +33,21 @@ function page() {
       </Header>
       <div className='mt-2 px-6'>
         <div className='flex justify-between items-center' >
+          <div>
           <h1 className='text-white text-2xl font-semibold'>
             Entdecke Neues
           </h1>
+          <p className='flex gap-1 text-white/70 items-center'>
+            Beliebt    
+             <FaFireFlameCurved 
+             className='h-3 text-white/60' />
+          </p>
+          </div>
         </div>
      
      </div>
       <div className='px-5 pb-40'>
-        <TitleTest />
+        <Discover />
     </div>
       
       <MobileNavbar/>

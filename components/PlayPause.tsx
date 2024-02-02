@@ -26,19 +26,24 @@ function PlayPause({ item, handlePause, handlePlay ,isPlaying, activeSong }: {
 
   return (
     <>
-    {isPlaying && activeSong?.title === item.title ? (
+    {isPlaying && activeSong?.id === item.id ? (
     <div 
     onClick={handlePause}
-    className=' absolute bottom-14 right-5
-     flex justify-center  items-center rounded-full w-8 h-8 sm:w-12 sm:h-12 bg-white/90'>
-    <FaPause  className='h-3 sm:h-8'/>
+    className='flex justify-center absolute items-center  h-full w-full '>
+     <div className='absolute bottom-14 right-5
+     flex justify-center  items-center rounded-full w-8 h-8 sm:w-10 sm:h-10 bg-white/90'>
+    <FaPause className='text-neutral-900  h-3 sm:h-4' />
+    </div>
     </div>
     ): (
     <div 
     onClick={handlePlay}
-    className='flex absolute bottom-14 right-5
-     justify-center items-center rounded-full w-8 h-8 sm:w-12 sm:h-12 bg-white/80'>
-    <FaPlay className='h-3 sm:h-8' />
+    className='flex 
+     justify-center absolute items-center  h-full w-full '>
+    <div className='absolute bottom-14 right-5
+     flex justify-center  items-center rounded-full w-8 h-8 sm:w-10 sm:h-10 bg-white/90'>
+    <FaPlay className='text-neutral-900  h-3 sm:h-4' />
+    </div>
     </div>
     )}
 

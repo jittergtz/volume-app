@@ -24,12 +24,14 @@ interface TrackProps {
 
 
 
-function SongCard ({ item, index, data, isPlaying, activeSong }: {
+function SongCard ({ item, index, data, isPlaying, activeSong, currentIndex }: {
     item: TrackProps,
     index: number,
     data: any,
     isPlaying: any,
-    activeSong: any }) {
+    activeSong: any,
+    currentIndex: number ,
+  }) {
    
     const dispatch = useDispatch()
 
@@ -47,7 +49,7 @@ function SongCard ({ item, index, data, isPlaying, activeSong }: {
   return (
     <div key={item.id} className={twMerge(
         'bg-neutral-800 relative border border-neutral-700 p-2 rounded-xl flex flex-col justify-center animate-appearance-in ',
-        isPlaying[index] && 'shadow-lg shadow-neutral-100/40'
+        isPlaying && activeSong?.id === item.id && 'shadow-lg shadow-neutral-100/40'
       )}>
        <img
          className='rounded-xl '
@@ -59,14 +61,15 @@ function SongCard ({ item, index, data, isPlaying, activeSong }: {
 
        <span className='overflow-x-hidden line-clamp-1'>{item.title}</span>
        <span className='text-xs overflow-x-hidden line-clamp-1'>{item.artist.name}</span>
-       
+   
        <PlayPause
               isPlaying={isPlaying}
               activeSong={activeSong}
               item={item}
               handlePause={handlePauseClick}
               handlePlay={handlePlayClick}/>
-     </div>
+  
+     </div>  
   )
 }
 

@@ -70,7 +70,7 @@ const Player = () => {
     {isActive ? (
        <div
        className="fixed bottom-16 sm:bottom-0 backdrop-blur-xl
-         border-b p-1 border-neutral-400 rounded-t-xl
+         border-b p-1 border-neutral-500 rounded-t-xl
          w-full ">
  
          <PlayLogic
@@ -81,8 +81,6 @@ const Player = () => {
            repeat={repeat}
     
            onEnded={handleNextSong}
-           onTimeUpdate={(event: { target: { currentTime: SetStateAction<number> } }) => setAppTime(event.target.currentTime)}
-           onLoadedData={(event: { target: { duration: SetStateAction<number> } }) => setDuration(event.target.duration)}
          />
  
  
@@ -111,7 +109,7 @@ const Player = () => {
              /> 
              }
                <div>
-                 <h3 className="w-28 sm:w-full line-clamp-1 font-semibold text-xs sm:text-small text-foreground/90">
+                 <h3 className="w-28  sm:w-full line-clamp-1 font-semibold text-xs sm:text-small text-foreground/90">
                  {activeSong?.title ? activeSong?.title : ''}
                  </h3>
                  <p className="sm:text-small text-xs text-foreground/80">
