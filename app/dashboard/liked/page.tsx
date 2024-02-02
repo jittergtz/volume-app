@@ -5,7 +5,7 @@ function page() {
   return (
 
     <>
-    <div>Library</div>
+    <div>liked</div>
     <span className='text-orange-500' >- In Development</span>
   
 
