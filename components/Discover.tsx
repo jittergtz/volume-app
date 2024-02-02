@@ -54,7 +54,6 @@ interface TrackProps {
             item={item} 
             index={index} 
             data={discoverData || popularData}
-            currentIndex={currentIndex}
             isPlaying={isPlaying}
             activeSong={activeSong}
           />

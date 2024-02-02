@@ -17,7 +17,7 @@ function page() {
       <DashboardAmbientLight/>
       <Header>
         <div className='sm:mb-2'>
-          <h1 className='text-neutral-200/60 text-2xl font-semibold'>
+          <h1 className='text-neutral-200/60 tracking-tight text-2xl font-semibold'>
             Guten Abend, Sandro
           </h1>
           <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4

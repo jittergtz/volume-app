@@ -24,13 +24,12 @@ interface TrackProps {
 
 
 
-function SongCard ({ item, index, data, isPlaying, activeSong, currentIndex }: {
+function SongCard ({ item, index, data, isPlaying, activeSong}: {
     item: TrackProps,
     index: number,
     data: any,
     isPlaying: any,
     activeSong: any,
-    currentIndex: number ,
   }) {
    
     const dispatch = useDispatch()

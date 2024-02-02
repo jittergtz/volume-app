@@ -137,14 +137,14 @@ export interface InputProps
         
         {data?.data?.map((item: TrackProps, index: number) => (
                   <SongCard 
-                  key={item.id}
-                  item={item} 
-                  index={index} 
-                  data={data}
-          
-                  isPlaying={isPlaying}
-                  activeSong={activeSong}
-                  />
+            key={item.id}
+            item={item}
+            index={index}
+            data={data}
+
+            isPlaying={isPlaying}
+            activeSong={activeSong}     
+           />
           
        ))}
     </div>
