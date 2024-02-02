@@ -160,7 +160,7 @@ const Player = () => {
 
     ):
     (
-      <div> hi</div>
+      <div></div>
      )}
     </>
   )
