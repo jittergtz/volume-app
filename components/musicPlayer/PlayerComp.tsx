@@ -82,9 +82,11 @@ const Player = () => {
         <div
         onClick={onOpen}
           className="fixed bottom-16 sm:bottom-0 backdrop-blur-xl bg-black/30
-         border-b px-1 border-neutral-600 rounded-t-xl w-full "
+         border-b px-1  border-neutral-600 rounded-t-xl w-full "
         >
+          <div className="my-1 mb-2">
           <NextModal/>
+          </div>
 
           <PlayLogic
             activeSong={activeSong}
@@ -117,7 +119,7 @@ const Player = () => {
                     />
                   )}
                   <div>
-                    <h3 className="w-36  sm:w-full line-clamp-1 font-semibold text-xs sm:text-small text-foreground/90">
+                    <h3 className="w-36 mt-2  sm:w-full line-clamp-1 font-semibold text-xs sm:text-small text-foreground/90">
                       {activeSong?.title ? activeSong?.title : ""}
                     </h3>
                     <p className="sm:text-small text-xs text-foreground/80">
