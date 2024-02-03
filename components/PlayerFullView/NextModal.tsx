@@ -7,8 +7,10 @@ export default function NextModal() {
 
   return (
     <>
-    <div className="flex justify-center">
-         <Button className="w-24 h-2 bg-white/20" onPress={onOpen}></Button>
+    <div
+    onClick={onOpen}
+     className="flex h-12  absolute w-full z-10 justify-center">
+         <Button className="w-24 h-2  bg-white/20" onPress={onOpen}></Button>
     </div>
      
       <Modal size="full"  className="md:w-max-[300px] h-full w-full fixed bottom-0 bg-transparent" isOpen={isOpen} onOpenChange={onOpenChange}>
@@ -18,6 +20,7 @@ export default function NextModal() {
 
               <PlayerFullCard
               onClose={onClose}
+              onOpen={onOpen}
                 />
             
             </>

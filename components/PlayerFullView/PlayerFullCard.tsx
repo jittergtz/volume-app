@@ -12,7 +12,7 @@ import { IoIosClose } from "react-icons/io"
 import usePlayerFUllModal from "@/hooks/usePlayerFullModul"
 
 
-function PlayerFullCard({onClose}: any) {
+function PlayerFullCard({onClose, onOpen}: any) {
   const [liked, setLiked] = useState(false)
   const PlayerFull = usePlayerFUllModal()
 

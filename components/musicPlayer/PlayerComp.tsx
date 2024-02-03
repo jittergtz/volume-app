@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@nextui-org/react"
+import { Button, useDisclosure } from "@nextui-org/react"
 import { HeartIcon } from "../Next-Ui/HeartIcon"
 
 import { PreviousIcon } from "../Next-Ui/PreviousIcon"
@@ -36,6 +36,8 @@ const Player = () => {
   const [repeat, setRepeat] = useState(false)
   const [shuffle, setShuffle] = useState(false)
   const dispatch = useDispatch()
+
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
   useEffect(() => {
     if (currentSongs.length) dispatch(playPause(true))
@@ -78,6 +80,7 @@ const Player = () => {
         <>
         
         <div
+        onClick={onOpen}
           className="fixed bottom-16 sm:bottom-0 backdrop-blur-xl bg-black/30
          border-b px-1 border-neutral-600 rounded-t-xl w-full "
         >
@@ -135,24 +138,24 @@ const Player = () => {
                     <div className="flex-col">
                       <div className="flex flex-col gap-1"></div>
 
-                      <div className="flex w-full items-center justify-center">
+                      <div className="flex bottom-16 z-50 w-full items-center justify-center">
                         {isPlaying ? (
                           <BsFillPauseFill
                             size={45}
                             onClick={handlePlayPause}
-                            className="text-neutral-100 cursor-pointer"
+                            className="text-neutral-100 z-50 cursor-pointer"
                           />
                         ) : (
                           <BsFillPlayFill
                             size={45}
                             onClick={handlePlayPause}
-                            className="text-neutral-100  cursor-pointer"
+                            className="text-neutral-100 z-50  cursor-pointer"
                           />
                         )}
                         {currentSongs?.length && (
                           <MdSkipNext
                             size={30} 
-                            className="cursor-pointer text-neutral-400"
+                            className="cursor-pointer z-50 text-neutral-400"
                             onClick={handleNextSong}
                           />
                         )}
@@ -160,7 +163,7 @@ const Player = () => {
                   <div className="flex  items-center justify-center ">
                   <Button
                     isIconOnly
-                    className="flex  justify-center items-center text-default-900/60 data-[hover]:bg-foreground/10 "
+                    className="flex  justify-center z-50 items-center text-default-900/60 data-[hover]:bg-foreground/10 "
                     radius="full"
                     variant="light"
                     onPress={() => setLiked((v) => !v)}
