@@ -81,7 +81,7 @@ const Player = () => {
         
         <div
         onClick={onOpen}
-          className="fixed bottom-16 mb-1  sm:bottom-0 backdrop-blur-xl bg-black/30
+          className="fixed bottom-16 mb-1 sm:bottom-0 backdrop-blur-xl bg-black/30
           px-1   rounded-2xl w-full "
         >
           <div className="my-1 mb-2">
