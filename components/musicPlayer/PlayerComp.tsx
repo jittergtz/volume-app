@@ -80,12 +80,13 @@ const Player = () => {
         <>
         
         <div
-        onClick={onOpen}
+          onClick={onOpen} // Full Player View
           className="fixed bottom-16 mb-1 sm:bottom-0 backdrop-blur-xl bg-black/30
           px-1   rounded-2xl w-full "
         >
           <div className="my-1 mb-2">
-          <NextModal/>
+          <NextModal        //Full Player
+          />
           </div>
 
           <PlayLogic

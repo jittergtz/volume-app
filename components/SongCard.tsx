@@ -51,7 +51,7 @@ function SongCard ({ item, index, data, isPlaying, activeSong}: {
         isPlaying && activeSong?.id === item.id && 'shadow-lg shadow-neutral-100/40'
       )}>
        <img
-         className='rounded-xl '
+         className='rounded-xl'
          height={270}
          width={270}
          alt='deezer-pic'
