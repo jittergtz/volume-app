@@ -10,7 +10,7 @@ import { HeartIcon } from "../Next-Ui/HeartIcon"
 import { FaArrowsTurnRight } from "react-icons/fa6"
 import { IoIosClose } from "react-icons/io"
 import usePlayerFUllModal from "@/hooks/usePlayerFullModul"
-import PlayerFullModal from "./PlayerFullModul"
+
 
 function PlayerFullCard({onClose}: any) {
   const [liked, setLiked] = useState(false)
