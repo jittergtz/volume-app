@@ -83,9 +83,7 @@ function PlayerFullCard({onClose, onOpen}: any) {
             />
           )}
 
-          <Button>
-            Zu Apple Music <FaArrowsTurnRight size={9} />
-          </Button>
+        
         </div>
 
         <div className="flex px-5 flex-col col-span-6 md:col-span-8">
