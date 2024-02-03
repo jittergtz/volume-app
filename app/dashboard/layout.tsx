@@ -1,4 +1,5 @@
 import Player from "@/components/musicPlayer/PlayerComp"
+import PlayerFullCard from "@/components/PlayerFullView/PlayerFullCard"
 import Sidebar from "@/components/Sidebar"
 import { ReduxProvider } from "@/lib/provider"
 import ModalProvider from "@/providers/ModalProvider"
