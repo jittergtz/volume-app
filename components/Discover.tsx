@@ -54,7 +54,7 @@ interface TrackProps {
         <div className='mt-2 '>
         <div className='flex justify-between items-center' >
           <div>
-          <h1 className='text-white text-2xl font-semibold'>
+          <h1 className='text-white text-2xl '>
             Entdecke Neues
           </h1>
           <p className='flex gap-1 text-white/70 items-center'>

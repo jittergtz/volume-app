@@ -57,7 +57,7 @@ function PlayerFullCard({onClose, onOpen}: any) {
 
   return (
     <Card
-      className=" h-full w-full   bg-black/70 backdrop-blur-3xl  rounded-none "
+      className=" h-full w-full  bg-black/70 backdrop-blur-3xl  rounded-none "
       shadow="sm"
     >
       <button
@@ -96,7 +96,7 @@ function PlayerFullCard({onClose, onOpen}: any) {
           
         </div>
 
-        <div className="flex  px-5 flex-col col-span-6 md:col-span-8">
+        <div className="flex   px-5 flex-col col-span-6 md:col-span-8">
           <div className="flex  justify-between items-start">
             <div className="flex flex-col gap-0">
               <h3 className=" text-lg text-foreground/90">
