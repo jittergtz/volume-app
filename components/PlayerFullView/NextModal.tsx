@@ -12,9 +12,10 @@ export default function NextModal() {
      className="flex  h-full absolute w-full z-10 justify-center">
     <div className="w-24 h-2 rounded-2xl  bg-white/20" onClick={onOpen}></div>
     </div>
+
      
-      <Modal size="full"  className="md:w-max-[300px] h-full w-full fixed bottom-0 bg-transparent" isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent>
+      <Modal size="full" backdrop="transparent" shouldBlockScroll={false} hideCloseButton={true} scrollBehavior="outside"  className=" bg-transparent h-full w-[100%] rounded-none fixed  -bottom-1 sm:bottom-0" isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent >
           {(onClose) => (
             <>
 
@@ -27,6 +28,8 @@ export default function NextModal() {
           )}
         </ModalContent>
       </Modal>
+
+   
     </>
   );
 }

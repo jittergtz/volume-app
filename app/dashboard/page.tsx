@@ -9,6 +9,8 @@ import React from 'react'
 import Discover from '@/components/Discover'
 import { FaFireFlameCurved } from 'react-icons/fa6'
 import Greeting from '@/components/Greeting'
+import { Tab, Tabs } from '@nextui-org/react'
+import TabsGenre from '@/components/TabsGenre'
 
 function page() {
   return (
@@ -31,21 +33,11 @@ function page() {
         </div>
         
       </Header>
-      <div className='mt-2 px-6'>
-        <div className='flex justify-between items-center' >
-          <div>
-          <h1 className='text-white text-2xl font-semibold'>
-            Entdecke Neues
-          </h1>
-          <p className='flex gap-1 text-white/70 items-center'>
-            Beliebt    
-             <FaFireFlameCurved 
-             className='h-3 text-white/60' />
-          </p>
-          </div>
-        </div>
-     
-     </div>
+
+
+
+
+
       <div className='px-5 pb-40'>
         <Discover />
     </div>

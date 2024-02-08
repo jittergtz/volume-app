@@ -57,25 +57,35 @@ function PlayerFullCard({onClose, onOpen}: any) {
 
   return (
     <Card
-      className="ml-auto h-full w-full backdrop-blur-3xl bg-transparent rounded-none md:max-w-[400px]"
+      className=" h-full w-full   bg-black/70 backdrop-blur-3xl  rounded-none "
       shadow="sm"
     >
       <button
        onClick={onClose}
-       className="ml-auto p-5">
+       className="   mt-20 ml-auto p-5">
         <IoIosClose size={28} />
       </button>
-      <CardBody className="flex justify-center gap-10  ">
+
+      <CardBody className="flex overflow-visible  h-full justify-center gap-10  ">
         <div className="flex flex-col items-center gap-2 justify-center  col-span-6 md:col-span-4">
         {activeSong?.album?.cover_big ? (
-          <Image
+        <>
+        <Image
             alt="Album cover"
             className="object-cover w-64 h-64"
             shadow="md"
             src={activeSong?.album?.cover_big}
           />
+       
+          <img
+          alt="Shadow"
+          className="image-card-shadow"
+          src={activeSong?.album?.cover_big}
+        />
+        </>
           ) : (
             <Image
+            
               alt="Album cover"
               className="object-cover w-64 h-64 "
               shadow="md"
@@ -89,7 +99,7 @@ function PlayerFullCard({onClose, onOpen}: any) {
         <div className="flex  px-5 flex-col col-span-6 md:col-span-8">
           <div className="flex  justify-between items-start">
             <div className="flex flex-col gap-0">
-              <h3 className="font-semibold text-lg text-foreground/90">
+              <h3 className=" text-lg text-foreground/90">
                 {activeSong?.title ? activeSong?.title : ""}
                 </h3>
               <p className="text-small text-foreground/80">

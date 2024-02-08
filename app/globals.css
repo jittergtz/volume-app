@@ -35,10 +35,37 @@ body {
 
 
 .searching {
-
-
   background-color: rgb(0, 0, 0);
   background-image: radial-gradient(at 0% 0%, rgb(63, 51, 238) 0, transparent 67%);
+}
 
+
+.image-card-shadow {
+  position: absolute;
+  width: 80%;
+  height:80%;
+  background-image: inherit;
+  background-size: cover;
+  border-radius: var(--radius);
+  overflow: hidden;
+  filter: blur(60px);
+  opacity: 100%;
+  z-index: -1;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+
+.w-screen {
+  width: 20rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .w-screen {
+    width: 100%;
+   
+  }
 
 }

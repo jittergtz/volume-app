@@ -25,21 +25,21 @@ const scale = useTransform(scrollYProgress, [0, 0], [0, 1])
       return (
         <>
         <motion.div ref={ref} style={{ scale: scrollYProgress }} className="grid max-w-4xl ">
-        <Card  key={data.title} className="py-4 ">
-        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-          <p className="text-tiny uppercase font-bold line-clamp-1">{data.category}</p>
-          <small className="text-default-500 line-clamp-1 ">Tracks: {data.tracks}</small>
-          <h4 className="font-bold text-large line-clamp-1 w-36 sm:w-44 ">{data.title}</h4>
-        </CardHeader>
-        <CardBody className="overflow-visible py-2">
-          <Image
+        <Card  key={data.title} className="sm:w-48  w-36 bg-neutral-800 relative border border-neutral-700 p-2 rounded-xl flex flex-col justify-center animate-appearance-in ">
+
+       
+     
+          <img
             alt="Card background"
             className="object-cover sm:w-48 sm:h-48 w-36 h-36 rounded-xl"
             src={data.image}
             width={270}
             height={270}
           />
-        </CardBody>
+           <h1 className="font-bold text-large line-clamp-1 overdlow-x-hidden ">{data.title}</h1>
+        <p className="text-default-500 line-clamp-1 ">{data.artist}</p>
+       
+
       </Card>
       </motion.div>
     </>

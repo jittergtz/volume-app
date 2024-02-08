@@ -15,7 +15,7 @@ function Greeting() {
   }
 
   return (
-    <h1 className='text-neutral-200/60 tracking-tight text-2xl font-semibold'>
+    <h1 className='text-neutral-200/60 tracking-tight text-2xl '>
 {greeting}
 </h1>
    

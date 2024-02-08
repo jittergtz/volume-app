@@ -78,11 +78,11 @@ const Player = () => {
 
       {isActive ? (
         <>
-        
+        <div className="fixed bottom-16 mb-1  w-full sm:bottom-0">
         <div
           onClick={onOpen} // Full Player View
-          className="fixed bottom-16 mb-1 sm:bottom-0 backdrop-blur-xl bg-black/30
-          px-1   rounded-2xl w-full "
+          className=" backdrop-blur-xl  bg-black/30
+          px-1   rounded-2xl mx-2 "
         >
           <div className="my-1 mb-2">
           <NextModal        //Full Player
@@ -112,7 +112,7 @@ const Player = () => {
                     />
                   ) : (
                     <img
-                      alt="Album cover"
+                      alt="fallback img"
                       className="object-cover rounded-lg "
                       height={45}
                       width={45}
@@ -120,7 +120,7 @@ const Player = () => {
                     />
                   )}
                   <div>
-                    <h3 className="w-36 mt-2  sm:w-full line-clamp-1 font-semibold text-xs sm:text-small text-foreground/90">
+                    <h3 className="w-36 mt-2  sm:w-full line-clamp-1  text-xs sm:text-small text-foreground/90">
                       {activeSong?.title ? activeSong?.title : ""}
                     </h3>
                     <p className="sm:text-small text-xs text-foreground/80">
@@ -187,6 +187,7 @@ const Player = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
      </>
       ) : (

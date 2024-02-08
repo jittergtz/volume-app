@@ -7,6 +7,8 @@ import LoadingSkeleton from './Next-Ui/LoadingSkeleton';
 import SongCard from './SongCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
+import TabsGenre from './TabsGenre';
+import { FaFireFlameCurved } from 'react-icons/fa6';
 
 
 
@@ -36,7 +38,7 @@ interface TrackProps {
     if (discoverIsFetching || popularFetching) {
       const index = 10;
       return (
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4 mt-4 p-5'>
+        <div className='grid  grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4 mt-4 p-5'>
           {Array.from({ length: index }, (_, index) => (
             <LoadingSkeleton key={index} />
           ))}
@@ -47,8 +49,28 @@ interface TrackProps {
     if (discoverError || popularError) return <span>Ein Fehler ist aufgetreten</span>;
   
     return (
-      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4 mt-4 p-3'>
-        {[ ...popularData?.tracks?.data, ...discoverData?.tracks?.data,].map((item: TrackProps, index: number) => (
+      <div className='p-3'>
+
+        <div className='mt-2 '>
+        <div className='flex justify-between items-center' >
+          <div>
+          <h1 className='text-white text-2xl font-semibold'>
+            Entdecke Neues
+          </h1>
+          <p className='flex gap-1 text-white/70 items-center'>
+             Charts 100
+             <FaFireFlameCurved 
+             className='h-3 text-white/60' />
+          </p>
+          </div>
+        </div>
+     
+     </div>
+     
+      <TabsGenre/>
+
+      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4 mt-4 '>
+        {discoverData?.tracks?.data.map((item: TrackProps, index: number) => (
           <SongCard 
             key={item.id}
             item={item} 
@@ -59,6 +81,8 @@ interface TrackProps {
           />
         ))}
       </div>
+
+    </div>
     );
   }
   
