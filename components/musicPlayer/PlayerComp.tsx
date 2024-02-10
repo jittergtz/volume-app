@@ -82,7 +82,7 @@ const Player = () => {
         <div
           onClick={onOpen} // Full Player View
           className=" backdrop-blur-xl  bg-black/30
-          px-1   rounded-2xl mx-2 "
+          px-1   rounded-2xl mx-1 "
         >
           <div className="my-1 mb-2">
           <NextModal        //Full Player

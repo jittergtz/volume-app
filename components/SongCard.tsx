@@ -7,6 +7,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { playPause, setActiveSong } from '@/lib/features/playerSlice';
 import PlayPause from './PlayPause';
+import LoadingSkeleton from './Next-Ui/LoadingSkeleton';
 
 
 
@@ -42,6 +43,7 @@ function SongCard ({ item, index, data, isPlaying, activeSong}: {
         dispatch(setActiveSong({ item, data, index }));
         dispatch(playPause(true));
       };
+    
 
 
       
@@ -56,6 +58,7 @@ function SongCard ({ item, index, data, isPlaying, activeSong}: {
          alt='deezer-pic'
          src={item.album.cover_big}
        />
+
 
        <span className='overflow-x-hidden line-clamp-1'>{item.title}</span>
        <span className='text-xs overflow-x-hidden line-clamp-1'>{item.artist.name}</span>

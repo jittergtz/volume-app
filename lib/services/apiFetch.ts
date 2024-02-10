@@ -21,9 +21,32 @@ export const deezerApi = createApi({
     }),
     popular: builder.query<any, void>({
       // Für einen statischen Endpoint ohne Parameter
-      query: () => `playlist/3155776842`,
+      query: () => `playlist/1996494362`,
+    }),
+    speedup: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/11058495582`,
+    }),
+    germannew: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/1043463931`,
+    }),
+    germanrap: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/1257540851`,
+    }),
+    oldhits: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/1977689462`,
     }),
   }),
 });
 
-export const { useSearchQuery,usePopularQuery ,useDiscoverQuery } = deezerApi;
+export const { 
+  useSearchQuery,
+  usePopularQuery,
+  useSpeedupQuery,
+  useDiscoverQuery,
+  useGermannewQuery,
+  useGermanrapQuery,
+  useOldhitsQuery } = deezerApi;
