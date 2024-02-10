@@ -10,7 +10,7 @@ import Discover from '@/components/Discover'
 import { FaFireFlameCurved } from 'react-icons/fa6'
 import Greeting from '@/components/Greeting'
 import { Tab, Tabs } from '@nextui-org/react'
-import TabsGenre from '@/components/TabsGenre'
+
 
 function page() {
   return (
