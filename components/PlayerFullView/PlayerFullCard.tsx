@@ -7,12 +7,14 @@ import { PauseCircleIcon } from "../Next-Ui/PauseCircleIcon"
 import { PreviousIcon } from "../Next-Ui/PreviousIcon"
 import { RepeatOneIcon } from "../Next-Ui/RepeatOneIcon"
 import { HeartIcon } from "../Next-Ui/HeartIcon"
-import { FaArrowsTurnRight } from "react-icons/fa6"
+import { FaArrowsTurnRight, FaLocationArrow } from "react-icons/fa6"
 import { IoIosClose } from "react-icons/io"
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "@/lib/store"
 import { playPause } from "@/lib/features/playerSlice"
 import { BsFillPauseFill, BsFillPlayFill } from "react-icons/bs"
+import LinkSongButton from "../LinkSongButton"
+
 
 
 function PlayerFullCard({onClose, onOpen}: any) {
@@ -93,8 +95,14 @@ function PlayerFullCard({onClose, onOpen}: any) {
             />
           )}
 
+       
+        <LinkSongButton/>
+
           
         </div>
+
+    
+   
 
         <div className="flex   px-5 flex-col col-span-6 md:col-span-8">
           <div className="flex  justify-between items-start">

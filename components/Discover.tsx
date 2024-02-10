@@ -7,7 +7,6 @@ import React, { useState } from 'react'
 import SongCard from './SongCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
-import TabsGenre from './TabsGenre';
 import { FaFireFlameCurved } from 'react-icons/fa6';
 import { Tab, Tabs } from '@nextui-org/react';
 import LoadingSkeleton from './Next-Ui/LoadingSkeleton';
@@ -94,7 +93,7 @@ interface TrackProps {
         </div>
   
         <div className="flex flex-col gap-4 sm:overflow-hidden">
-          <Tabs variant="light" className='overflow-x-scroll' aria-label="Tabs variants">
+          <Tabs variant="light" className='overflow-x-scroll scrollbar-hide ' aria-label="Tabs variants">
             <Tab key="charts" title="Charts">
             { chartsIsFetching  ? 
            ( <SongCardLoading/> )
