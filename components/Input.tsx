@@ -1,6 +1,6 @@
 "use client"
 import { useSearchQuery } from "@/lib/services/apiFetch"
-import { forwardRef, useState } from "react"
+import { forwardRef, useEffect, useState } from "react"
 import { FaPause, FaPlay } from "react-icons/fa"
 import { twMerge } from "tailwind-merge"
 import LoadingSkeleton from "./Next-Ui/LoadingSkeleton"
@@ -28,19 +28,30 @@ interface TrackProps {
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
 
+  const SEARCH_KEY = "searchTerm";
+
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, disabled, ...props }, ref) => {
-    const [searchTerm, setSearchTerm] = useState("")
-    const { data, isFetching, error } = useSearchQuery(searchTerm)
-    const { activeSong, isPlaying } = useSelector((state: RootState) => state.player)
+    const [searchTerm, setSearchTerm] = useState("");
+    const { data, isFetching, error } = useSearchQuery(searchTerm);
+    const { activeSong, isPlaying } = useSelector((state: RootState) => state.player);
 
-    console.log(data)
+    // Retrieve search term from local storage on component mount
+    useEffect(() => {
+      const savedSearchTerm = localStorage.getItem(SEARCH_KEY);
+      if (savedSearchTerm) {
+        setSearchTerm(savedSearchTerm);
+      }
+    }, []);
 
+    // Save search term to local storage whenever input value changes
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setSearchTerm(e.target.value)
-    }
+      const value = e.target.value;
+      setSearchTerm(value);
+      localStorage.setItem(SEARCH_KEY, value);
+    };
 
-    const Skeletonindex = 10
+    const Skeletonindex = 10;
 
     return (
       <div>

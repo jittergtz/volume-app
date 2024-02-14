@@ -155,13 +155,13 @@ const Player = () => {
                             className="text-neutral-100 z-50  cursor-pointer"
                           />
                         )}
-                        {currentSongs?.length && (
+                        
                           <MdSkipNext
                             size={30} 
                             className="cursor-pointer z-50 text-neutral-400"
                             onClick={handleNextSong}
                           />
-                        )}
+                      
 
                   <div className="flex  items-center justify-center ">
                   <Button
