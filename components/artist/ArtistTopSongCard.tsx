@@ -1,12 +1,13 @@
 "use client"
 
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { twMerge } from 'tailwind-merge';
 
 
 import { playPause, setActiveSong } from '@/lib/features/playerSlice';
 import PlayPause from '../PlayPause';
+import { RootState } from '@/lib/store';
 
 
 
@@ -24,13 +25,16 @@ interface TrackProps {
 
 
 
-function ArtistTopSongCard ({ item, index, data, isPlaying, activeSong}: {
+function ArtistTopSongCard ({ item, index, data,}: {
     item: TrackProps,
     index: number,
     data: any,
-    isPlaying: any,
-    activeSong: any,
+ 
   }) {
+
+  const { activeSong, isPlaying } = useSelector((state: RootState) => state.player);
+
+    
    
     const dispatch = useDispatch()
 
