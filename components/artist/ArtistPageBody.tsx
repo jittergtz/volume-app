@@ -74,18 +74,18 @@ function ArtistPageBody() {
          <ArtistPageHeader
          artistData={artistData}/>
 
-        <div className="bg-neutral-950  flex border-neutral-800">
+        <div className="bg-neutral-950 ml-2 lg:ml-6 flex border-neutral-800">
 
-        <h1 className="text-2xl opacity-55 mt-12">
+        <h1 className="text-md opacity-55 mt-12">
         {artistData?.name}`s 
-        <p className="text-sm">Top 50 Songs</p> 
+        <p className="text-xl">Top 50 Songs</p> 
           </h1>
 
         </div>
 
        
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4 mt-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4  p-5 mt-4">
           {topTracks?.map((item: TrackProps, index: number) => (
             <ArtistTopSongCard
               key={item.id}

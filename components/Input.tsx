@@ -117,7 +117,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
 
             {data && data.data && data.data.length > 0 && (
-              <h1 className="text-sm md:text-xl ml-1 mt-2 text-neutral-200">
+              <h1 className="text-lg md:text-xl ml-1 mt-2 text-neutral-200">
                 Künstler
               </h1>
             )}
@@ -151,7 +151,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
 
             {data && data.data && data.data.length > 0 && (
-              <h1 className="text-sm md:text-xl ml-1 mt-1 text-neutral-200">
+              <h1 className="text-lg md:text-xl ml-1 mt-3 text-neutral-200">
                 Songs
               </h1>
             )}
@@ -168,8 +168,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       xl:grid-cols-5 
       2xl:grid-cols-8 
       gap-4 
-      mt-4
-      p-"
+      mt-1
+      p-5"
         >
           {data?.data?.map((item: TrackProps, index: number) => (
             <SongCard
