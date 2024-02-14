@@ -15,20 +15,20 @@ import SongCardLoading from './SongCardLoading';
 
 
 
-
 interface TrackProps {
-    id: number;
-    preview: string;
-    album: {
-      cover_big: string;
-    };
-    title: string;
-    artist: {
-      name: string;
-    };
-  }
-
-  
+  id: number;
+  preview: string;
+  album: {
+    cover_big: string;
+  };
+  title: string;
+  artist: {
+    id: number
+    name: string;
+    picture_xl: string
+    picture: string
+  };
+}
 
 
 
