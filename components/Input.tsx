@@ -1,83 +1,57 @@
 "use client"
-import { useSearchQuery } from "@/lib/services/apiFetch";
-import { forwardRef, useState } from "react";
-import { FaPause, FaPlay } from "react-icons/fa";
+import { useSearchQuery } from "@/lib/services/apiFetch"
+import { forwardRef, useState } from "react"
+import { FaPause, FaPlay } from "react-icons/fa"
 import { twMerge } from "tailwind-merge"
-import LoadingSkeleton from "./Next-Ui/LoadingSkeleton";
-import { IoSearchOutline } from "react-icons/io5";
-import SongCard from "./SongCard";
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/store";
-
-
-
-
-
-
-
+import LoadingSkeleton from "./Next-Ui/LoadingSkeleton"
+import { IoSearchOutline } from "react-icons/io5"
+import SongCard from "./SongCard"
+import { useSelector } from "react-redux"
+import { RootState } from "@/lib/store"
+import ArtistCard from "./artist/ArtistCard"
 
 interface TrackProps {
-    id: number;
-    preview: string;
-    album: {
-      cover_big: string;
-    };
-    title: string;
-    artist: {
-      name: string;
-    };
+  id: number
+  preview: string
+  album: {
+    cover_big: string
   }
-
-
-
-
+  title: string
+  artist: {
+    name: string
+  }
+}
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-  
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, disabled, ...props }, ref) => {
+    const [searchTerm, setSearchTerm] = useState("")
+    const { data, isFetching, error } = useSearchQuery(searchTerm)
+    const { activeSong, isPlaying } = useSelector((state: RootState) => state.player)
 
+    console.log(data)
 
-    const Input = forwardRef<HTMLInputElement, InputProps>(({
-    className,
-    type,
-    disabled,
-    ...props
-  }, ref) => {
-      const [searchTerm, setSearchTerm] = useState('');
-      const { data, isFetching, error } = useSearchQuery(searchTerm)
-      const { activeSong, isPlaying } = useSelector((state: RootState) => state.player);
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchTerm(e.target.value)
+    }
 
+    const Skeletonindex = 10
 
-
-
-
-
-
-
-
-    
-      const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(e.target.value);
-      };
-
-
-   const Skeletonindex = 10
-
-
-
-
-
-  return (
-
-<div>
-    
-    <div className="flex items-center px-2 rounded-xl bg-neutral-900">
-    <IoSearchOutline size={20} />
-    <input
-     type="search" autoComplete="off"  spellCheck="false" value={searchTerm} onChange={handleInputChange} placeholder="Tippen zum suchen..."
-      className={twMerge(
-        `
+    return (
+      <div>
+        <div className="flex items-center px-2 rounded-xl bg-neutral-900">
+          <IoSearchOutline size={20} />
+          <input
+            type="search"
+            autoComplete="off"
+            spellCheck="false"
+            value={searchTerm}
+            onChange={handleInputChange}
+            placeholder="Tippen zum suchen..."
+            className={twMerge(
+              `
         flex
         w-full 
         lg:w-96
@@ -95,17 +69,18 @@ export interface InputProps
         disabled:opacity-50
         focus:outline-none
       `,
-        disabled && 'opacity-75',
-        className
-      )}
-      disabled={disabled}
-      ref={ref}
-      {...props}
-    />
-    </div>
+              disabled && "opacity-75",
+              className
+            )}
+            disabled={disabled}
+            ref={ref}
+            {...props}
+          />
+        </div>
 
-
-     {isFetching && <div className='    
+        {isFetching && (
+          <div
+            className="    
         grid 
         grid-cols-2 
         sm:grid-cols-3 
@@ -115,14 +90,62 @@ export interface InputProps
         2xl:grid-cols-8 
         gap-4 
         mt-4
-        p-5'>
-         {Array.from({ length: Skeletonindex }, (_, Skeletonindex) => (
-        <LoadingSkeleton key={Skeletonindex} />
-        ))}
+        p-5"
+          >
+            {Array.from({ length: Skeletonindex }, (_, Skeletonindex) => (
+              <LoadingSkeleton key={Skeletonindex} />
+            ))}
+          </div>
+        )}
 
-        </div>}
-                            
-     <div className='      
+
+
+
+
+            {data && data.data && data.data.length > 0 && (
+              <h1 className="text-sm md:text-xl ml-1 mt-2 text-neutral-200">
+                Künstler
+              </h1>
+            )}
+
+<div className="overflow-x-scroll flex gap-7 mt-1 scrollbar-hide">
+  {/* Filtern der Künstler */}
+  {data?.data &&
+    data.data
+      // Entfernen von Duplikaten basierend auf dem Künstler
+      .filter((item: TrackProps, index: number, self: TrackProps[]) =>
+        index === self.findIndex((t) => (
+          t.artist.name === item.artist.name
+        ))
+      )
+      .map((item: TrackProps, index: number) => (
+        <ArtistCard 
+          key={item.id}
+          item={item}
+          index={index}
+          data={data}
+          isPlaying={isPlaying}
+          activeSong={activeSong}
+        />
+      ))
+  }
+</div>
+
+
+
+
+
+
+            {data && data.data && data.data.length > 0 && (
+              <h1 className="text-sm md:text-xl ml-1 mt-1 text-neutral-200">
+                Songs
+              </h1>
+            )}
+
+
+
+        <div
+          className="      
      grid 
       grid-cols-2 
       sm:grid-cols-3 
@@ -132,30 +155,24 @@ export interface InputProps
       2xl:grid-cols-8 
       gap-4 
       mt-4
-      p-3'>
-        
-        
-        {data?.data?.map((item: TrackProps, index: number) => (
-                  <SongCard 
-            key={item.id}
-            item={item}
-            index={index}
-            data={data}
+      p-"
+        >
+          {data?.data?.map((item: TrackProps, index: number) => (
+            <SongCard
+              key={item.id}
+              item={item}
+              index={index}
+              data={data}
+              isPlaying={isPlaying}
+              activeSong={activeSong}
+            />
+          ))}
+        </div>
+      </div>
+    )
+  }
+)
 
-            isPlaying={isPlaying}
-            activeSong={activeSong}     
-           />
-          
-       ))}
-    </div>
-
-                        </div>
-            
-                        )
-                        });
-
-
-
-Input.displayName = "Input";
+Input.displayName = "Input"
 
 export default Input

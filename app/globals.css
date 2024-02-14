@@ -75,3 +75,20 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+
+
+.artist-card-shadow {
+  
+  width: 100%;
+  height:100%;
+  background-image: inherit;
+  background-size: cover;
+  border-radius: var(--radius);
+  filter: blur(40px);
+  border-radius:0%;
+  opacity: 100%;
+  z-index: -1;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}

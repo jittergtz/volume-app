@@ -41,8 +41,7 @@ function page() {
       <div className='px-5 pb-40'>
         <Discover />
     </div>
-      
-      <MobileNavbar/>
+  
     </main>
   )
 }

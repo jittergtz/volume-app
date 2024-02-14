@@ -1,3 +1,4 @@
+import MobileNavbar from "@/components/MobileNav"
 import Player from "@/components/musicPlayer/PlayerComp"
 import PlayerFullCard from "@/components/PlayerFullView/PlayerFullCard"
 import Sidebar from "@/components/Sidebar"
@@ -23,6 +24,7 @@ export default function Layout({ children }: SidebarProps) {
               <ModalProvider />
               <Sidebar>{children}</Sidebar>
               <Player />
+              <MobileNavbar/>
             </UserProvider>
           </SupabaseProvider>
         </ReduxProvider>

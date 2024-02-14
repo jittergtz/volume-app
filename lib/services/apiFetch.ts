@@ -15,6 +15,7 @@ export const deezerApi = createApi({
     search: builder.query<any, string>({
       query: (query) => `search?q=${query}`,
     }),
+
     discover: builder.query<any, void>({
       // Für einen statischen Endpoint ohne Parameter
       query: () => `playlist/3155776842`,
@@ -25,7 +26,7 @@ export const deezerApi = createApi({
     }),
     speedup: builder.query<any, void>({
       // Für einen statischen Endpoint ohne Parameter
-      query: () => `playlist/11058495582`,
+      query: () => `playlist/11967291621`,
     }),
     germannew: builder.query<any, void>({
       // Für einen statischen Endpoint ohne Parameter
@@ -39,14 +40,28 @@ export const deezerApi = createApi({
       // Für einen statischen Endpoint ohne Parameter
       query: () => `playlist/1977689462`,
     }),
+    mix: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/4403076402`,
+    }),
+
+    artist: builder.query<any, any>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: (query) => `artist/${query}`,
+    }),
+
+
+  
   }),
 });
 
 export const { 
   useSearchQuery,
+  useArtistQuery,
   usePopularQuery,
   useSpeedupQuery,
   useDiscoverQuery,
   useGermannewQuery,
   useGermanrapQuery,
-  useOldhitsQuery } = deezerApi;
+  useOldhitsQuery,
+  useMixQuery } = deezerApi;

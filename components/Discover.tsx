@@ -1,6 +1,6 @@
 "use client"
 
-import { useDiscoverQuery, useGermannewQuery, useGermanrapQuery, useOldhitsQuery, usePopularQuery, useSpeedupQuery } from '@/lib/services/apiFetch';
+import { useArtistQuery, useDiscoverQuery, useGermannewQuery, useGermanrapQuery, useMixQuery, useOldhitsQuery, usePopularQuery, useSpeedupQuery } from '@/lib/services/apiFetch';
 import React, { useState } from 'react'
 
 
@@ -43,7 +43,9 @@ interface TrackProps {
     const {data: germannewData, isFetching: germannewFetching, error: germanewError} = useGermannewQuery()
     const {data: germanrapData, isFetching: germanrapFetching, error: germanrapError} = useGermanrapQuery()
     const {data: oldhitsData, isFetching: oldhitsFetching, error: oldhitsError} = useOldhitsQuery()
+    const {data: mixData, isFetching: mixIsFetching, error: mixError} =  useMixQuery()
 
+    console.log(mixData)
 
   
     const renderSongs = (data: any) => {
@@ -85,7 +87,7 @@ interface TrackProps {
             <div>
               <h1 className="text-white text-2xl">Entdecke Neues</h1>
               <p className="flex gap-1 text-white/70 items-center">
-                Charts 100
+                Mix
                 <FaFireFlameCurved className="h-3 text-white/60" />
               </p>
             </div>
@@ -94,6 +96,12 @@ interface TrackProps {
   
         <div className="flex flex-col gap-4 sm:overflow-hidden">
           <Tabs variant="light" className='overflow-x-scroll scrollbar-hide ' aria-label="Tabs variants">
+          <Tab  key="mix" title="Mix">
+            { mixIsFetching  ? 
+           ( <SongCardLoading/> )
+           :(  renderSongs(mixData) )}
+            </Tab>
+           
             <Tab key="charts" title="Charts">
             { chartsIsFetching  ? 
            ( <SongCardLoading/> )

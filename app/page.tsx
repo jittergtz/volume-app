@@ -15,6 +15,7 @@ import { useRef } from "react"
 
 
 
+
 export default function Home() {
 
   const ref = useRef<HTMLDivElement>(null)
@@ -80,6 +81,9 @@ const {scrollYProgress: completionProgress} = useScroll()
           </div>
         </div>
       </div>
+
+
+      
 
       <div className="flex absolute top-[30rem] lg:top-[40rem] w-full justify-center  flex-col">
         <section className="h-[33rem] overflow-hidden backgroundLP w-full z-0  bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-700 from-10% to-black to-90%"></section>

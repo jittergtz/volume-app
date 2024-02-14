@@ -35,7 +35,7 @@ function page() {
 
 
 
-    <MobileNavbar/>
+
     </>
   )
 }

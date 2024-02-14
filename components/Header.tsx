@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({
 
 
 
-        <div className=' hidden sm:flex  w-full sm:mb-4 items-center justify-between'>
+        <div className=' hidden sm:flex  w-full sm:mb-4 items-center justify-between '>
             <div className='hidden md:flex gap-x-2 items-center'>
                 <button
                 onClick={() => router.back()} 

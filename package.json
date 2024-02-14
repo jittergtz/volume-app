@@ -18,6 +18,7 @@
     "@supabase/auth-helpers-react": "^0.4.2",
     "@supabase/auth-ui-react": "^0.4.7",
     "@supabase/auth-ui-shared": "^0.1.8",
+    "deezer-api-ts": "^1.2.3",
     "framer-motion": "^10.18.0",
     "next": "14.0.4",
     "react": "^18",
