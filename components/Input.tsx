@@ -11,15 +11,18 @@ import { RootState } from "@/lib/store"
 import ArtistCard from "./artist/ArtistCard"
 
 interface TrackProps {
-  id: number
-  preview: string
+  id: number;
+  preview: string;
   album: {
-    cover_big: string
-  }
-  title: string
+    cover_big: string;
+  };
+  title: string;
   artist: {
-    name: string
-  }
+    id: number
+    name: string;
+    picture_xl: string
+    picture: string
+  };
 }
 
 export interface InputProps
