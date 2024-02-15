@@ -42,24 +42,24 @@ const {scrollYProgress: completionProgress} = useScroll()
         <div className="flex justify-center">
         <img
         alt="Landing page background"
-        className=" z-0 w-[40rem] backgroundLP mt-20 object-cover"
-        src="/image/gif4.GIF"/>
+        className="z-0 fixed top-0 h-screen w-full  object-cover"
+        src="/image/6867640.jpg"/>
         </div>
 
    
        
 
-        <div className="absolute  justify-center top-40 z-20  left-1/2  transform -translate-x-1/2  ">
+        <div className="absolute  justify-center top-36 z-20  left-1/2  transform -translate-x-1/2  ">
           <div className="flex flex-col items-center justify-center">
             <ChipNews/>
-            <BsSoundwave className="text-neutral-100 w-28 h-28 " />
+            <BsSoundwave className="text-white/80 w-28 h-28 lg:w-36 lg:h-36  xl:w-48 xl:h-48 " />
           </div>
-          <h1 className="text-7xl z-50 text-center md:text-9xl tracking-tighter sm:font-semibold text-neutral-200 ">
+          <h1 className="text-8xl z-50 text-center xl:text-[15rem] lg:text-[11rem] md:text-9xl   tracking-tighter -mt-9 xl:-mt-16 font-semibold text-white/80 ">
             Volume
           </h1>
           <div className="flex justify-center">
-          <p className="text-lg text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400
-          opacity-70 text-center w-64 line-clamp-3">
+          <p className="text-lg lg:text-2xl text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400
+          opacity-70 text-center lg:w-96 line-clamp-3">
             Streame gratis musik überall und jedezeit. jetzt noch besser
           </p>
           </div>
@@ -74,7 +74,9 @@ const {scrollYProgress: completionProgress} = useScroll()
               </Link>
             </Button>
             <Button
-            className="bg-transparent border-2 border-indigo-900/90 shadow-md shadow-white/10 rounded-2xl p-3 px-5 ">
+            color="primary"
+            variant="shadow"
+            className="  shadow-md rounded-2xl p-3 px-5 ">
              Premium
              <Chip size="sm">Bald</Chip>
             </Button>
@@ -85,20 +87,9 @@ const {scrollYProgress: completionProgress} = useScroll()
 
       
 
-      <div className="flex absolute top-[30rem] lg:top-[40rem] w-full justify-center  flex-col">
-        <section className="h-[33rem] overflow-hidden backgroundLP w-full z-0  bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-700 from-10% to-black to-90%"></section>
-        <section className="w-full h-60 lg:h-96  bg-black -mt-64 z-0  flex items-end justify-center ">
-          <motion.div
-           ref={ref} 
-          >
-          <h1
-           className="text-5xl  lg:text-7xl tracking-tighter w-96
-          text-transparent bg-clip-text bg-gradient-to-b text-center from-white to-neutral-500 ">
-            Musik finden war noch nie so leicht
-            </h1>
-            </motion.div>
-        </section>
-
+      <div className="flex mt-20 w-full justify-center  flex-col">
+       
+      
         <div className="flex lg:mt-48 mt-28 justify-center">
         <h1 className="text-4xl md:text-5xl font-semibold text-neutral-300 ">
         <GridImgLp/>

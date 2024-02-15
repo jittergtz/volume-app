@@ -78,7 +78,7 @@ const Player = () => {
 
       {isActive ? (
         <>
-        <div className="fixed bottom-16 mb-1  w-full sm:bottom-0">
+        <div className="fixed bottom-16 mb-1 sm:mb-0  w-full sm:bottom-0">
         <div
           onClick={onOpen} // Full Player View
           className=" backdrop-blur-xl  bg-black/30

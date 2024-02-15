@@ -36,7 +36,7 @@ function AuthCard() {
               <div className='flex  items-center'>
                <Button 
                onClick={handleLogout}
-               className='rounded-full  px-20 w-full  '>
+               className='rounded-full text-md  w-80  xl:w-[40rem] '>
                 Ausloggen
                </Button>
               </div>
@@ -45,7 +45,7 @@ function AuthCard() {
             <div>
             <Button
             color='primary'
-            className='rounded-full  px-20  '
+            className='rounded-full text-md w-80 xl:w-[40rem]  '
             onClick={authModal.onOpen}>
                 Anmelden
             </Button>

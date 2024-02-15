@@ -32,7 +32,7 @@ export default function FollowButton() {
     getLabelProps,
     getInputProps,
   } = useCheckbox({
-    defaultSelected: true,
+    defaultSelected: false,
   })
 
   const styles = checkbox({ isSelected, isFocusVisible })
@@ -48,7 +48,7 @@ export default function FollowButton() {
           base: styles.base(),
           content: styles.content(),
         }}
-        color="success"
+
         startContent={isSelected ? <CheckIcon className="ml-1" /> : null}
         variant="faded"
         {...getLabelProps()}
