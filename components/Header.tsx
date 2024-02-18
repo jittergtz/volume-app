@@ -82,11 +82,6 @@ const Header: React.FC<HeaderProps> = ({
                
                { user ? (
                   <div className='flex gap-x-4 items-center'>
-                   <Button 
-                   onClick={handleLogout}
-                   className='rounded-full'>
-                    Ausloggen
-                   </Button>
                    <button 
                    onClick={() => router.push("/dashboard/profile")}
                    className='bg-white/20 hover:bg-white/50 transition p-3 rounded-full'>

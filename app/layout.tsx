@@ -9,6 +9,7 @@ import SupabaseProvider from "@/providers/SupabaseProvider"
 import UserProvider from "@/providers/UserProvider"
 import ModalProvider from "@/providers/ModalProvider"
 import Sidebar from "@/components/Sidebar"
+import { ReduxProvider } from "@/lib/provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -35,9 +36,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={nunito.className}>
+        <ReduxProvider>
+          <UserProvider>
         <Providers>
           {children} 
         </Providers>
+        </UserProvider>
+        </ReduxProvider>
       </body>
     </html>
   )

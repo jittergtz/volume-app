@@ -38,7 +38,7 @@ export const deezerApi = createApi({
     }),
     oldhits: builder.query<any, void>({
       // Für einen statischen Endpoint ohne Parameter
-      query: () => `playlist/1977689462`,
+      query: () => `playlist/4723756228`,
     }),
     mix: builder.query<any, void>({
       // Für einen statischen Endpoint ohne Parameter

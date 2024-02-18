@@ -27,7 +27,7 @@ function page() {
             <ListItem 
             name="Favoriten"
             image="/image/volume-heartIcon.svg"
-             href='/dashboard/liked' />
+             href='/dashboard/playlist/333' />
           </div>
 
         </div>
