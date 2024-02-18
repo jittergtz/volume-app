@@ -11,93 +11,93 @@ export const products = [
     title: "Moonbeam",
     link: "https://gomoonbeam.com",
     thumbnail:
-      "/image/songsGrid-1.png",
+      "/image/songsGrid-a.png",
   },
   {
     title: "Cursor",
     link: "https://cursor.so",
     thumbnail:
-      "/image/songsGrid-2.png",
+      "/image/songsGrid-b.png",
   },
   {
     title: "Rogue",
     link: "https://userogue.com",
     thumbnail:
-      "/image/songsGrid-3.png",
+      "/image/songsGrid-c.png",
   },
 
   {
     title: "Editorially",
     link: "https://editorially.org",
     thumbnail:
-      "/image/songsGrid-4.png",
+      "/image/songsGrid-d.png",
   },
   {
     title: "Editrix AI",
     link: "https://editrix.ai",
     thumbnail:
-      "/image/songsGrid-5.png",
+      "/image/songsGrid-e.png",
   },
   {
     title: "Pixel Perfect",
     link: "https://app.pixelperfect.quest",
     thumbnail:
-      "/image/songsGrid-6.png",
+      "/image/songsGrid-f.png",
   },
 
   {
     title: "Algochurn",
     link: "https://algochurn.com",
     thumbnail:
-      "/image/songsGrid-7.png",
+      "/image/songsGrid-g.png",
   },
   {
     title: "Aceternity UI",
     link: "https://ui.aceternity.com",
     thumbnail:
-      "/image/songsGrid-5.png",
+      "/image/songsGrid-h.png",
   },
   {
     title: "Tailwind Master Kit",
     link: "https://tailwindmasterkit.com",
     thumbnail:
-      "/image/songsGrid-4.png",
+      "/image/songsGrid-d.png",
   },
   {
     title: "SmartBridge",
     link: "https://smartbridgetech.com",
     thumbnail:
-      "/image/songsGrid-1.png",
+      "/image/songsGrid-a.png",
   },
   {
     title: "Renderwork Studio",
     link: "https://renderwork.studio",
     thumbnail:
-      "/image/songsGrid-6.png",
+      "/image/songsGrid-f.png",
   },
 
   {
     title: "Creme Digital",
     link: "https://cremedigital.com",
     thumbnail:
-      "/image/songsGrid-4.png",
+      "/image/songsGrid-d.png",
   },
   {
     title: "Golden Bells Academy",
     link: "https://goldenbellsacademy.com",
     thumbnail:
-      "/image/songsGrid-2.png",
+      "/image/songsGrid-b.png",
   },
   {
     title: "Invoker Labs",
     link: "https://invoker.lol",
     thumbnail:
-      "/image/songsGrid-5.png",
+      "/image/songsGrid-g.png",
   },
   {
     title: "E Free Invoice",
     link: "https://efreeinvoice.com",
     thumbnail:
-      "/image/songsGrid-1.png",
+      "/image/songsGrid-a.png",
   },
 ];
