@@ -23,9 +23,11 @@ import { MdSkipNext, MdSkipPrevious } from "react-icons/md"
 import PlayerFullCard from "../PlayerFullView/PlayerFullCard"
 import usePlayerFUllModal from "@/hooks/usePlayerFullModul"
 import NextModal from "../PlayerFullView/NextModal"
+import LikedButton from "../LikedButton"
+import SongCard from "../SongCard"
 
 const Player = () => {
-  const [liked, setLiked] = useState(false)
+
 
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
     useSelector((state: RootState) => state.player)
@@ -78,7 +80,7 @@ const Player = () => {
 
       {isActive ? (
         <>
-        <div className="fixed bottom-16 mb-1 sm:mb-0  w-full sm:bottom-0">
+        <div className="fixed z-50 bottom-16 mb-1 sm:mb-0  w-full sm:bottom-0">
         <div
           onClick={onOpen} // Full Player View
           className=" backdrop-blur-xl  bg-black/30
@@ -163,21 +165,17 @@ const Player = () => {
                           />
                       
 
+                
+                
+                
                   <div className="flex  items-center justify-center ">
-                  <Button
-                    isIconOnly
-                    className="flex  justify-center z-50 items-center text-default-900/60 data-[hover]:bg-foreground/10 "
-                    radius="full"
-                    variant="light"
-                    onPress={() => setLiked((v) => !v)}
-                  >
-                    <HeartIcon
-                      size={28}
-                      className={liked ? "[&>path]:stroke-transparent" : ""}
-                      fill={liked ? "currentColor" : "none"}
-                    />
-                  </Button>
+                      <LikedButton  song={activeSong} />
                       </div>
+
+
+
+
+
                     </div>
                   </div>
                 </div>

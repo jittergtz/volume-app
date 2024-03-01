@@ -2,12 +2,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { deezerApi } from './services/apiFetch';
 import playerReducer from './features/playerSlice';
+import trackReducer from './features/trackSlice';
+
 
 
 const store = configureStore({
   reducer: {
     [deezerApi.reducerPath]: deezerApi.reducer,
     player: playerReducer,
+    track: trackReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(deezerApi.middleware),

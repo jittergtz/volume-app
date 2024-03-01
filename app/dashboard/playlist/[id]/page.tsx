@@ -1,85 +1,74 @@
-import MobileNavbar from '@/components/MobileNav'
-import PlaylistItem from '@/components/PlaylistItem'
-import { Image } from '@nextui-org/react'
-import React from 'react'
 
-function page() {
-  return (
 
-    <>
-<div className='bg-neutral-950 p-5 lg:px-20 rounded-lg pb-20'>
-  <div className='flex flex-col items-center justify-center '>
-  <Image
-      isBlurred
-      width={200}
-      src="https://nextui-docs-v2.vercel.app/images/album-cover.png"
-      alt="NextUI Album Cover"
-      className=" "
-    />
-    <h1 className='text-3xl w-72 text-white/90 mt-3 text-center'>
-    Gym 20
-    </h1>
-  </div>
+import Header from "@/components/Header";
+import getLikedSongs from "@/api/getLikedSongs";
+import { Image } from "@nextui-org/react";
+import LikedContent from "@/components/LikedContent";
+
+
+
+export const revalidate = 0;
+
+const Liked = async () => {
+  const songs = await getLikedSongs();
+   
+ console.log(songs)
   
-  <div className='flex flex-col gap-3 mt-20 '>
-         <PlaylistItem 
-          image={'/image/IMG_7711.jpg'}
-           name={'Mood'}
-           href={'/dashboard/playlist/888'}/>
-
-<PlaylistItem 
-          image={'/image/IMG_7662.jpg'}
-           name={'Mood '}
-           href={'/dashboard/playlist/888'}/>
-
-<PlaylistItem 
-          image={'/image/IMG_7662.jpg'}
-           name={'Mood'}
-           href={'/dashboard/playlist/888'}/>
-
-<PlaylistItem 
-          image={'/image/IMG_7662.jpg'}
-           name={'Mood'}
-           href={'/dashboard/playlist/888'}/>
-
-<PlaylistItem 
-          image={'/image/IMG_7662.jpg'}
-           name={'Mood'}
-           href={'/dashboard/playlist/888'}/>
-
-<PlaylistItem 
-          image={'/image/IMG_7662.jpg'}
-           name={'Mood'}
-           href={'/dashboard/playlist/888'}/>
-
-<PlaylistItem 
-          image={'/image/IMG_7662.jpg'}
-           name={'Mood'}
-           href={'/dashboard/playlist/888'}/>
-
-<PlaylistItem 
-          image={'/image/IMG_7662.jpg'}
-           name={'Mood'}
-           href={'/dashboard/playlist/888'}/>
-
-<PlaylistItem 
-          image={'/image/IMG_7662.jpg'}
-           name={'Mood'}
-           href={'/dashboard/playlist/888'}/>
-
-<PlaylistItem 
-          image={'/image/IMG_7662.jpg'}
-           name={'Mood'}
-           href={'/dashboard/playlist/888'}/>
-  </div>
-
-</div>
 
 
- 
-    </>
-
-  )
+  return (
+    <div 
+      className="
+        bg-neutral-950 
+        rounded-lg 
+        h-full 
+        w-full 
+        overflow-hidden 
+        overflow-y-auto
+      "
+    >
+      <Header>
+        <div className="mt-20 ">
+          <div 
+            className="
+              flex 
+              flex-col 
+              md:flex-row 
+              items-center 
+              gap-x-5
+            "
+          >
+            <div className="relative h-32 w-32 lg:h-44 lg:w-44">
+              <Image
+                className="object-cover"
+                isBlurred
+                src="/image/volume-hearticon.svg"
+                alt="Liked Cover img"
+              />
+            </div>
+            <div className="flex flex-col gap-y-2 mt-4 md:mt-0">
+              <p className="hidden md:block text-sm">
+                Playlist
+              </p>
+              <h1 
+                className="
+                  text-white/90 
+                  text-4xl 
+                  sm:text-5xl 
+                  lg:text-7xl 
+                "
+              >
+                Favoriten
+              </h1>
+            </div>
+          </div>
+        </div>
+      </Header>
+      <div className="pb-20">
+         <LikedContent songs={songs} />
+      </div>
+    </div>
+  );
 }
 
-export default page
+export default Liked;

@@ -6,6 +6,5 @@ export async function fetchArtistTopTracks(artistIde: any) {
       throw new Error('Failed to fetch artist top tracks');
     }
     const data = await response.json();
-    console.log('Fetched artist top tracks:', data); // Add console log here
     return data.data || [];
 }

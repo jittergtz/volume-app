@@ -23,7 +23,7 @@ function page() {
         
       
       <div className='px-5'>
-        <LibraryBody/>
+        
 
 
 

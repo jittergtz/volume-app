@@ -1,28 +1,17 @@
 "use client"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import { AnyNode } from "postcss"
 import { FaPlay } from "react-icons/fa"
 
 
-interface PlaylistItem {
-    image: string
-    name: string
-    href: string
-}
 
 
 
-const PlaylistItem: React.FC<PlaylistItem> = ({
-    image,
-    name,
-    href
-}) => {
+const PlaylistItem = () => {
     const router = useRouter()
 
-    const onClick = () =>{
-        router.push(href)
-    }
-
+  
     return ( 
         <button
         onClick={onClick}
@@ -38,7 +27,7 @@ const PlaylistItem: React.FC<PlaylistItem> = ({
                  />
             </div>
             <p className="font-medium transcate py-5" >
-                    {name}
+     
                  </p>
      
 

@@ -53,7 +53,7 @@ export default function FollowButton() {
         variant="faded"
         {...getLabelProps()}
       >
-        {children ? children : isSelected ? "Entfolgen" : "Folgen"}
+        {children ? children : isSelected ? "gefolgt" : "Folgen"}
       </Chip>
     </label>
   )

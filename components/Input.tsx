@@ -55,7 +55,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div>
-        <div className="flex items-center px-2 rounded-xl bg-neutral-900">
+        <div className="flex sticky top-6 z-50 items-center px-2 rounded-xl bg-neutral-900">
           <IoSearchOutline size={20} />
           <input
             type="search"
@@ -73,7 +73,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         bg-transparent
         px-2 
         py-3 
-        
+      
         file:border-0 
         
         file:text-sm 
@@ -123,10 +123,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             )}
 
 <div className="overflow-x-scroll flex gap-7 mt-1 scrollbar-hide">
-  {/* Filtern der Künstler */}
+  {/* Filtern aller Künstler */}
   {data?.data &&
     data.data
-      // Entfernen von Duplikaten basierend auf dem Künstler
+      // Entfernen von Duplikation wichtig!!
       .filter((item: TrackProps, index: number, self: TrackProps[]) =>
         index === self.findIndex((t) => (
           t.artist.name === item.artist.name

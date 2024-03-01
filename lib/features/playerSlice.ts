@@ -19,9 +19,11 @@ export interface PlayerState {
   isPlaying: boolean;
   activeSong: TrackProps;
   genreListId: string;
+
 }
 
 const initialState: PlayerState = {
+
   currentSongs: [],
   currentIndex: 0,
   isActive: false,
@@ -50,7 +52,10 @@ const playerSlice = createSlice({
         state.currentSongs = payloadData.tracks.data;
       } else if (payloadData.data) {
         state.currentSongs = payloadData.data;
-      } else {
+      }
+      else if (payloadData) {
+        state.currentSongs = payloadData}
+         else {
         // Handle case when data structure is unexpected or missing
         state.currentSongs = []; // Or any other appropriate default value
       }
@@ -76,9 +81,15 @@ const playerSlice = createSlice({
     playPause: (state, action) => {
       state.isPlaying = action.payload;
     },
+
+
   },
 });
+
+
 
 export const { setActiveSong, playPause } = playerSlice.actions;
 
 export default playerSlice.reducer;
+
+

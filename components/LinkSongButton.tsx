@@ -7,6 +7,7 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
+  Chip,
 } from "@nextui-org/react"
 import { FaDeezer, FaLocationArrow, FaSpotify } from "react-icons/fa6"
 import { SiApplemusic, SiYoutubemusic } from "react-icons/si"
@@ -32,14 +33,17 @@ export default function LinkSongButton() {
               <ModalHeader className="flex flex-col gap-1">
                 
               </ModalHeader>
-              <ModalBody className="text-neutral-200  gap-6 w-full px-5  text-2xl">
+              <ModalBody className="text-neutral-200 flex flex-col items  gap-6 w-full px-5  text-2xl">
+
+   
                 
-                <Link className="flex items-center gap-4 justify-center bg-neutral-900/40 p-2 px-3 rounded-xl" href={"https://open.spotify.com/search/ssio%20warum%20l%C3%BCgst%20du"} >
+                
+                <div className="flex items-center gap-4 justify-center bg-neutral-900/40 p-2 px-3 rounded-xl" >
                  Spotify
                  <FaSpotify
                  className="text-green-500" 
                  />
-                 </Link>
+                 </div>
                 
                 <span className="flex items-center gap-4 justify-center bg-neutral-900/40 p-2 px-3 rounded-xl">
                   Deezer
@@ -53,12 +57,12 @@ export default function LinkSongButton() {
                   
                 </span>
                 <span className="flex items-center text-md  gap-4 justify-center bg-neutral-900/40 p-2 px-3 rounded-xl">
-                <Link className="flex items-center gap-4 "  href={"https://music.youtube.com/search?q=ssio+warum+l%C3%BCgst+du "} >
+                <div className="flex items-center gap-4 "   >
                   Youtube Music
                   <SiYoutubemusic
                   className="text-red-700 rounded-md "  
                   />
-                  </Link>
+                  </div>
                 </span>
               </ModalBody>
             </>

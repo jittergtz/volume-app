@@ -2,14 +2,15 @@ import Stripe from 'stripe';
 
 export interface Song {
   id: number;
+  song_id: number;
+  user_id: string;
+  song_title: string;
   preview: string;
-  album: {
-    cover_big: string;
-  };
-  title: string;
-  artist: {
-    name: string;
-  };
+  artist_name: string;
+  created_at: any,
+  song_img: string,
+  
+  
 }
 
 export interface Product {

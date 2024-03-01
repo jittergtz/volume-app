@@ -15,9 +15,9 @@ export function SparklesPreview() {
         <h1 className="text-7xl z-50  text-center xl:text-[11rem] lg:text-[10rem] md:text-9xl   tracking-tighter     font-semibold text-white/80 ">
         Volume
         </h1>
-      <div className="w-[40rem] h-40 relative">
+      <div className="w-[40rem]  h-40 relative">
         {/* Gradients */}
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+        <div className="absolute inset-x-20   top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
         <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
         <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
@@ -33,7 +33,7 @@ export function SparklesPreview() {
         />
 
         {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(210px_200px_at_top,transparent_30%,white)] md:[mask-image:radial-gradient(350px_200px_at_top,transparent_30%,white)]"></div>
+        <div className="absolute inset-0 w-full   h-full bg-black [mask-image:radial-gradient(210px_200px_at_top,transparent_30%,white)] md:[mask-image:radial-gradient(350px_200px_at_top,transparent_30%,white)]  "></div>
       </div>
     </div>
   );

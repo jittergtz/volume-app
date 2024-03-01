@@ -15,10 +15,16 @@ export const deezerApi = createApi({
     search: builder.query<any, string>({
       query: (query) => `search?q=${query}`,
     }),
+    
+    track: builder.query<any, any>({
+    
+      query: (query) => `track/${query}`,
+    }),
+
 
     discover: builder.query<any, void>({
       // Für einen statischen Endpoint ohne Parameter
-      query: () => `playlist/3155776842`,
+      query: () => `playlist/1111143121`,
     }),
     popular: builder.query<any, void>({
       // Für einen statischen Endpoint ohne Parameter
@@ -57,6 +63,7 @@ export const deezerApi = createApi({
 
 export const { 
   useSearchQuery,
+  useTrackQuery,
   useArtistQuery,
   usePopularQuery,
   useSpeedupQuery,

@@ -8,6 +8,7 @@ import { twMerge } from 'tailwind-merge';
 import { playPause, setActiveSong } from '@/lib/features/playerSlice';
 import PlayPause from './PlayPause';
 import LoadingSkeleton from './Next-Ui/LoadingSkeleton';
+import Link from 'next/link';
 
 
 
@@ -64,7 +65,11 @@ function SongCard ({ item, index, data, isPlaying, activeSong}: {
 
 
        <span className='overflow-x-hidden line-clamp-1'>{item.title}</span>
-       <span className='text-xs overflow-x-hidden line-clamp-1'>{item.artist.name}</span>
+       <span className='text-xs overflow-x-hidden line-clamp-1 hover:text-neutral-400 w-max z-50'>  
+       <Link href={`/dashboard/artist/${item.artist.id}`} >
+          {item.artist.name}
+       </Link>
+       </span>
    
        <PlayPause
               isPlaying={isPlaying}

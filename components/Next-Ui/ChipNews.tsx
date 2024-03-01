@@ -1,5 +1,6 @@
 import React from "react";
 import {Chip} from "@nextui-org/react";
+import Link from "next/link";
 
 function ChipNews() {
   return (
@@ -10,7 +11,10 @@ function ChipNews() {
         content: "drop-shadow shadow-black text-white",
       }}
     >
+      <Link href={"/news"} >
       Neuigkeiten Volume 0.8 🎉
+      </Link>
+     
     </Chip>
   );
 }

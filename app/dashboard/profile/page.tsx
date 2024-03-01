@@ -18,7 +18,7 @@ function page() {
 
   return (
     <>
-    <div className='bg-neutral-950 rounded-lg pb-64'>
+    <div className='bg-neutral-950 rounded-lg h-full pb-64'>
         <Header>
         <div className='sm:mb-2'>
           <h1 className='text-white z-50 mt-10 text-3xl'>

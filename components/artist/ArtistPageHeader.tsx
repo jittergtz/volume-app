@@ -40,7 +40,9 @@ function ArtistPageHeader({artistData}: any) {
     {artistData?.name}
     </h1>
     <p className='ml-1 xl:text-xl text-white'>Künstler*in</p>
-    <p><FollowButton/></p>
+    <p>
+      <FollowButton/>
+    </p>
  
     </div>
 

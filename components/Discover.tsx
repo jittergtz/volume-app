@@ -1,6 +1,6 @@
 "use client"
 
-import { useArtistQuery, useDiscoverQuery, useGermannewQuery, useGermanrapQuery, useMixQuery, useOldhitsQuery, usePopularQuery, useSpeedupQuery } from '@/lib/services/apiFetch';
+import { useArtistQuery, useDiscoverQuery, useGermannewQuery, useGermanrapQuery, useMixQuery, useOldhitsQuery, usePopularQuery, useSpeedupQuery, useTrackQuery } from '@/lib/services/apiFetch';
 import React, { useState } from 'react'
 
 
@@ -44,6 +44,8 @@ interface TrackProps {
     const {data: germanrapData, isFetching: germanrapFetching, error: germanrapError} = useGermanrapQuery()
     const {data: oldhitsData, isFetching: oldhitsFetching, error: oldhitsError} = useOldhitsQuery()
     const {data: mixData, isFetching: mixIsFetching, error: mixError} =  useMixQuery()
+
+
 
     console.log(mixData)
 
