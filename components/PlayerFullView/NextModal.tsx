@@ -14,7 +14,7 @@ export default function NextModal() {
     </div>
 
      
-      <Modal size="full" backdrop="transparent" shouldBlockScroll={false} hideCloseButton={true} scrollBehavior="outside"  className=" bg-transparent h-full w-full md:w-[320px] rounded-none fixed  -bottom-1 sm:bottom-0" isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal size="full" backdrop="transparent" isDismissable={false} shouldBlockScroll={false} hideCloseButton={true} scrollBehavior="outside"  className=" bg-transparent h-full w-full md:w-[320px] rounded-none fixed  -bottom-1 sm:bottom-0" isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent >
           {(onClose) => (
             <>

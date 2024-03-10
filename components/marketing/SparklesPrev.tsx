@@ -8,7 +8,7 @@ import { BsSoundwave } from "react-icons/bs";
 export function SparklesPreview() {
   return (
     <div className="h-[40rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
-          <div className="flex mb-5 flex-col items-center justify-center">
+          <div className="flex z-50 mb-5 flex-col items-center justify-center">
        <ChipNews/>
 
         </div>
@@ -33,7 +33,7 @@ export function SparklesPreview() {
         />
 
         {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-0 w-full   h-full bg-black [mask-image:radial-gradient(210px_200px_at_top,transparent_30%,white)] md:[mask-image:radial-gradient(350px_200px_at_top,transparent_30%,white)]  "></div>
+        <div className="absolute inset-0 w-full   h-full bg-gray-950 [mask-image:radial-gradient(210px_200px_at_top,transparent_30%,white)] md:[mask-image:radial-gradient(350px_200px_at_top,transparent_30%,white)]  "></div>
       </div>
     </div>
   );

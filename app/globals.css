@@ -17,6 +17,7 @@
 }
 
 body {
+
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,14 +25,10 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    
 }
 
 
-.backgroundLP { 
-  filter: contrast(160%) brightness(100%);
- 
-
-}
 
 
 .searching {
@@ -55,10 +52,24 @@ body {
   transform: translate(-50%, 0%);
 }
 
+.lp-image-card-shadow {
+  position: absolute;
+  width: 80%;
+  height:80%;
+  background-image: inherit;
+  background-size: cover;
+  border-radius: var(--radius);
+  overflow: hidden;
+  filter: blur(60px);
+  opacity: 100%;
+  transform: translate(-20%, 0%);
+}
+
 
 .w-screen {
   width: 20rem;
 }
+
 
 
 @media only screen and (max-width: 768px) {
@@ -74,6 +85,10 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+ 
+  ::-webkit-scrollbar {  /* Chrome */
+    display: none;
+}
 }
 
 
@@ -92,3 +107,57 @@ body {
   left: 50%;
   transform: translate(-50%, 0%);
 }
+
+
+
+
+
+.bg-shape1 {
+  width: 400px;
+  height: 400px;
+  border-radius: 9999px;
+  position: relative;
+
+
+}
+
+.bg-shape2 {
+  width: 400px;
+  height: 300px;
+  border-radius: 9999px;
+  position: relative;
+}
+
+.bg-shape3 {
+  width: 900px;
+  height: 700px;
+  border-radius: 9999px;
+  position: relative;
+}
+
+
+
+
+
+
+.shape-bg-blur {
+  filter: blur(90px)
+}
+
+.bg-first{
+  background-color: rgb(138, 79, 255)
+
+}
+
+.bg-second {
+  background-color: rgb(34, 10, 57)
+  
+}
+
+.bg-main{
+  background-color: rgb(52, 40, 96)
+  
+}
+
+
+

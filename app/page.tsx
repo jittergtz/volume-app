@@ -1,31 +1,45 @@
-"use client"
-import Navbar from "../components/marketing/NavbarLp"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
-import { SparklesPreview } from "@/components/marketing/SparklesPrev"
-import { TabsDemo } from "@/components/marketing/ProductTab"
-import ButtonToDashboard from "@/components/marketing/ButtonToDashboard"
-import { HeroParallaxDemo } from "@/components/marketing/HeroParallaxDemo"
-import { DirectionAwareHoverDemo } from "@/components/marketing/AwareHoverDemo"
-import { Image } from "@nextui-org/react"
-import { LampDemo } from "@/components/marketing/LampDemo"
-import { StickyScroll } from "@/components/marketing/StickyScrollReveal"
-import { SecondLamp } from "@/components/marketing/Lamp"
-import { TextGenerateEffect } from "@/components/marketing/TextGenerateEffect"
+
 import HeroLp from "@/components/marketing/HeroLp"
+import { FloatingNavComp } from "@/components/marketing/ui/Floating-navbar"
+import { IconHome, IconMessage, IconNews, IconUser } from "@tabler/icons-react"
+import GradientFirst from "@/components/marketing/GradientFirst"
 
 
 
 
 export default function Home() {
 
+  const navItems = [
+    {
+      name: "Volume",
+      link: "/dashboard",
+      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Neues",
+      link: "/news",
+      icon: <IconNews className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+   
+  ];
+
 
 
   return (
-    <main>
-      <Navbar />
+    <main className="bg-gray-950 ">
+        <FloatingNavComp navItems={navItems} />
 
-      <HeroLp/>
+           <HeroLp/>
+
+<div className="flex justify-center ">
+
+   <GradientFirst/>
+</div>
+   
+
+           <div className="bg-black h-96">
+           Bento Box
+           </div>
       
   
 

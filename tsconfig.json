@@ -28,7 +28,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "components/artist/DzApi.js",
-    "components/Next-Ui/FollowButton.tsx"
-  ],
+    "components/artist/FollowButton.tsx"
+, "components/marketing/ui/GradientAnimated.jsx"  ],
   "exclude": ["node_modules"]
 }

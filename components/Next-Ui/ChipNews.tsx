@@ -12,7 +12,7 @@ function ChipNews() {
       }}
     >
       <Link href={"/news"} >
-      Neuigkeiten Volume 0.8 🎉
+      Neuigkeiten Volume 0.9 🎉
       </Link>
      
     </Chip>

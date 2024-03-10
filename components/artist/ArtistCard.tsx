@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React from 'react'
 import { FaPlay } from 'react-icons/fa6';
 import { twMerge } from 'tailwind-merge';
-import ArtistPageHeader from './ArtistPageHeader';
 
 interface TrackProps {
     id: number;

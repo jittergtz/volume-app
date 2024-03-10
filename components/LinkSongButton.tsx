@@ -1,3 +1,4 @@
+"use client"
 import React from "react"
 import {
   Modal,
@@ -12,9 +13,23 @@ import {
 import { FaDeezer, FaLocationArrow, FaSpotify } from "react-icons/fa6"
 import { SiApplemusic, SiYoutubemusic } from "react-icons/si"
 import Link from "next/link"
+import { AiFillAmazonCircle } from "react-icons/ai"
 
-export default function LinkSongButton() {
+export default function LinkSongButton({activeSong}: any) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
+
+
+  let artistName :string
+  if (activeSong?.artist?.name) {
+    artistName = activeSong.artist.name
+  } else if (activeSong?.artist_name) {
+    artistName = activeSong.artist_name
+  } else {
+    null
+  }
+
+
+
 
   return (
     <>
@@ -38,32 +53,49 @@ export default function LinkSongButton() {
    
                 
                 
-                <div className="flex items-center gap-4 justify-center bg-neutral-900/40 p-2 px-3 rounded-xl" >
+            
+                <Link
+                className="flex items-center gap-4 justify-center bg-neutral-900/40 hover:bg-neutral-800 text-white/70 p-2 px-3 rounded-xl"
+                 href={`https://open.spotify.com/search/${artistName}%20${activeSong.title}`}>
                  Spotify
                  <FaSpotify
                  className="text-green-500" 
                  />
-                 </div>
-                
-                <span className="flex items-center gap-4 justify-center bg-neutral-900/40 p-2 px-3 rounded-xl">
-                  Deezer
-                  <FaDeezer 
-                  className="text-violet-500" />
-                </span>
-                <span className="flex items-center gap-4 justify-center bg-neutral-900/40 p-2 px-3 rounded-xl">
-                  Apple Music
-                  <SiApplemusic
-                  className="text-red-500" />
-                  
-                </span>
-                <span className="flex items-center text-md  gap-4 justify-center bg-neutral-900/40 p-2 px-3 rounded-xl">
-                <div className="flex items-center gap-4 "   >
-                  Youtube Music
+                 </Link>
+             
+
+
+                <Link
+                className="flex items-center gap-4 justify-center bg-neutral-900/40 hover:bg-neutral-800 text-white/70 p-2 px-3 rounded-xl"
+                 href={`https://www.deezer.com/search/${artistName}%20${activeSong.title}`}>
+                 Deezer
+                 <FaDeezer 
+                  className="text-violet-500" 
+                 />
+                 </Link>
+
+
+
+
+                 <Link
+                className="flex items-center gap-4 justify-center bg-neutral-900/40 hover:bg-neutral-800 text-white/70 p-2 px-3 rounded-xl"
+                 href={`https://music.youtube.com/search?q=${artistName}+${activeSong.title}`}>
+                  Youtube music
                   <SiYoutubemusic
                   className="text-red-700 rounded-md "  
                   />
-                  </div>
-                </span>
+                 </Link>
+
+                 <Link
+                className="flex items-center gap-4 justify-center bg-neutral-900/40 hover:bg-neutral-800 text-white/70 p-2 px-3 rounded-xl"
+                 href={`https://music.amazon.de/search/${artistName}+${activeSong.title}`}>
+                  Amazon music
+                  <AiFillAmazonCircle 
+                  className="text-cyan-500 rounded-md "  
+                  />
+                 </Link>
+                 
+
               </ModalBody>
             </>
           )}

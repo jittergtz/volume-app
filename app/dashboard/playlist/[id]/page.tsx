@@ -1,35 +1,27 @@
+import Header from "@/components/Header"
+import getLikedSongs from "@/api/getLikedSongs"
+import { Image } from "@nextui-org/react"
+import LikedContent from "@/components/playlist/LikedContent"
 
-
-import Header from "@/components/Header";
-import getLikedSongs from "@/api/getLikedSongs";
-import { Image } from "@nextui-org/react";
-import LikedContent from "@/components/LikedContent";
-
-
-
-export const revalidate = 0;
+export const revalidate = 0
 
 const Liked = async () => {
-  const songs = await getLikedSongs();
-   
- console.log(songs)
-  
-
+  const songs = await getLikedSongs()
 
   return (
-    <div 
+    <div
       className="
         bg-neutral-950 
         rounded-lg 
-        h-full 
+        h-[130vh] 
         w-full 
         overflow-hidden 
         overflow-y-auto
       "
     >
-      <Header>
-        <div className="mt-20 ">
-          <div 
+      <Header className="  bg-gradient-to-b from-[#09314e]">
+        <div className="sm:mt-20 mt-5 ">
+          <div
             className="
               flex 
               flex-col 
@@ -43,32 +35,35 @@ const Liked = async () => {
                 className="object-cover"
                 isBlurred
                 src="/image/volume-hearticon.svg"
-                alt="Liked Cover img"
+                alt="Liked playlist img"
               />
             </div>
-            <div className="flex flex-col gap-y-2 mt-4 md:mt-0">
-              <p className="hidden md:block text-sm">
-                Playlist
-              </p>
-              <h1 
+            <div className="flex flex-col items-center md:items-start gap-y-2 mt-4 md:mt-0">
+
+              <h1
                 className="
-                  text-white/90 
+                  text-white/80 
                   text-4xl 
                   sm:text-5xl 
                   lg:text-7xl 
+                  md:font-bold
+                  
                 "
               >
-                Favoriten
+              Favoriten
               </h1>
+              <p className="text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-300">
+                Playlist
+                </p>
             </div>
           </div>
         </div>
       </Header>
-      <div className="pb-20">
-         <LikedContent songs={songs} />
+      <div className="pb-20 md:p-5">
+        <LikedContent songs={songs} />
       </div>
     </div>
-  );
+  )
 }
 
-export default Liked;
+export default Liked

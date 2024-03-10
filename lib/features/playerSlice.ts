@@ -9,7 +9,14 @@ interface TrackProps {
   title: string;
   artist: {
     name: string;
+    id: number;
   };
+
+  song_img: string;
+  artist_name: string;
+  artist_id: number;
+  
+
 }
 
 export interface PlayerState {
@@ -31,13 +38,20 @@ const initialState: PlayerState = {
   activeSong: {
     id: 0,
     preview: '',
+    song_img: '',
+    artist_name: '',
+    artist_id: 0,
+    
     album: {
       cover_big: '',
     },
     title: '',
     artist: {
       name: '',
+      id: 0,
     },
+    
+
   },
   genreListId: '',
 };
@@ -48,12 +62,7 @@ const playerSlice = createSlice({
   reducers: {
     setActiveSong: (state, action) => {
       const payloadData = action.payload.data;
-      if (payloadData.tracks && payloadData.tracks.data) {
-        state.currentSongs = payloadData.tracks.data;
-      } else if (payloadData.data) {
-        state.currentSongs = payloadData.data;
-      }
-      else if (payloadData) {
+    if (payloadData) {
         state.currentSongs = payloadData}
          else {
         // Handle case when data structure is unexpected or missing

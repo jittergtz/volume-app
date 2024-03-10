@@ -71,7 +71,7 @@ function SongCard ({ item, index, data, isPlaying, activeSong}: {
        </Link>
        </span>
    
-       <PlayPause
+             <PlayPause
               isPlaying={isPlaying}
               activeSong={activeSong}
               item={item}

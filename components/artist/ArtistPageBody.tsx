@@ -1,4 +1,5 @@
 "use client"
+import { fetchAlbumData } from "@/api/deezerAlbumData"
 import { fetchArtistTopTracks } from "@/api/deezerTopTracks"
 import ArtistPageHeader from "@/components/artist/ArtistPageHeader"
 import ArtistTopSongCard from "@/components/artist/ArtistTopSongCard"
@@ -33,6 +34,8 @@ function ArtistPageBody() {
 
 
   const [artistId, setArtistId] = useState<number>();
+  const [albumId, setAlbumId] = useState<number>();
+  
 
   useEffect(() => {
     // Parse the current URL to get the artist ID from the path
@@ -45,7 +48,8 @@ function ArtistPageBody() {
 
   const { data: artistData, isFetching: artistIsFetching, error: artistError} = useArtistQuery(artistId)
 
-
+   console.log(artistData)
+   
   useEffect(() => {
     async function fetchData() {
       try {
@@ -61,13 +65,31 @@ function ArtistPageBody() {
   }, [artistId]); 
 
 
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        if (albumId !== undefined) { // Check if artistId is available
+          const tracks = await fetchAlbumData(albumId); // Pass the artistId here
+          setTopTracks(tracks);
+          console.log("Album data", tracks)
+        }
+      } catch (error) {
+        console.error('Error fetching artist top tracks:', error);
+      }
+
+    }
+    fetchData();
+  }, [albumId]); 
+
+
+
 
   
 
 
   return (
     <>
-      <div className="p-5 lg:p-7 rounded-lg h-full bg-neutral-950  ">
+      <div className="p-2 lg:p-7 rounded-lg h-full bg-neutral-950  ">
          
      
 
@@ -76,16 +98,16 @@ function ArtistPageBody() {
 
         <div className="bg-neutral-950 ml-2 lg:ml-6 flex border-neutral-800">
 
-        <h1 className="text-md opacity-55 mt-12">
+        <h1 className="text-md opacity-55 px-3 mt-12">
         {artistData?.name}`s 
-        <p className="text-xl">Top 50 Songs</p> 
+        <p className="text-xl">Top Songs</p> 
           </h1>
 
         </div>
 
        
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4  p-5 mt-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4  p-3 mt-4">
           {topTracks?.map((item: TrackProps, index: number) => (
             <ArtistTopSongCard
               key={item.id}

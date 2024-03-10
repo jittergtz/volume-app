@@ -8,63 +8,49 @@ import ParallaxMoveText from './ParallaxMoveText'
 import { LampDemo } from './LampDemo'
 
 function HeroLp() {
-    const targetRef = useRef<HTMLDivElement>(null)
-    const {scrollY,scrollYProgress} = useScroll({
-        target: targetRef,
-        offset: ["end end", "end start"]
-    })
-
-    const opacity = useTransform(scrollYProgress, [0, 0.8],[1, 0] )
-    const position = useTransform(
-        scrollYProgress,
-        [1, 0],
-        ["sticky top-0", "relative"]
-    )
-
-
-    const backgroundOpacity = useTransform(
-        scrollYProgress,
-        [1, 0.7],
-        [100, 0] // Hier kannst du den Bereich von 0 bis 100 festlegen
-    )
-
-    const background = useTransform(
-        backgroundOpacity,
-        opacity => `linear-gradient(180deg, rgba(0, 0, 0, ${opacity}%), rgba(6, 6, 100, ${opacity}%), rgba(0, 0, 0, ${opacity}%))`
-    )
+   
     
 
 
   return (
     <>
-    <motion.div
-    style={ {opacity} }
-    ref={targetRef}
-    className="fixed w-full sm:h-screen  flex  flex-col justify-center items-center ">
+    <div
+    className=" w-full sm:h-screen   flex  flex-col justify-center items-center ">
       <SparklesPreview/>
         
-      <div className="flex justify-center  -mt-40 sm:mt-0 ">
+      <div className="flex justify-cente z-50  -mt-40 sm:mt-0 ">
       <ButtonToDashboard/>
       </div>
-      </motion.div>
+      
+    </div>
 
-      <div className="h-screen">
+      <div className="h-72">
+
+
+        
+
+          <div className='absolute max-w-4xl top-[30rem] sm:top-[37rem] '>
+          <div className='bg-shape2  bg-[#381870] opacity-50 shape-bg-blur'></div>
+           </div>
+
+
+            <div className='absolute  sm:top-[34rem] right-0 '>
+            <div className='hidden sm:flex bg-shape1 bg-[#2f2f6e] opacity-50 shape-bg-blur'></div>
+            </div>
+             
+
+            
+            <div className='hidden md:flex absolute left-1/2 transform -translate-x-1/2  top-[10rem] '>
+            <div className=' bg-shape3 bg-[#381870] opacity-30 shape-bg-blur'></div>
+            </div>
+
+
+        
 
       </div>
 
 
-      <motion.div 
-       style={{ position, background }}
-      className="flex-col h-[160rem] flex items-center  pt-40  ">
-      <Image
-      src="/image/dashboard-prev-main.png"
-      alt="preview image"
-      width="1200"
-      height="1200"
-      className="object-cover opacity-100  object-left-top inset-x-0 rounded-2xl mx-auto"/>
-
-
-    </motion.div>
+    
     </>
   )
 }

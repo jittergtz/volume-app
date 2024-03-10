@@ -1,30 +1,27 @@
 "use client"
-import React, { useEffect, useState } from "react"
-import { Card, CardBody, Image, Button, Slider } from "@nextui-org/react"
+import React, { useState } from "react"
+import { Card, CardBody, Image, Button } from "@nextui-org/react"
 import { ShuffleIcon } from "../Next-Ui/ShuffleIcon"
 import { NextIcon } from "../Next-Ui/NextIcon"
-import { PauseCircleIcon } from "../Next-Ui/PauseCircleIcon"
+
 import { PreviousIcon } from "../Next-Ui/PreviousIcon"
 import { RepeatOneIcon } from "../Next-Ui/RepeatOneIcon"
-import { HeartIcon } from "../Next-Ui/HeartIcon"
-import { FaArrowsTurnRight, FaLocationArrow } from "react-icons/fa6"
 import { IoIosClose } from "react-icons/io"
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "@/lib/store"
 import { playPause } from "@/lib/features/playerSlice"
 import { BsFillPauseFill, BsFillPlayFill } from "react-icons/bs"
 import LinkSongButton from "../LinkSongButton"
+import LikedButton from "../playlist/LikedButton"
+import Link from "next/link"
 
-
-
-function PlayerFullCard({onClose, onOpen}: any) {
+function PlayerFullCard({ onClose, onOpen }: any) {
   const [liked, setLiked] = useState(false)
   const [shuffle, setShuffle] = useState(false)
-  
-  const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
-  useSelector((state: RootState) => state.player)
-  const dispatch = useDispatch()
 
+  const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
+    useSelector((state: RootState) => state.player)
+  const dispatch = useDispatch()
 
   const handlePlayPause = () => {
     if (!isActive) return
@@ -56,78 +53,73 @@ function PlayerFullCard({onClose, onOpen}: any) {
     }
   }
 
+  let imageUrl
+  if (activeSong?.album?.cover_big) {
+    imageUrl = activeSong.album.cover_big
+  } else if (activeSong?.song_img) {
+    imageUrl = activeSong.song_img
+  } else {
+    imageUrl = "/image/IMG_7651.jpg"
+  }
+
+  let artistId
+  if (activeSong?.artist?.id) {
+    artistId = activeSong.artist.id
+  } else if (activeSong?.artist_id) {
+    artistId = activeSong.artist_id
+  } else {
+    null
+  }
 
   return (
     <Card
       className=" h-full w-full  bg-black/70 backdrop-blur-3xl  rounded-none "
       shadow="sm"
     >
-      <button
-       onClick={onClose}
-       className="   mt-20 ml-auto p-5">
+      <button onClick={onClose} className="   mt-20 ml-auto p-5">
         <IoIosClose size={28} />
       </button>
 
       <CardBody className="flex overflow-visible  h-full justify-center gap-10  ">
         <div className="flex flex-col items-center gap-2 justify-center  col-span-6 md:col-span-4">
-        {activeSong?.album?.cover_big ? (
-        <>
-        <Image
-            alt="Album cover"
-            className="object-cover w-64 h-64"
-            shadow="md"
-            src={activeSong?.album?.cover_big}
-          />
-       
-          <img
-          alt="Shadow"
-          className="image-card-shadow"
-          src={activeSong?.album?.cover_big}
-        />
-        </>
+          {imageUrl ? (
+            <>
+              <Image
+    
+                alt="Album cover"
+                className="object-cover w-64 h-64"
+                shadow="md"
+                src={imageUrl}
+              />
+              <img alt="Shadow" className="image-card-shadow" src={imageUrl} />
+            </>
           ) : (
             <Image
-            
               alt="Album cover"
-              className="object-cover w-64 h-64 "
+              className="object-cover w-64 h-64"
               shadow="md"
               src="/image/IMG_7651.jpg"
             />
           )}
 
-       
-        <LinkSongButton/>
-
-          
+          <LinkSongButton
+          activeSong={activeSong} />
         </div>
-
-    
-   
 
         <div className="flex   px-5 flex-col col-span-6 md:col-span-8">
           <div className="flex  justify-between items-start">
             <div className="flex flex-col gap-0">
               <h3 className=" text-lg text-foreground/90">
                 {activeSong?.title ? activeSong?.title : ""}
-                </h3>
-              <p className="text-small text-foreground/80">
-                 {activeSong?.artist.name ? activeSong?.artist.name : ""}
-                 </p>
+              </h3>
+              <p className="sm:text-small text-xs text-foreground/80 hover:text-neutral-100  z-50">
+                <Link href={`/dashboard/artist/${artistId}`}>
+                  {activeSong?.artist?.name ?? activeSong?.artist_name ?? ""}
+                </Link>
+              </p>
             </div>
-            <Button
-              isIconOnly
-              className="text-default-900/60 data-[hover]:bg-foreground/10 -translate-y-2 translate-x-2"
-              radius="full"
-              variant="light"
-              onPress={() => setLiked((v) => !v)}
-            >
-              <HeartIcon
-                className={liked ? "[&>path]:stroke-transparent" : ""}
-                fill={liked ? "currentColor" : "none"}
-              />
-            </Button>
+            <LikedButton song={activeSong} />
           </div>
-     
 
           <div className="flex w-full  items-center justify-center">
             <Button
@@ -148,20 +140,18 @@ function PlayerFullCard({onClose, onOpen}: any) {
             </Button>
 
             {isPlaying ? (
-            <BsFillPauseFill
-             size={65}
-              onClick={handlePlayPause}
-             className="text-neutral-100 z-50 cursor-pointer"
-               />
-                ) : (
-             <BsFillPlayFill
-             size={65}
-             onClick={handlePlayPause}
-            className="text-neutral-100 z-50  cursor-pointer"
+              <BsFillPauseFill
+                size={65}
+                onClick={handlePlayPause}
+                className="text-neutral-100 z-50 cursor-pointer"
               />
-              )}
-          
-
+            ) : (
+              <BsFillPlayFill
+                size={65}
+                onClick={handlePlayPause}
+                className="text-neutral-100 z-50  cursor-pointer"
+              />
+            )}
 
             <Button
               isIconOnly
@@ -194,5 +184,3 @@ function nextSong(arg0: number): any {
 function prevSong(arg0: number): any {
   throw new Error("Function not implemented.")
 }
-
-

@@ -6,6 +6,7 @@ import React from 'react'
 import AccordionCard from './Next-Ui/Accordion';
 import { BiUserCircle } from 'react-icons/bi';
 import AuthCard from './AuthCard';
+import DeleteUserModal from './Next-Ui/DeleteUserModal';
 
 function ProfilData() {
     const  user  = useUser();
@@ -17,9 +18,7 @@ function ProfilData() {
          <p className='text-white text-sm'>Email</p> <p className='text-neutral-400 text-md'>{user?.email}</p>
           </div>}
         <AuthCard/>
-       {user && <Button className='w-80 lg:w-[30rem] ' color="danger" variant="bordered" startContent={<BiUserCircle size={26} />}>
-        Account löschen
-       </Button> } 
+   
        <AccordionCard/>
     
         </div>

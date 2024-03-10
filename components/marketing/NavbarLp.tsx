@@ -1,37 +1,42 @@
-"use client"
-import useAuthModal from "@/hooks/useAuthModal"
-import { Button } from "@nextui-org/react"
-import Link from "next/link"
-import React from "react"
+"use client";
+import React from "react";
+import { FloatingNavComp } from "./ui/Floating-navbar";
+import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
-function Navbar() {
-  const authModal = useAuthModal()
-
-  
+export function NavbarLp() {
+  const navItems = [
+    {
+      name: "Home",
+      link: "/",
+      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "About",
+      link: "/about",
+      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Contact",
+      link: "/contact",
+      icon: (
+        <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
+      ),
+    },
+  ];
   return (
-    <nav className="h-16 z-50 flex px-5 justify-between items-center fixed top-0 left-0 w-full  backdrop-blur-sm">
-      <span className="text-3xl tracking-tighter text-neutral-300">Volume</span>
-
- 
-      <div className="flex gap-2 items-center">
-      <Link href={"/news"} 
-      className="text-neutral-300 hover:text-white hover:cursor-pointer" >
-      News
-      </Link>
-      <Button className="bg-transparent border-2
-       text-neutral-300 hover:text-white border-neutral-100/10 " 
-            variant="shadow"
-            onClick={authModal.onOpen} >
-        <Link href={"/dashboard"} >
-      Anmelden
-      </Link>
-    </Button>
+    <div className="relative  w-full">
+      <FloatingNavComp navItems={navItems} />
+      <DummyContent />
     </div>
-
-  
-
-    </nav>
-  )
+  );
 }
-
-export default Navbar
+const DummyContent = () => {
+  return (
+    <div className="grid grid-cols-1 h-[40rem] w-full bg-white dark:bg-black relative border border-neutral-200 dark:border-white/[0.2] rounded-md">
+      <p className="dark:text-white text-neutral-600 text-center text-4xl mt-40 font-bold">
+        Scroll back up to reveal Navbar
+      </p>
+      <div className="inset-0 absolute bg-grid-black/[0.1] dark:bg-grid-white/[0.2]" />
+    </div>
+  );
+};

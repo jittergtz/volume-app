@@ -9,8 +9,17 @@ export interface Song {
   artist_name: string;
   created_at: any,
   song_img: string,
+  artist_id: number,
   
   
+}
+
+export interface Follow {
+  artist: {
+  id: number;
+  name: string;
+  picture_xl: string; 
+  }
 }
 
 export interface Product {

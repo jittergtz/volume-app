@@ -27,7 +27,7 @@ const ListItem: React.FC<ListItem> = ({
         <button
         onClick={onClick}
          className="relative group flex items-center rounded-md
-        overflow-hidden gap-x-4 bg-neutral-600/20 hover:bg-neutral-400/20
+        overflow-hidden gap-x-4 bg-neutral-600/20 sm:hover:bg-neutral-400/20
         transition pr-4 ">
             <div className="relative min-h-[64px] min-w-[64px]">
                 <Image
@@ -42,7 +42,7 @@ const ListItem: React.FC<ListItem> = ({
                  </p>
                  <div className="absolute transition opacity-0 
                  rounded-full flex items-center justify-center bg-neutral-200/90
-                 p-4 drop-shadow-md right-5 group-hover:opacity-100 hover:scale-110 " >
+                 p-4 drop-shadow-md right-5 sm:group-hover:opacity-100 hover:scale-110 " >
                     <FaPlay className="text-black/90" />
                  </div>
 

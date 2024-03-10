@@ -58,7 +58,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <div className="flex sticky top-6 z-50 items-center px-2 rounded-xl bg-neutral-900">
           <IoSearchOutline size={20} />
           <input
-            type="search"
+            type="text"
             autoComplete="off"
             spellCheck="false"
             value={searchTerm}
@@ -104,7 +104,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         2xl:grid-cols-8 
         gap-4 
         mt-4
-        p-5"
+        p-3"
           >
             {Array.from({ length: Skeletonindex }, (_, Skeletonindex) => (
               <LoadingSkeleton key={Skeletonindex} />
@@ -169,7 +169,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       2xl:grid-cols-8 
       gap-4 
       mt-1
-      p-5"
+      p-1"
         >
           {data?.data?.map((item: TrackProps, index: number) => (
             <SongCard
