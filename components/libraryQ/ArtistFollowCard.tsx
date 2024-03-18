@@ -28,7 +28,7 @@ const ArtistFollowCard = async () => {
 
     
       return (
-        <div className='w-full h-16 hover:bg-neutral-900 rounded-md'>
+        <div key={index} className='w-full h-16 hover:bg-neutral-900 rounded-md'>
         <Link href={`/dashboard/artist/${artist.id}`}>
          <div className='flex items-center gap-2'>
           <Image 
