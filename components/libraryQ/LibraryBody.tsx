@@ -2,7 +2,6 @@
 import { Tab, Tabs } from '@nextui-org/react'
 import React from 'react'
 import ListItem from '../ListItem'
-import PlaylistItem from '../PlaylistItem'
 import ArtistFollowCard from './ArtistFollowCard'
 
 function LibraryBody() {
