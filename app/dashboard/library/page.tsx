@@ -9,7 +9,7 @@ function page() {
   return (
 
     <>
-     <div className='bg-neutral-950  rounded-lg min-h-full'>
+     <div className='bg-neutral-950  rounded-lg min-h-full pb-28'>
        <div className='rounded-lg'>
         <Header>
        

@@ -17,7 +17,7 @@ export const deezerApi = createApi({
     }),
     
     track: builder.query<any, any>({
-    
+      
       query: (query) => `track/${query}`,
     }),
 
@@ -32,7 +32,7 @@ export const deezerApi = createApi({
     }),
     speedup: builder.query<any, void>({
       // Für einen statischen Endpoint ohne Parameter
-      query: () => `playlist/11967291621`,
+      query: () => `playlist/10798293142`,
     }),
     germannew: builder.query<any, void>({
       // Für einen statischen Endpoint ohne Parameter

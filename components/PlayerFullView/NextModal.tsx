@@ -1,11 +1,22 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import PlayerFullCard from "./PlayerFullCard";
+import { useWindowSize } from 'react-use';
 
 export default function NextModal() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
+   
 
-  return (
+  function useIsSM() {
+    const { width } = useWindowSize();
+    return width > 640;
+  }
+  
+
+  const isSM = useIsSM();
+
+   return (
     <>
     <div
     onClick={onOpen}
@@ -14,7 +25,7 @@ export default function NextModal() {
     </div>
 
      
-      <Modal size="full" backdrop="transparent" isDismissable={false} shouldBlockScroll={false} hideCloseButton={true} scrollBehavior="outside"  className=" bg-transparent h-full w-full md:w-[320px] rounded-none fixed  -bottom-1 sm:bottom-0" isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal size="full" backdrop="transparent" isDismissable={!isSM} shouldBlockScroll={false} hideCloseButton={true} scrollBehavior="outside"  className=" bg-transparent h-full w-full md:w-[320px] rounded-none fixed  -bottom-1 sm:bottom-0" isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent >
           {(onClose) => (
             <>
@@ -31,5 +42,5 @@ export default function NextModal() {
 
    
     </>
-  );
+  )
 }

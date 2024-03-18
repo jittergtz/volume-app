@@ -39,6 +39,7 @@ function SongCard ({ item, index, data, isPlaying, activeSong}: {
    
     const dispatch = useDispatch()
 
+
     const handlePauseClick = () => {
         dispatch(playPause(false));
       };

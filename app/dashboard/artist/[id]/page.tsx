@@ -31,13 +31,6 @@ interface TrackProps {
 
 function page() {
 
-
-
-
-
-  
-
-
   return (
     <>
         <ArtistPageBody/>

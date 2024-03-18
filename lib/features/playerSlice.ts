@@ -20,7 +20,7 @@ interface TrackProps {
 }
 
 export interface PlayerState {
-  currentSongs: TrackProps[];
+  currentSongs: any;
   currentIndex: number;
   isActive: boolean;
   isPlaying: boolean;
@@ -30,7 +30,6 @@ export interface PlayerState {
 }
 
 const initialState: PlayerState = {
-
   currentSongs: [],
   currentIndex: 0,
   isActive: false,
@@ -76,14 +75,32 @@ const playerSlice = createSlice({
     
 
     nextSong: (state, action) => {
-      state.activeSong = state.currentSongs[action.payload.index];
-      state.currentIndex = action.payload.index;
+      if (state.currentSongs.tracks?.data[action.payload]) {
+        state.activeSong = state.currentSongs.tracks?.data[action.payload];
+      } else if 
+      (state.currentSongs.data[action.payload]) {
+        state.activeSong = state.currentSongs.data[action.payload];
+      } else {
+        state.activeSong = state.currentSongs[action.payload];
+      }
+
+      state.currentIndex = action.payload;
       state.isActive = true;
     },
 
+    
+
     prevSong: (state, action) => {
-      state.activeSong = state.currentSongs[action.payload.index];
-      state.currentIndex = action.payload.index;
+      if (state.currentSongs.tracks?.data[action.payload]) {
+        state.activeSong = state.currentSongs.tracks?.data[action.payload];
+      } else if 
+      (state.currentSongs.data[action.payload]) {
+        state.activeSong = state.currentSongs.data[action.payload];
+      } else {
+        state.activeSong = state.currentSongs[action.payload];
+      }
+
+      state.currentIndex = action.payload;
       state.isActive = true;
     },
 
@@ -97,7 +114,7 @@ const playerSlice = createSlice({
 
 
 
-export const { setActiveSong, playPause } = playerSlice.actions;
+export const { setActiveSong, playPause, nextSong, prevSong } = playerSlice.actions;
 
 export default playerSlice.reducer;
 

@@ -1,17 +1,11 @@
 "use client"
 
-import { Button, useDisclosure } from "@nextui-org/react"
-import { HeartIcon } from "../Next-Ui/HeartIcon"
+import { useEffect, useState } from "react"
 
-import { PreviousIcon } from "../Next-Ui/PreviousIcon"
-import { NextIcon } from "../Next-Ui/NextIcon"
-import { PauseCircleIcon } from "../Next-Ui/PauseCircleIcon"
-import { SetStateAction, useEffect, useState } from "react"
-import Image from "next/image"
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "@/lib/store"
 
-import { playPause } from "@/lib/features/playerSlice"
+import { nextSong, playPause, prevSong } from "@/lib/features/playerSlice"
 import PlayLogic from "./PlayLogic"
 import {
   BsArrowRepeat,
@@ -26,6 +20,7 @@ import NextModal from "../PlayerFullView/NextModal"
 import LikedButton from "../playlist/LikedButton"
 import SongCard from "../SongCard"
 import Link from "next/link"
+import { useDisclosure } from "@nextui-org/react"
 
 const Player = () => {
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
@@ -40,10 +35,21 @@ const Player = () => {
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
 
+  const divider = () => {
+    if (currentSongs?.tracks?.data) {
+      return currentSongs.tracks.data.length;
+    } else if (currentSongs?.data) {
+      return currentSongs.data.length;
+    } else {
+      return currentSongs.length;
+    }
+  }
+
   useEffect(() => {
-    if (currentSongs.length) dispatch(playPause(true))
+    if (currentSongs) dispatch(playPause(true))
   }, [currentIndex])
 
+  
   const handlePlayPause = () => {
     if (!isActive) return
 
@@ -58,10 +64,9 @@ const Player = () => {
     dispatch(playPause(false))
 
     if (!shuffle) {
-      dispatch(nextSong((currentIndex + 1) % currentSongs.length))
-    } else {
-      dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)))
-    }
+      dispatch(nextSong((currentIndex + 1) % divider() ))
+      console.log(nextSong)
+    } 
   }
 
   const handlePrevSong = () => {
@@ -173,7 +178,7 @@ const Player = () => {
                             />
 
                             <div className="flex  items-center justify-center ">
-                              <LikedButton song={activeSong} />
+                              <LikedButton song={activeSong} /> 
                             </div>
                           </div>
                         </div>
@@ -193,10 +198,3 @@ const Player = () => {
 }
 
 export default Player
-function nextSong(arg0: number): any {
-  throw new Error("Function not implemented.")
-}
-
-function prevSong(arg0: number): any {
-  throw new Error("Function not implemented.")
-}

@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Card, CardBody, Image, Button } from "@nextui-org/react"
 import { ShuffleIcon } from "../Next-Ui/ShuffleIcon"
 import { NextIcon } from "../Next-Ui/NextIcon"
@@ -9,19 +9,34 @@ import { RepeatOneIcon } from "../Next-Ui/RepeatOneIcon"
 import { IoIosClose } from "react-icons/io"
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "@/lib/store"
-import { playPause } from "@/lib/features/playerSlice"
+import { nextSong ,playPause, prevSong } from "@/lib/features/playerSlice"
 import { BsFillPauseFill, BsFillPlayFill } from "react-icons/bs"
 import LinkSongButton from "../LinkSongButton"
 import LikedButton from "../playlist/LikedButton"
 import Link from "next/link"
 
 function PlayerFullCard({ onClose, onOpen }: any) {
-  const [liked, setLiked] = useState(false)
   const [shuffle, setShuffle] = useState(false)
 
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
-    useSelector((state: RootState) => state.player)
+  useSelector((state: RootState) => state.player)
   const dispatch = useDispatch()
+  
+
+  const divider = () => {
+    if (currentSongs?.tracks?.data) {
+      return currentSongs.tracks.data.length;
+    } else if (currentSongs?.data) {
+      return currentSongs.data.length;
+    } else {
+      return currentSongs.length;
+    }
+  }
+
+  useEffect(() => {
+    if (currentSongs) dispatch(playPause(true))
+  }, [currentIndex])
+
 
   const handlePlayPause = () => {
     if (!isActive) return
@@ -33,25 +48,27 @@ function PlayerFullCard({ onClose, onOpen }: any) {
     }
   }
 
+
   const handleNextSong = () => {
     dispatch(playPause(false))
 
     if (!shuffle) {
-      dispatch(nextSong((currentIndex + 1) % currentSongs.length))
+      dispatch(nextSong((currentIndex + 1) % divider() ))
+      console.log(nextSong)
     } else {
-      dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)))
+      dispatch(nextSong(Math.floor(Math.random() * divider() )))
     }
   }
-
+  
+  
   const handlePrevSong = () => {
     if (currentIndex === 0) {
-      dispatch(prevSong(currentSongs.length - 1))
-    } else if (shuffle) {
-      dispatch(prevSong(Math.floor(Math.random() * currentSongs.length)))
+      dispatch(prevSong( divider() - 1))
     } else {
       dispatch(prevSong(currentIndex - 1))
     }
   }
+
 
   let imageUrl
   if (activeSong?.album?.cover_big) {
@@ -112,7 +129,7 @@ function PlayerFullCard({ onClose, onOpen }: any) {
               <h3 className=" text-lg text-foreground/90">
                 {activeSong?.title ? activeSong?.title : ""}
               </h3>
-              <p className="sm:text-small text-xs text-foreground/80 hover:text-neutral-100  z-50">
+              <p className="sm:text-small text-xs text-foreground/80 hover:text-neutral-100 w-max   z-50">
                 <Link href={`/dashboard/artist/${artistId}`}>
                   {activeSong?.artist?.name ?? activeSong?.artist_name ?? ""}
                 </Link>
@@ -120,7 +137,7 @@ function PlayerFullCard({ onClose, onOpen }: any) {
             </div>
             <LikedButton song={activeSong} />
           </div>
-
+         
           <div className="flex w-full  items-center justify-center">
             <Button
               isIconOnly
@@ -131,6 +148,7 @@ function PlayerFullCard({ onClose, onOpen }: any) {
               <RepeatOneIcon className="text-foreground/80" />
             </Button>
             <Button
+              onClick={handlePrevSong }
               isIconOnly
               className="data-[hover]:bg-foreground/10"
               radius="full"
@@ -138,7 +156,7 @@ function PlayerFullCard({ onClose, onOpen }: any) {
             >
               <PreviousIcon />
             </Button>
-
+            
             {isPlaying ? (
               <BsFillPauseFill
                 size={65}
@@ -152,8 +170,9 @@ function PlayerFullCard({ onClose, onOpen }: any) {
                 className="text-neutral-100 z-50  cursor-pointer"
               />
             )}
-
+            
             <Button
+              onClick={handleNextSong}
               isIconOnly
               className="data-[hover]:bg-foreground/10"
               radius="full"
@@ -162,12 +181,16 @@ function PlayerFullCard({ onClose, onOpen }: any) {
               <NextIcon />
             </Button>
             <Button
+              onClick={() => {shuffle ? setShuffle(false): setShuffle(true)}}
               isIconOnly
               className="data-[hover]:bg-foreground/10"
               radius="full"
               variant="light"
-            >
-              <ShuffleIcon className="text-foreground/80" />
+            >{shuffle ? (
+              <ShuffleIcon className="text-white" />
+            ): (
+              <ShuffleIcon className="text-foreground/50" />
+            )}   
             </Button>
           </div>
         </div>
@@ -178,9 +201,4 @@ function PlayerFullCard({ onClose, onOpen }: any) {
 
 export default PlayerFullCard
 
-function nextSong(arg0: number): any {
-  throw new Error("Function not implemented.")
-}
-function prevSong(arg0: number): any {
-  throw new Error("Function not implemented.")
-}
+

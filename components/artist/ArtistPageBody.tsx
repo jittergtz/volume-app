@@ -89,7 +89,7 @@ function ArtistPageBody() {
 
   return (
     <>
-      <div className="p-2 lg:p-7 rounded-lg h-full bg-neutral-950  ">
+      <div className="p-2 lg:p-7 rounded-lg pb-24  bg-neutral-950  ">
          
      
 

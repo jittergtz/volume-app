@@ -1,26 +1,62 @@
+"use client"
 import { Image } from '@nextui-org/react'
-import React from 'react'
+import { useInView, useMotionValueEvent } from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react'
+import { useScroll } from "framer-motion"
 
-function GradientFirst() {
-   
-  const prevImg = "https://e-cdns-images.dzcdn.net/images/cover/4ba495b1f2534a515f431dba70006972/1000x1000-000000-80-0-0.jpg"
+function GradientFirst({imgValue, classNames, text}: {
+  imgValue: string,
+  text: string,
+  classNames: any}) {
+  const [isVisible, setIsVisible] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      });
+    });
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => {
+      if (imgRef.current) {
+        observer.unobserve(imgRef.current);
+      }
+    };
+  }, []);
+
+
 
   return (
    <div className='flex flex-col md:flex-row h-[57rem] items-center justify-center p-5
       rounded-2xl'>
          <Image
           alt='app player preview'
-          src={prevImg}
+          src={imgValue}
           className='w-64 lg:w-96'
           />
-            <img alt="Shadow" className="lp-image-card-shadow" src={prevImg} />
+
+
+         <img
+          alt="Shadow"
+          className={`lp-image-card-shadow ${isVisible ? 'appear' : ''}`}
+          src={imgValue}
+          ref={imgRef}
+        />
 
    
 
-         <div className='mt-5 md:mt-0 ml-7 w-72 lg:w-[30rem] z-50 text-white/60'>
+         <div className={`mt-5 md:mt-0 ml-7 w-80  lg:w-[33rem] z-50 ${classNames}`}>
             <h1 className='text-5xl lg:text-7xl'>
-            <p className='text-6xl lg:text-8xl' >Einfacher</p> Musik finden
-            <p className=' text-4xl lg:text-4xl'>die dir gefällt.</p>
+           {text}
             </h1>
             
           </div>

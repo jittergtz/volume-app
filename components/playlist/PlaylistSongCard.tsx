@@ -1,4 +1,4 @@
-import { playPause, setActiveSong } from '@/lib/features/playerSlice';
+import { nextSong, playPause, setActiveSong } from '@/lib/features/playerSlice';
 import { Song } from '@/types';
 import { Image } from '@nextui-org/react';
 import Link from 'next/link';
@@ -36,16 +36,18 @@ function PlaylistSongCard({index, data, item ,isPlaying, activeSong}: {
         dispatch(setActiveSong({ data, item, index }));
         dispatch(playPause(true));
       };
+
+  
     
 
   return (
-    <div key={item.song_id} className="flex relative    gap-2 w-full sm:hover:bg-neutral-900 rounded-lg">
+    <div key={item.song_id}  className="flex relative  gap-2 w-full sm:hover:bg-neutral-900 rounded-lg">
     <Image
       className="h-16 w-16  md:h-20 md:w-20 rounded-lg"
       src={item.song_img}
     />
     <div className=" text-neutral-200 mt-4 ">
-     <p className='w-52 line-clamp-1'> {item.title} </p>
+     <p className='w-52 sm:w-80 lg:w-full line-clamp-1'> {item.title} {index}</p>
       <p className="text-sm z-20 absolute  text-neutral-400 line-clamp-1 w-max hover:text-neutral-200 hover:cursor-pointer">
         <Link href={`/dashboard/artist/${item.artist_id}`}>
           {item.artist_name}

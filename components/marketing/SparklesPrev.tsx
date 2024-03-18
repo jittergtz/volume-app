@@ -9,7 +9,8 @@ export function SparklesPreview() {
   return (
     <div className="h-[40rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
           <div className="flex z-50 mb-5 flex-col items-center justify-center">
-       <ChipNews/>
+       <ChipNews
+       text={"Neuigkeiten Volume 0.9 🎉"}/>
 
         </div>
         <h1 className="text-7xl z-50  text-center xl:text-[11rem] lg:text-[10rem] md:text-9xl   tracking-tighter  text-transparent

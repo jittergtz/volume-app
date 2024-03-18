@@ -1,17 +1,12 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "@/lib/store"
-import { useTrackQuery } from "@/lib/services/apiFetch"
 import { Image, Skeleton } from "@nextui-org/react"
-import Link from "next/link"
+
 import { Song } from "@/types"
 import { useUser } from "@/hooks/useUser"
-import PlayPause from "../PlayPause"
-import { playPause, setActiveSong } from "@/lib/features/playerSlice"
-import PlayLogic from "../musicPlayer/PlayLogic"
 import PlaylistSongCard from "./PlaylistSongCard"
 
 interface LikedContentProps {
@@ -35,20 +30,20 @@ interface TrackProps {
 
 const LikedContent: React.FC<LikedContentProps> = ({ songs }) => {
   const router = useRouter()
-  const { isLoading, user } = useUser()
+
 
   const { activeSong, isPlaying } = useSelector(
     (state: RootState) => state.player
   )
 
   return (
-    <div className="flex flex-col gap-y-2 w-full p-1">
+    <div className="flex flex-col pb-20 gap-y-2 w-full p-1">
       {songs.map((song: Song, index: number) => {
         if (!songs) {
           return (
             <div
               className=" w-full flex gap-2 items-center rounded-lg"
-              key={index}
+              key={song.song_id}
             >
               <Skeleton className="w-20 h-20 rounded-xl bg-neutral-800"></Skeleton>
               <div className="flex flex-col gap-3">

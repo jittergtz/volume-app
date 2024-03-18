@@ -19,7 +19,7 @@ const Liked = async () => {
         overflow-y-auto
       "
     >
-      <Header className="  bg-gradient-to-b from-[#09314e]">
+      <Header className="  bg-gradient-to-b from-[#9789e0]">
         <div className="sm:mt-20 mt-5 ">
           <div
             className="

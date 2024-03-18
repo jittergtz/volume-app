@@ -2,7 +2,7 @@ import React from "react";
 import {Chip} from "@nextui-org/react";
 import Link from "next/link";
 
-function ChipNews() {
+function ChipNews({text}: {text: string}) {
   return (
     <Chip
       variant="shadow"
@@ -12,7 +12,7 @@ function ChipNews() {
       }}
     >
       <Link href={"/news"} >
-      Neuigkeiten Volume 0.9 🎉
+       {text}
       </Link>
      
     </Chip>

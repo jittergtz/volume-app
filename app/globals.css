@@ -79,6 +79,8 @@ body {
    
   }
 
+
+
 }
 
 
@@ -113,7 +115,7 @@ body {
 
 
 .bg-shape1 {
-  width: 400px;
+  width: 350px;
   height: 400px;
   border-radius: 9999px;
   position: relative;
@@ -122,14 +124,15 @@ body {
 }
 
 .bg-shape2 {
-  width: 400px;
+  width: 350px;
   height: 300px;
   border-radius: 9999px;
   position: relative;
 }
 
 .bg-shape3 {
-  width: 900px;
+
+  width: 700px;
   height: 700px;
   border-radius: 9999px;
   position: relative;
@@ -161,3 +164,60 @@ body {
 
 
 
+/* Landing Page*/
+
+.scroll-reveal span {
+  color: hsl(0 0% 100% / 0.2 );
+  background-clip: text;
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  background-image: linear-gradient(40deg, rgb(222, 222, 222), rgb(92, 92, 250));
+  -webkit-animation: scroll-reveal linear forwards; /* Vendor Prefix */
+  animation: scroll-reveal linear forwards;
+  animation-timeline:  view(); /* Consider vendor prefixes here too */
+}
+
+.scroll-reveal p span{
+  animation-range-start: cover 40vh;
+  animation-range-end: cover 120vh;
+}
+
+@-webkit-keyframes scroll-reveal { /* Safari & Chrome */
+  to { background-size:  100% 100%; } /* Add closing curly brace here */
+}
+
+@keyframes scroll-reveal { /* Standard */
+  to { background-size:  100% 100%; }
+}
+
+
+
+
+.scroll-color {
+
+  color: hsl(0 0% 100% / 0.2 );
+  background-clip: text;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: linear-gradient(40deg, rgb(222, 222, 222), rgb(92, 92, 250));
+}
+
+
+
+.default-color {
+  color: hsl(0 0% 100% / 0.2 );
+}
+
+
+.appear {
+  animation: pulse 2s ease-in;
+}
+
+@keyframes pulse { 
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1; 
+  }
+}

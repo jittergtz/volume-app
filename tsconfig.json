@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     "components/artist/DzApi.js",
     "components/artist/FollowButton.tsx"
-, "components/marketing/ui/GradientAnimated.jsx"  ],
+, "components/marketing/ui/GradientAnimated.jsx", "components/marketing/TextReveal.tsx"  ],
   "exclude": ["node_modules"]
 }

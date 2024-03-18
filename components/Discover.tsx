@@ -45,9 +45,7 @@ interface TrackProps {
     const {data: oldhitsData, isFetching: oldhitsFetching, error: oldhitsError} = useOldhitsQuery()
     const {data: mixData, isFetching: mixIsFetching, error: mixError} =  useMixQuery()
 
-
-    console.log(popularData)
-  
+     console.log(mixData)
 
   
     const renderSongs = (data: any) => {
