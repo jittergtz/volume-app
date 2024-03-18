@@ -56,6 +56,7 @@ const LikedContent: React.FC<LikedContentProps> = ({ songs }) => {
 
         return (
           <PlaylistSongCard
+           key={song.song_id}
             index={index}
             data={song}
             item={song}
