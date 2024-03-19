@@ -1,0 +1,39 @@
+
+{
+    "name": "Volume",
+    "short_name": "PWA",
+    "theme_color": "#2196f3",
+    "background_color": "#2196f3",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/dashboard",
+    
+    "icons": [
+      {
+        "src": "icons/manifest-icon-192.maskable.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "icons/manifest-icon-192.maskable.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "src": "icons/manifest-icon-512.maskable.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "icons/manifest-icon-512.maskable.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ],
+    "splash_pages": null
+  }
