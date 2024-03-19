@@ -47,7 +47,7 @@ function PlaylistSongCard({index, data, item ,isPlaying, activeSong}: {
       src={item.song_img}
     />
     <div className=" text-neutral-200 mt-4 ">
-     <p className='w-52 sm:w-80 lg:w-full line-clamp-1'> {item.title} {index}</p>
+     <p className='w-52 sm:w-80 lg:w-full line-clamp-1'> {item.title}</p>
       <p className="text-sm z-20 absolute  text-neutral-400 line-clamp-1 w-max hover:text-neutral-200 hover:cursor-pointer">
         <Link href={`/dashboard/artist/${item.artist_id}`}>
           {item.artist_name}
