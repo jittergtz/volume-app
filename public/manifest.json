@@ -1,9 +1,9 @@
 
 {
     "name": "Volume",
-    "short_name": "PWA",
-    "theme_color": "#2196f3",
-    "background_color": "#2196f3",
+    "short_name": "Volume",
+    "theme_color": "#0d0d0d",
+    "background_color": "#0d0d0d",
     "display": "standalone",
     "orientation": "portrait",
     "scope": "/",

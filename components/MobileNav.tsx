@@ -40,7 +40,7 @@ function MobileNavbar() {
     ], [pathname])
 
   return (
-    <nav className="flex sm:hidden h-16 z-50  px-5 justify-around items-center fixed
+    <nav className="flex sm:hidden h-20 z-50  px-5 justify-around items-start fixed
      bottom-0 left-0 w-full bg-neutral-900/70 backdrop-blur-xl">
         {routes.map((item) => {
             return (
