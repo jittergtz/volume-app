@@ -66,7 +66,7 @@ function SongCard ({ item, index, data, isPlaying, activeSong}: {
 
 
        <span className='overflow-x-hidden line-clamp-1'>{item.title}</span>
-       <span className='text-xs overflow-x-hidden line-clamp-1 hover:text-neutral-400 w-min z-50'>  
+       <span className='text-xs overflow-x-hidden line-clamp-1 hover:text-neutral-400 max-w-36  z-50'>  
        <Link href={`/dashboard/artist/${item.artist.id}`} >
           {item.artist.name}
        </Link>
