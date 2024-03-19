@@ -5,8 +5,8 @@ function DashboardAmbientLight() {
     <>
       
 
-       <div className='absolute top-5 right-3 w-screen h-48 
-       bg-gradient-to-b from-orange-700/30 blur-xl'>
+       <div className='absolute top-5 right-3 w-screen h-28 
+       bg-gradient-to-b from-orange-700/40 blur-xl'>
 
        </div>
     </>
