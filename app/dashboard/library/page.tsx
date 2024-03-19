@@ -9,10 +9,10 @@ function page() {
   return (
 
     <>
-     <div className='bg-neutral-950  rounded-lg min-h-full pb-28'>
+     <div className='bg-neutral-950 rounded-lg min-h-full pb-28'>
        <div className='rounded-lg'>
         <Header>
-       
+
           <div className='flex items-center text-neutral-100/70 gap-1 mt-10'>
           <h1 className=' z-50  text-3xl'>
             Bibliothek
@@ -22,6 +22,7 @@ function page() {
          </Header>
           <LibraryBody/>
           <div className='p-1 lg:px-10'>
+            <div className='text-sm p-1 text-neutral-400'>Folge ich</div>
           <ArtistFollowCard/>
           </div>
          </div>
