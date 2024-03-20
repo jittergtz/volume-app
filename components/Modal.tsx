@@ -37,15 +37,16 @@ const Modal: React.FC<ModalProps> = ({
             md:max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-xl bg-gradient-to-t from-black via-black to-neutral-800
             backdrop-blur-xl p-[25px] focus:outline-none ">
                 <div className="flex flex-col items-center justify-center">
-                <BsSoundwave className="text-neutral-100 w-28 h-10 " />
-                <h1 className="text-4xl ">Volume</h1>
+                <BsSoundwave className="text-neutral-400 w-28 h-10 " />
+                <h1 className="text-4xl  text-transparent
+                 bg-clip-text bg-gradient-to-b
+                 from-white to-neutral-600 " >
+                 Volume
+               </h1>
                    
                    
                 </div>
-           
-        
-                   
-                    {children}
+                 {children}
                 
                 <div>
                     <Dialog.Close asChild>
