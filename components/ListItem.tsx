@@ -34,16 +34,16 @@ const ListItem: React.FC<ListItem> = ({
                 className="object-cover "
                 src={image}
                 fill
-                alt="liked"
+                alt="liked playlist"
                  />
             </div>
             <p className="font-medium transcate py-5" >
                     {name}
                  </p>
                  <div className="absolute transition opacity-0 
-                 rounded-full flex items-center justify-center bg-neutral-200/90
+                 rounded-2xl flex items-center justify-center bg-neutral-200/30
                  p-4 drop-shadow-md right-5 sm:group-hover:opacity-100 hover:scale-110 " >
-                    <FaPlay className="text-black/90" />
+                    <FaPlay className="text-white/70" />
                  </div>
 
         </button>

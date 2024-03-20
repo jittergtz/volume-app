@@ -31,8 +31,8 @@ function PlayPause({ item, handlePause, handlePlay ,isPlaying, activeSong }: {
     onClick={handlePause}
     className='flex justify-center absolute items-center  h-full w-full '>
      <div className='absolute bottom-14 right-5
-     flex justify-center  items-center rounded-full w-8 h-8 sm:w-10 sm:h-10 bg-white/90'>
-    <FaPause className='text-neutral-900  h-3 sm:h-4' />
+     flex justify-center  items-center rounded-2xl w-8 h-8 sm:w-10 sm:h-10 bg-neutral-500/50'>
+    <FaPause className='text-neutral-200  h-3 sm:h-4' />
     </div>
     </div>
     ): (
@@ -41,8 +41,7 @@ function PlayPause({ item, handlePause, handlePlay ,isPlaying, activeSong }: {
     className='flex 
      justify-center absolute items-center  h-full w-full '>
     <div className='absolute bottom-14 right-5
-     flex justify-center  items-center rounded-full w-8 h-8 sm:w-10 sm:h-10 bg-white/90'>
-    <FaPlay className='text-neutral-900  h-3 sm:h-4' />
+     flex justify-center  items-center rounded-2xl w-8 h-8 sm:w-10 sm:h-10 '>
     </div>
     </div>
     )}
