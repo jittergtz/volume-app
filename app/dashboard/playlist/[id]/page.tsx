@@ -19,13 +19,11 @@ const Liked = async () => {
         overflow-y-auto
       "
     >
-      <Header className="  bg-gradient-to-b from-[#9789e0]">
+      <Header className="  bg-gradient-to-b from-[#7165ac]">
         <div className="sm:mt-20 mt-5 ">
           <div
             className="
               flex 
-              flex-col 
-              md:flex-row 
               items-center 
               gap-x-5
             "
@@ -34,11 +32,11 @@ const Liked = async () => {
               <Image
                 className="object-cover"
                 isBlurred
-                src="/image/volume-hearticon.svg"
+                src="/image/favoriten-icon.svg"
                 alt="Liked playlist img"
               />
             </div>
-            <div className="flex flex-col items-center md:items-start gap-y-2 mt-4 md:mt-0">
+            <div className="flex flex-col  md:items-start gap-y-1 mt-4 md:mt-0">
 
               <h1
                 className="
@@ -59,6 +57,8 @@ const Liked = async () => {
           </div>
         </div>
       </Header>
+
+
       <div className="pb-20 md:p-5">
         <LikedContent songs={songs} />
       </div>

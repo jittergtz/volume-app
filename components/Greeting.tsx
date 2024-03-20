@@ -25,7 +25,7 @@ function Greeting() {
   }, [currentHour]);
 
   return (
-    <h1 className='text-neutral-200/60 tracking-tight text-2xl '>
+    <h1 className='text-neutral-300 tracking-tight text-2xl '>
 {greeting}
 </h1>
    

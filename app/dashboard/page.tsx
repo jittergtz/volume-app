@@ -26,7 +26,7 @@ function page() {
           gap-3 mt-4'>
             <ListItem 
             name="Favoriten"
-            image="/image/volume-heartIcon.svg"
+            image="/image/favoriten-icon.svg"
              href='/dashboard/playlist/favoriten' />
           </div>
 
