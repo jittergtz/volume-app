@@ -14,6 +14,7 @@ import { BsFillPauseFill, BsFillPlayFill } from "react-icons/bs"
 import LinkSongButton from "../LinkSongButton"
 import LikedButton from "../playlist/LikedButton"
 import Link from "next/link"
+import { useWindowSize } from "react-use"
 
 function PlayerFullCard({ onClose, onOpen }: any) {
   const [shuffle, setShuffle] = useState(false)
@@ -88,9 +89,17 @@ function PlayerFullCard({ onClose, onOpen }: any) {
     null
   }
 
+  function useIsSM() {
+    const { width } = useWindowSize();
+    return width > 540;
+  }
+  
+
+  const isSM = useIsSM();
+
   return (
     <Card
-      className=" h-full w-full  bg-black/70 backdrop-blur-3xl  rounded-none "
+      className=" h-full w-full  bg-black sm:bg-black/80 backdrop-blur-2xl sm:backdrop-blur-2xl   rounded-none "
       shadow="sm"
     >
       <button onClick={onClose} className="   mt-20 ml-auto p-5">
@@ -108,7 +117,7 @@ function PlayerFullCard({ onClose, onOpen }: any) {
                 shadow="md"
                 src={imageUrl}
               />
-              <img alt="Shadow" className="image-card-shadow" src={imageUrl} />
+              <img alt="Shadow" className={`${isSM ? 'image-card-shadow' : 'image-card-shadow-mobile'}`} src={imageUrl} />
             </>
           ) : (
             <Image

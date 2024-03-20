@@ -2,7 +2,7 @@
 {
     "name": "Volume",
     "short_name": "Volume",
-    "theme_color": "#0d0d0d",
+    "theme_color": "#000000",
     "background_color": "#0d0d0d",
     "display": "standalone",
     "orientation": "portrait",

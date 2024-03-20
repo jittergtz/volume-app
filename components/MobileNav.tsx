@@ -41,7 +41,7 @@ function MobileNavbar() {
 
   return (
     <nav className="flex sm:hidden h-20 z-50  px-5 justify-around items-start fixed
-     bottom-0 left-0 w-full bg-neutral-900/70 backdrop-blur-xl">
+     bottom-0 left-0 w-full bg-neutral-950/80 backdrop-blur-xl">
         {routes.map((item) => {
             return (
                 <MobileNavItem key={item.label} {...item} />

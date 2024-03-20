@@ -50,7 +50,10 @@ function Greeting() {
 
   return (
     <h1 className='text-neutral-300 tracking-tight text-xl transition'>
-      {isUser ? `${greeting}, ${isUser}` : greeting}
+      {isUser ? (
+      <> {greeting},
+       <p className='text-md '>{isUser}</p>
+       </> ) : greeting}
     </h1>
   );
 }

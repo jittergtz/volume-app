@@ -26,12 +26,12 @@ const Library = () => {
                    
             </div>
             <div className="flex felx-co mb-5 gap-y-2 mt-4 px-3">
-                Liste deiner Playlisten!
+      
             </div>
           <div className="flex flex-col gap-2">
             <ListItem 
             name="Favoriten"
-            image="/image/volume-heartIcon.svg"
+            image="/image/favoriten-icon.svg"
              href='/dashboard/playlist/favoriten' />
 
 

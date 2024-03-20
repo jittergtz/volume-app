@@ -45,7 +45,21 @@ body {
   background-size: cover;
   border-radius: var(--radius);
   overflow: hidden;
-  filter: blur(60px);
+  filter: blur(66px);
+  opacity: 100%;
+  z-index: -1;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+.image-card-shadow-mobile {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  background-image: inherit;
+  background-size: cover;
+  border-radius: var(--radius);
+  overflow: hidden;
+  filter: blur(47px);
   opacity: 100%;
   z-index: -1;
   left: 50%;

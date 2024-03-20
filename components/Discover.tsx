@@ -74,7 +74,7 @@ interface TrackProps {
     
     
     
-    
+  
     
     
     
@@ -85,49 +85,79 @@ interface TrackProps {
         <div className="mt-2">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-white text-2xl">Entdecke Neues</h1>
-              <p className="flex gap-1 text-white/70 items-center">
-                Mix
-                <FaFireFlameCurved className="h-3 text-white/60" />
-              </p>
+      
             </div>
           </div>
         </div>
   
         <div className="flex flex-col gap-4 sm:overflow-hidden">
           <Tabs variant="light" className='overflow-x-scroll scrollbar-hide ' aria-label="Tabs variants">
+        
           <Tab  key="mix" title="Mix">
+          <h1 className="text-white text-xl">Entdecke Neues</h1>
+              <p className="flex gap-1 text-white/70 items-center">
+                Mix
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
             { mixIsFetching  ? 
            ( <SongCardLoading/> )
            :(  renderSongs(mixData) )}
             </Tab>
            
             <Tab key="charts" title="Charts">
+            <h1 className="text-white text-xl">Top 100</h1>
+              <p className="flex gap-1 text-white/70 items-center">
+                Charts
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
             { chartsIsFetching  ? 
            ( <SongCardLoading/> )
            :(  renderSongs(chartsData) )}
             </Tab>
             <Tab key="popular" title="Rap">
+            <h1 className="text-white text-xl">International</h1>
+              <p className="flex gap-1 text-white/70 items-center">
+                Rap
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
            { popularData  ? 
            ( renderSongs(popularData) )
            :( <SongCardLoading/> )}
             </Tab>
             <Tab key="speedup" title="Speed up">
+            <p className="flex gap-1 text-white/70 items-center">
+                Speed up
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
             { speedupFetching  ? 
            ( <SongCardLoading/> )
            :(  renderSongs(speedupData) )}
             </Tab>
             <Tab key="germannew" title="Deutsch Neu">
+            <h1 className="text-white text-xl">Aktuell beliebt</h1>
+              <p className="flex gap-1 text-white/70 items-center">
+                Deutsch Neu
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
             { germannewFetching  ? 
            ( <SongCardLoading/> )
            :(  renderSongs(germannewData) )}
             </Tab>
             <Tab key="germanrap" title="Deutsch Rap">
+              <p className="flex gap-1 text-white/70 items-center">
+                Deutsch Rap
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
             { germanrapFetching  ? 
            ( <SongCardLoading/> )
            :(  renderSongs(germanrapData) )}
             </Tab>
             <Tab key="oldhits" title="2000er">
+            <h1 className="text-white text-xl">Nostalgie</h1>
+              <p className="flex gap-1 text-white/70 items-center">
+                2000er
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
             { oldhitsFetching  ? 
            ( <SongCardLoading/> )
            :(  renderSongs(oldhitsData) )}
