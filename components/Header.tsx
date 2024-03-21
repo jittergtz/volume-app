@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({
     }
   return (
     <div className={twMerge(`
-      h-fit  p-6`, className)}>
+      h-fit  p-5`, className)}>
 
 
 

@@ -3,6 +3,7 @@ import AuthCard from '@/components/AuthCard'
 import Header from '@/components/Header'
 import AccordionCard from '@/components/Next-Ui/Accordion'
 import ProfilData from '@/components/ProfilData'
+import AmbientBackground from '@/components/libraryQ/AmbientBackground'
 
 import { Button } from '@nextui-org/react'
 
@@ -18,7 +19,9 @@ function page() {
 
   return (
     <>
-    <div className='bg-neutral-950 rounded-lg min-h-full pb-64'>
+    <div className='bg-neutral-950 relative overflow-hidden rounded-lg min-h-full pb-64'>
+    <AmbientBackground/>
+       
         <Header>
         <div className='sm:mb-2'>
           <h1 className='text-white z-50 mt-10 text-3xl'>

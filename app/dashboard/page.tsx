@@ -12,7 +12,7 @@ import { Tab, Tabs } from "@nextui-org/react"
 function page() {
   return (
     <main
-      className="bg-white bg-opacity-5 relative  rounded-lg h-full 
+      className="bg-neutral-950 relative  rounded-lg h-full 
     w-full overflow-hidden overflow-y-auto"
     >
       <DashboardAmbientLight />
