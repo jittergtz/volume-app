@@ -91,7 +91,7 @@ const LikedButton: React.FC<LikeButtonProps> = ({ song }) => {
           >
             <Image
               alt="favoriten img"
-              src="/image/volume-heartIcon.svg"
+              src="/image/favoriten-icon.svg"
               className="h-10 w-10 rounded-md"
             />
             <div className="text-white">Zu Favoriten hinzugefügt.</div>

@@ -20,7 +20,7 @@ function page() {
   return (
     <>
     <div className='bg-neutral-950 relative overflow-hidden rounded-lg min-h-full pb-64'>
-    <AmbientBackground/>
+        <AmbientBackground/>
        
         <Header>
         <div className='sm:mb-2'>
@@ -32,6 +32,7 @@ function page() {
           </div>
            </div>
         </Header>
+  
       
 
 

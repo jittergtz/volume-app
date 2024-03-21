@@ -49,7 +49,7 @@ function Greeting() {
     }, [supabaseClient, user?.id]);
 
   return (
-    <h1 className='relative text-neutral-300 z-50 tracking-tight text-xl transition'>
+    <h1 className='relative text-neutral-300 z-20 tracking-tight text-xl transition'>
       {isUser ? (
       <> {greeting},
        <p className='text-md '>{isUser}</p>

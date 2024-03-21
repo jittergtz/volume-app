@@ -16,8 +16,20 @@ import LikedButton from "../playlist/LikedButton"
 import Link from "next/link"
 import { useWindowSize } from "react-use"
 
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
+import { twMerge } from "tailwind-merge"
+
 function PlayerFullCard({ onClose, onOpen }: any) {
   const [shuffle, setShuffle] = useState(false)
+
+  useGSAP(() => {
+    gsap.to("#animate", {
+    opacity: 0.8,
+     duration: 2,
+     
+    })
+  },[])
 
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
   useSelector((state: RootState) => state.player)
@@ -102,22 +114,22 @@ function PlayerFullCard({ onClose, onOpen }: any) {
       className=" h-full w-full  bg-black sm:bg-black/80 backdrop-blur-2xl sm:backdrop-blur-2xl   rounded-none "
       shadow="sm"
     >
-      <button onClick={onClose} className="   mt-20 ml-auto p-5">
+      <button onClick={onClose} className=" mt-20 ml-auto p-5">
         <IoIosClose size={28} />
       </button>
 
-      <CardBody className="flex overflow-visible  h-full justify-center gap-10  ">
+      <CardBody  className="flex overflow-visible  h-full justify-center gap-10  ">
         <div className="flex flex-col items-center gap-2 justify-center  col-span-6 md:col-span-4">
           {imageUrl ? (
             <>
               <Image
-    
+   
                 alt="Album cover"
                 className="object-cover w-64 h-64"
                 shadow="md"
                 src={imageUrl}
               />
-              <img alt="Shadow" className={`${isSM ? 'image-card-shadow' : 'image-card-shadow-mobile'}`} src={imageUrl} />
+              <img id="animate" alt="Shadow" className={`${isSM ? 'image-card-shadow' : 'image-card-shadow-mobile'}`} src={imageUrl} />
             </>
           ) : (
             <Image
@@ -139,7 +151,7 @@ function PlayerFullCard({ onClose, onOpen }: any) {
                 {activeSong?.title ? activeSong?.title : ""}
               </h3>
               <p className="sm:text-small text-xs text-foreground/80 hover:text-neutral-100 w-max   z-50">
-                <Link href={`/dashboard/artist/${artistId}`}>
+                <Link onClick={onClose} href={`/dashboard/artist/${artistId}`}>
                   {activeSong?.artist?.name ?? activeSong?.artist_name ?? ""}
                 </Link>
               </p>
