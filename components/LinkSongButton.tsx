@@ -14,19 +14,35 @@ import { FaDeezer, FaLocationArrow, FaSpotify } from "react-icons/fa6"
 import { SiApplemusic, SiYoutubemusic } from "react-icons/si"
 import Link from "next/link"
 import { AiFillAmazonCircle } from "react-icons/ai"
+import { useWindowSize } from "react-use"
 
 export default function LinkSongButton({activeSong}: any) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
 
 
-  let artistName :string
+  let artistName :string = ""
   if (activeSong?.artist?.name) {
     artistName = activeSong.artist.name
   } else if (activeSong?.artist_name) {
     artistName = activeSong.artist_name
   } else {
-    null
+    ""
   }
+  
+  function useIsSM() {
+    const { width } = useWindowSize();
+    return width < 540;
+  }
+  
+
+  const mobile = useIsSM();
+ 
+  const searchQuery = encodeURIComponent(`${artistName} ${activeSong.title}`);
+
+  const spotifyLink = mobile ? `spotify://search/${searchQuery}` : `https://open.spotify.com/search/${searchQuery}`;
+  const deezerLink = mobile ? `deezer://www.deezer.com/search/${searchQuery}` : `https://www.deezer.com/search/${searchQuery}`;
+  const youtubeMusicLink = mobile ? `youtubemusic://search?q=${searchQuery}` : `https://music.youtube.com/search?q=${searchQuery}`;
+  const amazonMusicLink =  `https://music.amazon.de/search/${searchQuery}`;
 
 
 
@@ -56,7 +72,7 @@ export default function LinkSongButton({activeSong}: any) {
             
                 <Link
                 className="flex items-center gap-4 justify-center bg-neutral-900/40 hover:bg-neutral-800 text-white/70 p-2 px-3 rounded-xl"
-                 href={`https://open.spotify.com/search/${artistName}%20${activeSong.title}`}>
+                 href={spotifyLink}>
                  Spotify
                  <FaSpotify
                  className="text-green-500" 
@@ -67,7 +83,7 @@ export default function LinkSongButton({activeSong}: any) {
 
                 <Link
                 className="flex items-center gap-4 justify-center bg-neutral-900/40 hover:bg-neutral-800 text-white/70 p-2 px-3 rounded-xl"
-                 href={`https://www.deezer.com/search/${artistName}%20${activeSong.title}`}>
+                 href={deezerLink}>
                  Deezer
                  <FaDeezer 
                   className="text-violet-500" 
@@ -79,7 +95,7 @@ export default function LinkSongButton({activeSong}: any) {
 
                  <Link
                 className="flex items-center gap-4 justify-center bg-neutral-900/40 hover:bg-neutral-800 text-white/70 p-2 px-3 rounded-xl"
-                 href={`https://music.youtube.com/search?q=${artistName}+${activeSong.title}`}>
+                 href={youtubeMusicLink}>
                   Youtube music
                   <SiYoutubemusic
                   className="text-red-700 rounded-md "  
@@ -88,7 +104,7 @@ export default function LinkSongButton({activeSong}: any) {
 
                  <Link
                 className="flex items-center gap-4 justify-center bg-neutral-900/40 hover:bg-neutral-800 text-white/70 p-2 px-3 rounded-xl"
-                 href={`https://music.amazon.de/search/${artistName}+${activeSong.title}`}>
+                 href={amazonMusicLink}>
                   Amazon music
                   <AiFillAmazonCircle 
                   className="text-cyan-500 rounded-md "  
