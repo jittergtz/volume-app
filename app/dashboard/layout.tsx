@@ -17,7 +17,7 @@ interface SidebarProps {
 // Metadatenexport
 export const metadata: Metadata = {
   title: "Volume",
-  description: "PWA application with Next 13",
+  description: "Schneller Songs entdecken die dir gefallen!",
   generator: "Next.js",
   manifest: "/manifest.json",
   keywords: ["nextjs", "nextjs13", "next13", "pwa", "next-pwa"],
@@ -33,6 +33,8 @@ export const metadata: Metadata = {
 
 // Viewport export
 export const viewport = "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover";
+
+
 
 
 export default function Layout({ children }: SidebarProps) {

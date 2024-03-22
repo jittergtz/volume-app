@@ -50,7 +50,42 @@ export const deezerApi = createApi({
       // Für einen statischen Endpoint ohne Parameter
       query: () => `playlist/2228601362`,
     }),
+    speedUp2: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/10691834062`,
+    }),
+    phonk: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/10746894082`,
+    }),
+    mog: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/12131355551`,
+    }),
+    happy: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/740966875`,
+    }),
+    mixThree: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/1386208615`,
+    }),
+    oldschoolRap: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/4676818664`,
+    }),
+    tiktok: builder.query<any, void>({
+      // Für einen statischen Endpoint ohne Parameter
+      query: () => `playlist/10920666262`,
+    }),
 
+   
+   
+   
+   
+   
+   
+   
     artist: builder.query<any, any>({
       // Für einen statischen Endpoint ohne Parameter
       query: (query) => `artist/${query}`,
@@ -71,4 +106,14 @@ export const {
   useGermannewQuery,
   useGermanrapQuery,
   useOldhitsQuery,
-  useMixQuery } = deezerApi;
+  useMixQuery,
+  useHappyQuery,
+  useSpeedUp2Query,
+  useMixThreeQuery,
+  useTiktokQuery,
+  useOldschoolRapQuery,
+  useMogQuery,
+  usePhonkQuery,
+
+
+} = deezerApi;

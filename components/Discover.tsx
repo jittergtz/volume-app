@@ -1,6 +1,6 @@
 "use client"
 
-import { useArtistQuery, useDiscoverQuery, useGermannewQuery, useGermanrapQuery, useMixQuery, useOldhitsQuery, usePopularQuery, useSpeedupQuery, useTrackQuery } from '@/lib/services/apiFetch';
+import { useArtistQuery, useDiscoverQuery, useGermannewQuery, useGermanrapQuery, useHappyQuery, useMixQuery, useMixThreeQuery, useMogQuery, useOldhitsQuery, useOldschoolRapQuery, usePhonkQuery, usePopularQuery, useSpeedUp2Query, useSpeedupQuery, useTiktokQuery, useTrackQuery } from '@/lib/services/apiFetch';
 import React, { useState } from 'react'
 
 
@@ -44,8 +44,15 @@ interface TrackProps {
     const {data: germanrapData, isFetching: germanrapFetching, error: germanrapError} = useGermanrapQuery()
     const {data: oldhitsData, isFetching: oldhitsFetching, error: oldhitsError} = useOldhitsQuery()
     const {data: mixData, isFetching: mixIsFetching, error: mixError} =  useMixQuery()
+    const {data: happyData, isFetching: happyIsFetching, error: happyError} = useHappyQuery()
+    const {data: SpeedUp2Data, isFetching: SpeedUp2IsFetching, error: SpeedUp2Error} = useSpeedUp2Query()
+    const {data: mixThreeData, isFetching: mixThreeIsFetching, error: mixThreeError} = useMixThreeQuery()
+    const {data: tiktokData, isFetching: tiktokIsFetching, error: tiktokError} = useTiktokQuery()
+    const {data: oldschoolRapData, isFetching: oldschoolRapIsFetching, error: oldschoolRapError} = useOldschoolRapQuery()
+    const {data: mogData, isFetching: mogIsFetching, error: mogError} = useMogQuery()
+    const {data: PhonkData, isFetching: PhonkIsFetching, error: PhonkError} = usePhonkQuery()
 
-     console.log(mixData)
+    
 
   
     const renderSongs = (data: any) => {
@@ -162,6 +169,77 @@ interface TrackProps {
            ( <SongCardLoading/> )
            :(  renderSongs(oldhitsData) )}
             </Tab>
+
+            <Tab key="happy" title="Gute Laune">
+            <h1 className="text-white text-xl">Nostalgie</h1>
+              <p className="flex gap-1 text-white/70 items-center">
+                Gute Laune
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
+            { happyIsFetching  ? 
+           ( <SongCardLoading/> )
+           :(  renderSongs(happyData) )}
+            </Tab>
+
+
+            <Tab key="SpeedUp2" title="SpeedUp">
+            <h1 className="text-white text-xl">Nostalgie</h1>
+              <p className="flex gap-1 text-white/70 items-center">
+               SpeedUp
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
+            { oldhitsFetching  ? 
+           ( <SongCardLoading/> )
+           :(  renderSongs(SpeedUp2Data) )}
+            </Tab>
+
+
+            <Tab key="mixPop" title="Mix Pop">
+            <h1 className="text-white text-xl">Nostalgie</h1>
+              <p className="flex gap-1 text-white/70 items-center">
+                Mix Pop
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
+            { oldhitsFetching  ? 
+           ( <SongCardLoading/> )
+           :(  renderSongs(mixThreeData) )}
+            </Tab>
+
+
+            <Tab key="Tiktok" title="Tiktok">
+            <h1 className="text-white text-xl">Nostalgie</h1>
+              <p className="flex gap-1 text-white/70 items-center">
+                Tiktok
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
+            { oldhitsFetching  ? 
+           ( <SongCardLoading/> )
+           :(  renderSongs(tiktokData) )}
+            </Tab>
+
+
+            <Tab key="oldRap" title=" 2000s Rap">
+            <h1 className="text-white text-xl">Nostalgie</h1>
+              <p className="flex gap-1 text-white/70 items-center">
+                2000s Rap
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
+            { oldhitsFetching  ? 
+           ( <SongCardLoading/> )
+           :(  renderSongs(oldschoolRapData) )}
+            </Tab>
+
+            <Tab key="Gym" title="Gym">
+            <h1 className="text-white text-xl">Nostalgie</h1>
+              <p className="flex gap-1 text-white/70 items-center">
+                Gym Playlist
+                <FaFireFlameCurved className="h-3 text-white/60" />
+              </p>
+            { oldhitsFetching  ? 
+           ( <SongCardLoading/> )
+           :(  renderSongs(mogData) )}
+            </Tab>
+
 
           </Tabs>
         </div>
