@@ -4,7 +4,7 @@ function DashboardAmbientLight() {
   return (
     <>
       <div
-        className="lg:flex absolute inset-0 z-0  hidden  rounded-lg w-full h-48 
+        className="md:flex absolute inset-0 z-0  hidden  rounded-lg w-full h-48 
        bg-gradient-to-b from-indigo-300/20  "
       ></div>
       <div
