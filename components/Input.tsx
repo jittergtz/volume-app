@@ -62,20 +62,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const [moreSearchResults, setMoreSearchResults] = useState<any>([])
     
     useEffect(() => {
+    setNextIndex(25) 
     setMoreSearchResults([])
     },[ searchTerm])
 
 
-    const { ref, inView } = useInView();
+    const { ref, inView } = useInView()
     
     const [NextIndex, setNextIndex] = useState(25)
     
     useEffect(() => {
       if (inView) {
-        setNextIndex(NextIndex +25) // Neu zuweisen des Werts von Nextindex
+        setNextIndex(NextIndex +25) 
       }
-      console.log(NextIndex);
-    }, [inView]);
+      console.log(NextIndex)
+    }, [inView])
     
   
 
@@ -83,17 +84,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     useEffect(() => {
       async function fetchData() {
         try {
-          if (data !== undefined) {
-            // Check if artistId is available
-            const result = await fetchAdvancedSearch(data.next, NextIndex); // Pass the artistId here
-            setMoreSearchResults([...moreSearchResults ,...result]);
+          if (data !== undefined || NextIndex > 25) {
+            const result = await fetchAdvancedSearch(data.next, NextIndex)
+            setMoreSearchResults([...moreSearchResults ,...result])
           }
         } catch (error) {
-          console.error("Error fetching more search :", error);
+          console.error("Error fetching more search results:", error)
         }
       }
       fetchData();
-    }, [ data, NextIndex]); 
+    }, [ NextIndex])
  
 
     return (
