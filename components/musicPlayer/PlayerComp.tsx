@@ -104,8 +104,8 @@ const Player = () => {
           <div className="fixed z-40 bottom-20 mb-1 sm:mb-0  w-full sm:bottom-0">
             <div
               onClick={onOpen} // Full Player View
-              className=" backdrop-blur-xl  bg-black/30
-          px-1   rounded-2xl mx-1 "
+              className=" backdrop-blur-xl  bg-black/40
+               px-1 rounded-2xl mx-3 "
             >
               <div className="my-1 mb-2">
                 <NextModal //Full Player
@@ -127,17 +127,17 @@ const Player = () => {
                     <div className="gap-1 flex">
                       <img
                         alt="Album cover"
-                        className="object-cover rounded-lg "
-                        height={45}
-                        width={45}
+                        className="object-cover rounded-xl "
+                        height={48}
+                        width={48}
                         src={imageUrl}
                       />
 
                       <div className="flex flex-col mt-1">
-                        <h3 className="w-36   sm:w-full line-clamp-1  text-xs sm:text-small text-foreground/90">
+                        <h3 className="w-36   sm:w-full line-clamp-1  text-sm sm:text-small text-foreground/90">
                           {activeSong?.title ? activeSong?.title : ""}
                         </h3>
-                        <div className="mt-4 absolute z-50">
+                        <div className="mt-5 absolute z-50">
                           <Link href={`/dashboard/artist/${artistId}`}>
                             <p className="sm:text-small text-xs text-foreground/80 hover:text-neutral-100">
                               {activeSong?.artist?.name ??
