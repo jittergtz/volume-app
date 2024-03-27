@@ -22,8 +22,8 @@ export function LampDemo() {
                  
         <Image
           alt="AppMockup"
-          src="image/macbook-mockup.jpg"
-          className="max-h-[800px]"/>
+          src="image/mac9999.png"
+          className="max-h-[600px] mt-10"/>
 
       </motion.h1>
   

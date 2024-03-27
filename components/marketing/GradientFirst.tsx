@@ -40,7 +40,7 @@ function GradientFirst({imgValue, classNames, text}: {
 
          <img
           alt="Shadow"
-          className="blur-2xl opacity-0 absolute rounded-full"
+          className="blur-2xl sm:blur-3xl opacity-0 absolute rounded-full"
           src={imgValue}
          id='gradient-background'
         />
