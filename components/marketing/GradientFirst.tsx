@@ -29,7 +29,7 @@ function GradientFirst({imgValue, classNames, text}: {
 
 
   return (
-   <div className='bg-black flex flex-col md:flex-row h-[57rem] items-center justify-center p-5
+   <div className=' flex flex-col md:flex-row h-[50rem] items-center justify-center p-5
       rounded-2xl'>
          <Image
           alt='app player preview'

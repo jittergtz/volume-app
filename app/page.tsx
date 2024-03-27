@@ -46,13 +46,13 @@ export default function Home() {
 
 
 
-      <div className="flex justify-center pb-20 p-4">
+      <div className="flex justify-center pb-40 p-4">
         <GridOne />
       </div>
 
 
 
-      <div className="flex justify-center sm:pt-40 bg-black">
+      <div className="flex justify-center  rounded-t-[5rem] bg-gradient-to-b from-gray-950 to-black ">
         <GradientFirst
           text="Einfacher Musik finden die dir gefällt"
           classNames="text-transparent bg-clip-text bg-gradient-to-br from-neutral-200 to-neutral-400"

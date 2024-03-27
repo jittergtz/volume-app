@@ -27,7 +27,7 @@ export default function GridImgLp() {
     })
   }, [])
   return (
-    <div id="grid" className="flex opacity-5 flex-col items-center gap-10">
+    <div id="grid" className="flex opacity-0 flex-col items-center gap-10">
       <ChipNews text={"Änderugen mit Version 0.9"} />
       <div className="max-w-[1100px] gap-5 grid grid-cols-12 grid-rows-2 px-8">
         <Card className="col-span-12 bg-transparent shadow-none  sm:col-span-4 max-h-[380px]  ">
@@ -43,7 +43,7 @@ export default function GridImgLp() {
             removeWrapper
             alt="Card background"
             className="z-0  object-cover"
-            src="/image/grid-2b.png"
+            src="/image/grid-2y.png"
           />
         </Card>
         <Card className="col-span-12 bg-transparent shadow-none max-h-[380px]  sm:col-span-4 ">
@@ -51,7 +51,7 @@ export default function GridImgLp() {
             removeWrapper
             alt="Card background"
             className="z-0 w-full  object-cover"
-            src="/image/grid-3p.png"
+            src="/image/grid-3a.png"
           />
         </Card>
         <Card
