@@ -21,7 +21,6 @@ function GradientFirst({imgValue, classNames, text}: {
           toggleActions: "play none none  none",
         },
         duration: 3,
-        delay: 0.5,
         opacity: 1,
       })
     }, [])

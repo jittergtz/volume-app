@@ -3,7 +3,19 @@ import React from "react"
 import { SparklesCore } from "./Sparkles"
 import ChipNews from "../Next-Ui/ChipNews"
 
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+
+
 export function SparklesPreview() {
+
+  useGSAP(() => {
+    gsap.to("#sparkles", {
+      opacity: 1,
+      delay: 1.2,
+    })
+  }, [])
+
   return (
     <div className="h-[30rem] md:h-[40rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
       <div className="flex z-40 mb-5 flex-col items-center justify-center">
@@ -15,7 +27,7 @@ export function SparklesPreview() {
       >
         Volume
       </h1>
-      <div className="w-[40rem]  h-40 relative">
+      <div id="sparkles" className="w-[40rem] opacity-0  h-40 relative">
         {/* Gradients */}
         <div className="absolute inset-x-20   top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
@@ -23,12 +35,12 @@ export function SparklesPreview() {
         <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
 
         {/* Core component */}
-        <SparklesCore
+        <SparklesCore 
           background="transparent"
           minSize={0.4}
           maxSize={1}
           particleDensity={1200}
-          className="w-full h-full"
+          className="w-full h-full "
           particleColor="#FFFFFF"
         />
 

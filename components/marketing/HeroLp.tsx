@@ -17,7 +17,7 @@ function HeroLp() {
   useGSAP(() => {
     gsap.to("#spotlight", {
       opacity: 0.2,
-      delay: 0.5,
+      delay: 1,
       duration: 2,
     })
   }, [])
