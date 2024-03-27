@@ -40,7 +40,7 @@ export default function Home() {
 
       <HeroLp />
 
-      <div className="flex justify-center relative p-5 z-50">
+      <div className="flex justify-center relative p-5 ">
        <HeroImg/>
       </div>
 
