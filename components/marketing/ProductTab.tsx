@@ -8,13 +8,13 @@ import { Tabs } from "./Tabs";
 
 
 
-export function TabsDemo() {
+export function ProductTab() {
   const tabs = [
     {
       title: "Startseite",
       value: "home",
       content: (
-        <div className="w-full  overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-orange-700 to-violet-900">
+        <div className="w-full  overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-blue-950 to-fuchsia-600">
           <p className="font-normal text-2xl text-white/60">Startseite</p>
           <DummyContent
            srcValue="/image/dashboard-1.png"  />
@@ -47,7 +47,7 @@ export function TabsDemo() {
       title: "Künstler",
       value: "artist",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br  from-green-700 to-stone-400">
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br  from-green-700 to-stone-500">
           <p className="font-normal text-2xl text-white/60">Künstler</p>
           <DummyContent 
            srcValue="/image/dashboard-artist.png" />
