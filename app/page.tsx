@@ -1,4 +1,3 @@
-"use client"
 import HeroLp from "@/components/marketing/HeroLp"
 import { FloatingNavComp } from "@/components/marketing/ui/Floating-navbar"
 import { IconHome, IconMessage, IconNews, IconUser } from "@tabler/icons-react"
@@ -17,6 +16,7 @@ import HeadingText from "@/components/marketing/HeadingText"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import HeroImg from "@/components/marketing/HeroImg"
 
 export default function Home() {
   const navItems = [
@@ -32,46 +32,35 @@ export default function Home() {
     },
   ]
 
-
-
-
   return (
     <main className="bg-gray-950 ">
       <div className="felx z-50">
-      <FloatingNavComp navItems={navItems} />
+        <FloatingNavComp navItems={navItems} />
       </div>
 
       <HeroLp />
 
-
-
-
-      <div className="flex justify-center pb-40 p-4">
-        <GridOne />
+      <div className="flex justify-center relative p-5 z-50">
+       <HeroImg/>
       </div>
-
-
 
       <div className="flex justify-center  rounded-t-[5rem] bg-gradient-to-b from-gray-950 to-black ">
         <GradientFirst
           text="Einfacher Musik finden die dir gefällt"
-          classNames="text-transparent bg-clip-text bg-gradient-to-br from-neutral-200 to-neutral-400"
+          classNames="text-transparent bg-clip-text bg-gradient-to-br from-neutral-200 to-neutral-500"
           imgValue="https://e-cdns-images.dzcdn.net/images/cover/4ba495b1f2534a515f431dba70006972/1000x1000-000000-80-0-0.jpg"
         />
       </div>
 
-
-    <div className="flex justify-center pb-10 bg-black">
-    <HeadingText/>
-    </div>
- 
+      <div className="flex justify-center pb-10 bg-black">
+        <HeadingText />
+      </div>
 
       <div className="flex justify-center py-10 bg-black">
         <GridImgLp />
       </div>
 
-
-    {/* scroll reveal text 1 */}
+      {/* scroll reveal text 1 */}
       <div className="flex justify-center bg-black  p-5">
         <div className="max-w-[800px]">
           <TextReveal
@@ -84,14 +73,11 @@ export default function Home() {
         </div>
       </div>
 
-
-
       <div className="bg-black ">
         <LampDemo />
       </div>
 
-
-     {/* scroll reveal text 2 */}
+      {/* scroll reveal text 2 */}
       <div className="flex justify-center  ">
         <div className="flex justify-start max-w-4xl px-5 sm:mx-20">
           <TextReveal
@@ -102,15 +88,16 @@ export default function Home() {
           at laudantium architecto aperiam num"
           />
         </div>
-       </div>
+      </div>
 
-       <div className="flex justify-center pb-40">
-       <ProductTab/>
+      <div className="flex justify-center pb-40 p-4">
+        <GridOne />
+      </div>
 
-       </div>
+      <div className="flex justify-center pb-40">
+        <ProductTab />
+      </div>
 
-  
-    
       <footer>
         <Footer />
       </footer>

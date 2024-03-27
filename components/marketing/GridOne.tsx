@@ -17,14 +17,14 @@ function GridOne() {
       </Chip>
   
     <div
-      className="flex flex-col bg-gradient-to-tr from-neutral-900 to-neutral-950 items-center p-5 lg:p-0 z-40  border border-neutral-900  shadow rounded-xl 
+      className="flex flex-col bg-gradient-to-tr from-neutral-900 to-neutral-950 items-center py-3 px-1 lg:p-0 z-40  border border-neutral-900  shadow rounded-xl 
      "
     >
 
       <div className="flex gap-2">
         <div
           className="flex flex-col  justify-center pl-3  z-50 text-4xl lg:text-5xl text-transparent
-        bg-clip-text bg-gradient-to-l from-neutral-100  to-neutral-400 w-48 lg:ml-5
+        bg-clip-text bg-gradient-to-r from-neutral-300  to-neutral-500 w-48 lg:ml-5
         "
         >
           Volume{" "}

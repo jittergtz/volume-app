@@ -5,12 +5,12 @@ import ChipNews from "../Next-Ui/ChipNews"
 
 export function SparklesPreview() {
   return (
-    <div className="h-[40rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-[30rem] md:h-[40rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
       <div className="flex z-40 mb-5 flex-col items-center justify-center">
         <ChipNews text={"Neuigkeiten Volume 0.9 🎉"} />
       </div>
       <h1
-        className="text-8xl z-40  text-center sm:text-[11rem]  md:text-[13rem] xl:text-[16rem]   tracking-tighter  text-transparent
+        className="text-8xl md:text-[13rem] z-40  text-center    tracking-tighter  text-transparent
         bg-clip-text bg-gradient-to-b from-white to-neutral-500 "
       >
         Volume
