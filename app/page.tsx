@@ -18,6 +18,7 @@ import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import HeroImg from "@/components/marketing/HeroImg"
 import InfoText from "@/components/marketing/InfoText"
+import FooterText from "@/components/marketing/FooterText"
 
 export default function Home() {
   const navItems = [
@@ -101,6 +102,10 @@ export default function Home() {
       <div className="flex  justify-center pb-40 p-2">
         <ProductTab />
       </div>
+
+  
+       <FooterText/>
+ 
 
       <footer>
         <Footer />
