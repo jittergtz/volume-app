@@ -20,9 +20,9 @@ export default function GridImgLp() {
       scrollTrigger: {
         trigger: "#grid",
         start: "top center",
-        toggleActions: "play none none  none",
+        toggleActions: "play none resume reverse",
       },
-      duration: 3,
+      duration: 1.3,
       opacity: 1,
     })
   }, [])

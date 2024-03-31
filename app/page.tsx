@@ -17,6 +17,7 @@ import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import HeroImg from "@/components/marketing/HeroImg"
+import InfoText from "@/components/marketing/InfoText"
 
 export default function Home() {
   const navItems = [
@@ -64,7 +65,7 @@ export default function Home() {
       <div className="flex justify-center bg-black  p-5">
         <div className="max-w-[800px]">
           <TextReveal
-            color="text-neutral-100"
+            color="text-neutral-300"
             text=" 2Lorem ipsum dolor sit amet consectetur, 
           adipisicing elit. Accusamus assumenda, ipsum voluptatibus 
           eveniet possimus expedita tempora nihil. Quos expedita impedit
@@ -75,13 +76,16 @@ export default function Home() {
 
       <div className="bg-black ">
         <LampDemo />
+        <div className="h-96">
+          <InfoText/>
+        </div>
       </div>
 
       {/* scroll reveal text 2 */}
       <div className="flex justify-center  ">
         <div className="flex justify-start max-w-4xl px-5 sm:mx-20">
           <TextReveal
-            color="text-indigo-300 "
+            color="text-indigo-200 "
             text=" 2Lorem ipsum dolor sit amet consectetur, 
          uaerat iste est icing elit. Accusamus assumenda, ipsum voluptatibus 
          eveniet possimus expedita tempora nihil. Quos expedita impedit
@@ -90,11 +94,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex justify-center pb-40 p-4">
+      <div className="flex justify-center  p-4">
         <GridOne />
       </div>
 
-      <div className="flex justify-center pb-40">
+      <div className="flex  justify-center pb-40 p-2">
         <ProductTab />
       </div>
 

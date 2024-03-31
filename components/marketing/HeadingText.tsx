@@ -11,7 +11,7 @@ function HeadingText() {
       scrollTrigger: {
         trigger: "#heading-2",
         start: "top center",
-        toggleActions: "play none none  none",
+        toggleActions: "play none resume reverse",
       },
       y: 200,
       duration: 2,

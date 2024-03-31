@@ -16,13 +16,13 @@ export function LampDemo() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="mt-8 pb-40   bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+        className="mt-8 pb-5   bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
         Dein Sound <br /> einfacher entdecken
                  
         <Image
           alt="AppMockup"
-          src="image/mac9999.png"
+          src="image/mac777.png"
           className="max-h-[600px] mt-10"/>
 
       </motion.h1>

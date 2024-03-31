@@ -18,7 +18,7 @@ function GradientFirst({imgValue, classNames, text}: {
         scrollTrigger: {
           trigger: "#gradient-background",
           start: "top center",
-          toggleActions: "play none none  none",
+          toggleActions: "play none resume reverse",
         },
         duration: 3,
         opacity: 1,
