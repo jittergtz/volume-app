@@ -8,6 +8,7 @@ import { twMerge } from 'tailwind-merge';
 import { playPause, setActiveSong } from '@/lib/features/playerSlice';
 import PlayPause from '../PlayPause';
 import { RootState } from '@/lib/store';
+import Image from 'next/image';
 
 
 
@@ -54,7 +55,7 @@ function ArtistTopSongCard ({ item, index, data,}: {
     <div key={item.id} className={twMerge('bg-neutral-800 relative border border-neutral-700 p-2 rounded-xl flex flex-col justify-center animate-appearance-in ',
         isPlaying && activeSong?.id === item.id && 'shadow-lg shadow-neutral-100/40'
       )}>
-       <img
+       <Image
          className='rounded-xl'
          height={270}
          width={270}
@@ -63,8 +64,8 @@ function ArtistTopSongCard ({ item, index, data,}: {
        />
 
 
-       <span className='overflow-x-hidden line-clamp-1'>{item.title}</span>
-       <span className='text-xs overflow-x-hidden line-clamp-1'>{item.artist.name}</span>
+       <span className='overflow-x-hidden text-neutral-200 line-clamp-1'>{item.title}</span>
+       <span className='text-xs overflow-x-hidden text-neutral-400 line-clamp-1'>{item.artist.name}</span>
    
        <PlayPause
               isPlaying={isPlaying}

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import { FaPlay } from 'react-icons/fa6';
@@ -39,14 +40,15 @@ function ArtistCard ({ item, index, data, isPlaying, activeSong}: {
      
      <div className='absolute rounded-lg
       overflow-hidden right-0 w-full -z-50 '>
+     { // eslint-disable-next-line @next/next/no-img-element
       <img
           alt="Shadow"
           className=" blur-2xl h-[70px]   w-full "
           src={item.artist.picture}
         />
-        </div>
+      } </div>
 
-        <img
+        <Image
          className='rounded-full w-16 h-16 '
          height={150}
          width={150}

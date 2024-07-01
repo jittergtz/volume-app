@@ -96,7 +96,7 @@ function ArtistPageBody() {
          <ArtistPageHeader
          artistData={artistData}/>
 
-        <div className="bg-neutral-950 ml-2 lg:ml-6 flex border-neutral-800">
+        <div className="bg-neutral-950 ml-2 lg:ml-6 flex border-neutral-800 text-neutral-200">
 
         <h1 className="text-md opacity-55 px-3 mt-12">
         {artistData?.name}`s 

@@ -37,7 +37,7 @@ const ArtistFollowCard = async () => {
           src={artist?.picture_xl}
           />
           <div className=''>
-          <h1 className=''>{artist?.name}</h1>
+          <h1 className='text-neutral-200'>{artist?.name}</h1>
           <p className='text-sm text-neutral-400'>
             Künstler
           </p>

@@ -9,6 +9,7 @@ import { playPause, setActiveSong } from '@/lib/features/playerSlice';
 import PlayPause from './PlayPause';
 import LoadingSkeleton from './Next-Ui/LoadingSkeleton';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 
@@ -53,10 +54,10 @@ function SongCard ({ item, index, data, isPlaying, activeSong}: {
 
       
   return (
-    <div key={item.id} className={twMerge('bg-neutral-800 relative border border-neutral-700 p-2 rounded-xl flex flex-col justify-center animate-appearance-in ',
+    <div key={item.id} className={twMerge('bg-neutral-800 relative text-neutral-200 border border-neutral-700 p-2 rounded-xl flex flex-col justify-center animate-appearance-in ',
         isPlaying && activeSong?.id === item.id && 'shadow-lg shadow-neutral-100/40'
       )}>
-       <img
+       <Image
          className='rounded-xl'
          height={270}
          width={270}

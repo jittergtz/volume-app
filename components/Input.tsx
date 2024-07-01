@@ -99,7 +99,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div>
         <div className="flex sticky top-6 z-50 items-center px-2 rounded-xl bg-neutral-900">
-          <IoSearchOutline size={20} />
+          <IoSearchOutline className="text-neutral-200" size={20} />
           <input
             type="text"
             autoComplete="off"
@@ -117,10 +117,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             py-3 
           
             file:border-0 
-            
+            text-neutral-200
             file:text-sm 
             file:font-medium 
-            placeholder:text-neutral-300 
+            placeholder:text-neutral-500 
             disabled:cursor-not-allowed 
             disabled:opacity-50
             focus:outline-none
