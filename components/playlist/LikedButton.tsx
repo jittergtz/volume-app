@@ -63,7 +63,7 @@ const LikedButton: React.FC<LikeButtonProps> = ({ song }) => {
         .eq("song_id", song.id || song.song_id)
 
       if (error) {
-        toast.error(error.message)
+        toast.error("Ein Fehler aufgetreten!")
       } else {
         setIsLiked(false)
       }
@@ -80,7 +80,7 @@ const LikedButton: React.FC<LikeButtonProps> = ({ song }) => {
       })
 
       if (error) {
-        toast.error(error.message)
+        toast.error("Ein Fehler aufgetreten!")
       } else {
         setIsLiked(true)
         toast.custom((t) => (

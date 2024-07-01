@@ -12,7 +12,7 @@ const ButtonLogin = forwardRef<HTMLButtonElement, ButtonLoginProps>(
         ref={ref}
         {...props}
         color='primary'
-        className='rounded-full'
+        className='rounded-full text-neutral-200'
       >
         {children}
       </button>

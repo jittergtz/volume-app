@@ -1,19 +1,34 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   swcMinify: true,  
-};
-
-// Configuration object tells the next-pwa plugin 
-const withPWA = require("next-pwa")({
-  dest: "public", // Destination directory for the PWA files
-  disable: process.env.NODE_ENV === "development", // Disable PWA in development mode
-  register: true, // Register the PWA service worker
-  skipWaiting: true, // Skip waiting for service worker activation
-});
-
-module.exports = withPWA({
-  ...nextConfig, // Merge nextConfig with the configurations applied by withPWA
   images: {
     domains: ['api.deezer.com', 'e-cdns-images.dzcdn.net', 'images.unsplash.com'],
+  },
+};
+
+const withPWA = require("next-pwa")({
+  dest: "public", // Zielverzeichnis für die PWA-Dateien
+  disable: process.env.NODE_ENV === "development", // Deaktiviert PWA im Entwicklungsmodus
+  register: true, // Registriert den PWA Service Worker
+  skipWaiting: true, // Überspringt das Warten auf die Aktivierung des Service Workers
+});
+
+const webpack = require('webpack');
+
+module.exports = withPWA({
+  ...nextConfig,
+  webpack: (config, { dev, isServer }) => {
+    // Entfernt console.log im Client-seitigen Produktionsbuild
+    if (!dev && !isServer) {
+      config.plugins.push(
+        new webpack.DefinePlugin({
+          'console.log': '(() => {})', // Ersetzt console.log durch eine leere Funktion
+        })
+      );
+    }
+
+    // Hier können Sie weitere Webpack-Konfigurationen hinzufügen, wenn nötig.
+    
+    return config;
   },
 });

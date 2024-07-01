@@ -21,6 +21,7 @@ import LikedButton from "../playlist/LikedButton"
 import SongCard from "../SongCard"
 import Link from "next/link"
 import { useDisclosure } from "@nextui-org/react"
+import Image from "next/image"
 
 const Player = () => {
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
@@ -125,7 +126,7 @@ const Player = () => {
                 <div>
                   <div className="flex md:gap-4 items-center justify-between ">
                     <div className="gap-1 flex">
-                      <img
+                      <Image
                         alt="Album cover"
                         className="object-cover rounded-xl "
                         height={48}
@@ -178,7 +179,9 @@ const Player = () => {
                             />
 
                             <div className="flex  items-center justify-center ">
+                         
                               <LikedButton song={activeSong} /> 
+                            
                             </div>
                           </div>
                         </div>

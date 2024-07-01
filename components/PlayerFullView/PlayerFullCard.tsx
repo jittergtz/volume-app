@@ -129,7 +129,8 @@ function PlayerFullCard({ onClose, onOpen }: any) {
                 shadow="md"
                 src={imageUrl}
               />
-              <img id="animate" alt="Shadow" className={`${isSM ? 'image-card-shadow' : 'image-card-shadow-mobile'}`} src={imageUrl} />
+             { // eslint-disable-next-line @next/next/no-img-element
+              <img id="animate" alt="Shadow" className={`${isSM ? 'image-card-shadow' : 'image-card-shadow-mobile'}`} src={imageUrl} /> }
             </>
           ) : (
             <Image
