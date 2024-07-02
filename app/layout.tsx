@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Inter, Roboto, Nunito_Sans } from "next/font/google"
+import { Inter, Roboto, Nunito_Sans, Raleway, Poppins,  } from "next/font/google"
 import "./globals.css"
 import { NextUIProvider } from "@nextui-org/system"
 import { Providers } from "./providers"
@@ -12,9 +12,9 @@ import { ReduxProvider } from "@/lib/provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
-const roboto = Roboto({
+const mulish = Raleway({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400","600", "700" ]
 })
 
 const nunito = Nunito_Sans({
@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={nunito.className}>
+      <body className={mulish.className}>
         <ReduxProvider>
           <UserProvider>
         <Providers>

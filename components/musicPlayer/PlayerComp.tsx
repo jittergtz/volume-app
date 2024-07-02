@@ -174,13 +174,13 @@ const Player = () => {
 
                             <MdSkipNext
                               size={30}
-                              className="cursor-pointer z-50 text-neutral-400"
+                              className="cursor-pointer z-50 hover:text-neutral-200 text-neutral-400"
                               onClick={handleNextSong}
                             />
 
                             <div className="flex  items-center justify-center ">
                          
-                              <LikedButton song={activeSong} /> 
+                           
                             
                             </div>
                           </div>

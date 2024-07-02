@@ -19,97 +19,31 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import HeroImg from "@/components/marketing/HeroImg"
 import InfoText from "@/components/marketing/InfoText"
 import FooterText from "@/components/marketing/FooterText"
+import Nav from "@/components/marketing/Nav"
+import CardLP from "@/components/marketing/CardLP"
+import SectionA from "@/components/marketing/ui/SectionA"
+import SectionB from "@/components/marketing/ui/SectionB"
 
 export default function Home() {
-  const navItems = [
-    {
-      name: "Volume",
-      link: "/dashboard",
-      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
-    },
-    {
-      name: "Neues",
-      link: "/news",
-      icon: <IconNews className="h-4 w-4 text-neutral-500 dark:text-white" />,
-    },
-  ]
+
 
   return (
-    <main className="bg-gray-950 ">
-      <div className="felx z-50">
-        <FloatingNavComp navItems={navItems} />
-      </div>
+    <main className="bg-neutral-100  w-full ">
+  
+      
+        <Nav />
+   
 
       <HeroLp />
 
-      <div className="flex justify-center relative p-5 ">
-       <HeroImg/>
-      </div>
+      <SectionA/>
 
-      <div className="flex justify-center  rounded-t-[5rem] bg-gradient-to-b from-gray-950 to-black ">
-        <GradientFirst
-          text="Einfacher Musik finden die dir gefällt"
-          classNames="text-transparent bg-clip-text bg-gradient-to-br from-neutral-200 to-neutral-500"
-          imgValue="https://e-cdns-images.dzcdn.net/images/cover/4ba495b1f2534a515f431dba70006972/1000x1000-000000-80-0-0.jpg"
-        />
-      </div>
-
-      <div className="flex justify-center pb-10 bg-black">
-        <HeadingText />
-      </div>
-
-      <div className="flex justify-center py-10 bg-black">
-        <GridImgLp />
-      </div>
-
-      {/* scroll reveal text 1 */}
-      <div className="flex justify-center bg-black  p-5">
-        <div className="max-w-[800px]">
-          <TextReveal
-            color="text-neutral-300"
-            text=" 2Lorem ipsum dolor sit amet consectetur, 
-          adipisicing elit. Accusamus assumenda, ipsum voluptatibus 
-          eveniet possimus expedita tempora nihil. Quos expedita impedit
-           at laudantium architecto aperiam numquam, et possimus quaerat iste est?"
-          />
-        </div>
-      </div>
-
-      <div className="bg-black ">
-        <LampDemo />
-        <div className="h-96">
-          <InfoText/>
-        </div>
-      </div>
-
-      {/* scroll reveal text 2 */}
-      <div className="flex justify-center  ">
-        <div className="flex justify-start max-w-4xl px-5 sm:mx-20">
-          <TextReveal
-            color="text-indigo-200 "
-            text=" 2Lorem ipsum dolor sit amet consectetur, 
-         uaerat iste est icing elit. Accusamus assumenda, ipsum voluptatibus 
-         eveniet possimus expedita tempora nihil. Quos expedita impedit
-          at laudantium architecto aperiam num"
-          />
-        </div>
-      </div>
-
-      <div className="flex justify-center  p-4">
-        <GridOne />
-      </div>
-
-      <div className="flex  justify-center pb-40 p-2">
-        <ProductTab />
-      </div>
+      <SectionB/>
+     
 
   
-       <FooterText/>
- 
 
-      <footer>
-        <Footer />
-      </footer>
+    
     </main>
   )
 }

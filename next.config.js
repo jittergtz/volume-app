@@ -18,16 +18,16 @@ const webpack = require('webpack');
 module.exports = withPWA({
   ...nextConfig,
   webpack: (config, { dev, isServer }) => {
-    // Entfernt console.log im Client-seitigen Produktionsbuild
+
     if (!dev && !isServer) {
       config.plugins.push(
         new webpack.DefinePlugin({
-          'console.log': '(() => {})', // Ersetzt console.log durch eine leere Funktion
+          'console.log': '(() => {})', 
         })
       );
     }
 
-    // Hier können Sie weitere Webpack-Konfigurationen hinzufügen, wenn nötig.
+
     
     return config;
   },

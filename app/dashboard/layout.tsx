@@ -9,10 +9,18 @@ import SupabaseProvider from "@/providers/SupabaseProvider"
 import ToasterProvider from "@/providers/ToasterProvider"
 import UserProvider from "@/providers/UserProvider"
 import { Metadata } from "next"
+import { Poppins, Mulish, Lato, Nunito_Sans } from "next/font/google"
 
 interface SidebarProps {
   children: React.ReactNode
 }
+
+
+const mulish = Nunito_Sans({
+  subsets: ["latin"],
+  weight: "400",
+})
+
 
 // Metadatenexport
 export const metadata: Metadata = {
@@ -40,6 +48,7 @@ export const viewport = "minimum-scale=1, initial-scale=1, width=device-width, s
 export default function Layout({ children }: SidebarProps) {
   return (
     <>
+     <body className={mulish.className}>
       <main className="bg-black h-full w-full">
         <ReduxProvider>
           <ToasterProvider />
@@ -53,6 +62,7 @@ export default function Layout({ children }: SidebarProps) {
           </SupabaseProvider>
         </ReduxProvider>
       </main>
+      </body>
     </>
   )
 }

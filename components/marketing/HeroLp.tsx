@@ -5,41 +5,38 @@ import { SparklesPreview } from "./SparklesPrev"
 import ButtonToDashboard from "./ButtonToDashboard"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
+import { BiChevronRight } from "react-icons/bi"
+import { VelocityScroll } from "./ui/textXrotate"
 
 function HeroLp() {
-  useGSAP(() => {
-    gsap.to("#hero-text", {
-      opacity: 1,
-      delay: 0.5,
-    })
-  }, [])
-
-  useGSAP(() => {
-    gsap.to("#spotlight", {
-      opacity: 0.2,
-      delay: 1,
-      duration: 2,
-    })
-  }, [])
+ 
 
   return (
-    <>
-      <div
-        id="hero-text"
-        className=" w-full opacity-0   flex  flex-col justify-center items-center "
-      >
-        <div
-          id="spotlight"
-          className="absolute top-0 left-16 lg:-top-28 xl:-top-96 lg:left-28 xl:left-80 z-50 -rotate-45 h-96 w-24 md:h-[40rem] md:w-[10rem] lg:h-[48rem] xl:h-[80rem] blur-3xl bg-indigo-300 opacity-0"
-        ></div>
+    <div className="h-[80vh] bg-neutral-100  w-full px-2 pb-4 ">
 
-        <SparklesPreview />
 
-        <div className="flex justify-cente z-50 mb-5  -mt-40  ">
-          <ButtonToDashboard />
+       
+       <div className="flex flex-col  justify-center w-full pt-56 ">
+        <h1 className="text-center font-[600] md:font-[400] py-2 z-40 leading-tight text-transparent bg-clip-text tracking-tighter bg-gradient-to-b from-neutral-900 to-neutral-700 text-[42px] md:text-7xl  lg:text-8xl  mx-auto">
+        Volume find Music <br /> you love faster
+        </h1>
+
+        <div className="flex  justify-center gap-10  mt-8">
+        <button className="  z-40 flex items-center  px-4 p-2  bg-neutral-900 hover:bg-black/70 text-left text-neutral-200 rounded-full">
+        Jetzt Starten <BiChevronRight className='text-neutral-00' size={24}/>
+        </button>
+          <button className="text-neutral-800  z-40 px-4 p-2 rounded-full hover:bg-black/20">Neues</button>
         </div>
-      </div>
-    </>
+    
+  
+       </div>
+      
+   
+
+
+
+  
+    </div>
   )
 }
 
