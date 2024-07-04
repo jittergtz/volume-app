@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-function PlayLogic({ isPlaying, activeSong, volume, seekTime, repeat, onEnded}: {
+function PlayLogic({ isPlaying, activeSong, volume, seekTime, repeat, onEnded }: {
     isPlaying: any,
     activeSong: any,
     volume: number,
@@ -11,14 +11,20 @@ function PlayLogic({ isPlaying, activeSong, volume, seekTime, repeat, onEnded}: 
     const audioRef = useRef<HTMLAudioElement>(null);
 
     useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.volume = 0.8; // Setzt die Lautstärke auf 80%
+        }
+    }, []); // Dieser Effekt wird nur einmal nach der Initialisierung ausgeführt
+
+    useEffect(() => {
         if (audioRef.current && isPlaying) {
             const playPromise = audioRef.current.play();
             if (playPromise !== undefined) {
                 playPromise.then(_ => {
-                    // Audio has started playing
+                    // Audio hat begonnen zu spielen
                 }).catch(error => {
-                    // Handle play error
-                    console.error('Error playing audio:', error);
+                    // Fehler beim Abspielen behandeln
+                    console.error('Fehler beim Abspielen des Audios:', error);
                 });
             }
         } else if (audioRef.current && !isPlaying) {

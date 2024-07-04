@@ -41,7 +41,7 @@ export default function Home() {
       <SectionB/>
      
 
-  
+     <Footer/>
 
     
     </main>

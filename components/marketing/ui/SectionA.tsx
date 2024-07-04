@@ -40,15 +40,14 @@ function SectionA() {
     <div className='w-full max-w-5xl flex flex-col gap-20 items-center'>
        
        <div className='w-full  overflow-hidden bg-black rounded-3xl '>
-       <video
-    loop
-    muted
-    autoPlay
-    playsInline
-    className='w-full h-auto pointer-events-none'
-  >
-    <source type='video/mp4' src='/image/io.mp4' />
-  </video>
+      <video
+        loop
+        muted
+        autoPlay
+        playsInline
+        className='w-full h-auto pointer-events-none'>
+        <source type='video/mp4' src='/image/io.mp4' />
+      </video>
        </div>
 
 
