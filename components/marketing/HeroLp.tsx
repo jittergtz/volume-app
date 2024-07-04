@@ -7,17 +7,25 @@ import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { BiChevronRight } from "react-icons/bi"
 import { VelocityScroll } from "./ui/textXrotate"
+import { motion } from "framer-motion"
 
 function HeroLp() {
- 
+  const variants1 = {
+    hidden: { filter: "blur(10px)", opacity: 0 },
+    visible: { filter: "blur(0px)", opacity: 1 },
+  };
 
   return (
     <div className="h-[80vh] bg-neutral-100  w-full px-2 pb-4 ">
 
 
        
-       <div className="flex flex-col  justify-center w-full pt-56 ">
-        <h1 className="text-center font-[600] md:font-[400] py-2 z-40 leading-tight text-transparent bg-clip-text tracking-tighter bg-gradient-to-b from-neutral-900 to-neutral-700 text-[42px] md:text-7xl  lg:text-8xl  mx-auto">
+       <motion.div
+         initial="hidden"
+         animate="visible"
+         transition={{ duration: 1 }}
+         variants={variants1} className="flex flex-col  justify-center w-full items-center h-full ">
+        <h1 className="text-center font-[600] md:font-[400] py-2 z-40 leading-tight  text-transparent bg-clip-text tracking-tighter bg-gradient-to-b from-neutral-900 to-neutral-700 text-[42px] md:text-7xl  lg:text-8xl  mx-auto">
         Volume find Music <br /> you love faster
         </h1>
 
@@ -29,7 +37,7 @@ function HeroLp() {
         </div>
     
   
-       </div>
+       </motion.div>
       
    
 

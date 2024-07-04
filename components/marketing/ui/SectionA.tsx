@@ -1,4 +1,6 @@
 import React from 'react'
+import TextReveal from './textReveal';
+
 
 
 interface gridObject {
@@ -35,17 +37,25 @@ function SectionA() {
 
   return (
     <div className='w-full  bg-neutral-100  p-5 flex items-center justify-center '>
-    <div className='w-full max-w-5xl flex justify-center'>
-        <section className=' grid  gap-5 grid-cols-1 sm:grid-cols-2 '>
-            {grid.map((data: gridObject) => (
-               <div key={data.name} className='bg-gradient-to-bl text-2xl from-neutral-900 to-black p-5 text-neutral-200 border border-neutral-800 h-72 w-full rounded-3xl'>
-               {data.name}
-               <p className='text-neutral-400 text-lg mt-5'>
-                {data.description}
-               </p>
-              </div>
-            ))}
-           
+    <div className='w-full max-w-5xl flex flex-col gap-20 items-center'>
+       
+       <div className='w-full  overflow-hidden bg-black rounded-3xl '>
+       <video
+    loop
+    muted
+    autoPlay
+    playsInline
+    className='w-full h-auto pointer-events-none'
+  >
+    <source type='video/mp4' src='/image/io.mp4' />
+  </video>
+       </div>
+
+
+
+        <section className=' w-full flex flex-col gap-5 '>
+        <TextReveal text="In the new Space" paragraph='Der Jahresabschluss ist in der Betriebswirtschaftslehre und speziell im Rechnungswesen der Abschluss der Buchführung für ein bestimmtes Geschäftsjahr, das am Bilanzstichtag endet. Neben dem Jahresabschluss kann es auch Zwischenberichterstattungen geben, die inhaltlich und formell dem Jahresabschluss ähnlich sind. Wikipedia' />
+         
         </section>
     </div>
         
