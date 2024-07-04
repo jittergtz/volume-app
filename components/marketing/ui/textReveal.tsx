@@ -26,13 +26,13 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
   const paragraphWords = paragraph ? paragraph.split(" ") : [];
 
   // Berechnung der Range für Headline-Animation
-  const titleWordRanges = titleWords.map((_, i) => [
+  const titleWordRanges: [number, number][] = titleWords.map((_, i) => [
     i / titleWords.length / 2,        // Verteilen auf erste Hälfte (0 bis 0.5)
     (i + 1) / titleWords.length / 2,
   ]);
 
   // Berechnung der Range für Paragraph-Animation
-  const paragraphWordRanges = paragraphWords.map((_, i) => [
+  const paragraphWordRanges: [number, number][] = paragraphWords.map((_, i) => [
     0.5 + i / paragraphWords.length / 2,  // Verteilen auf zweite Hälfte (0.5 bis 1)
     0.5 + (i + 1) / paragraphWords.length / 2,
   ]);
