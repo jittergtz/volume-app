@@ -1,5 +1,6 @@
 import { DotBackgroundDemo } from "@/components/Next-Ui/DotBackground"
-import { TracingBeamComp } from "@/components/Next-Ui/TracingBeamComp"
+import { NewsPosts } from "@/components/Next-Ui/NewsPosts"
+
 import Link from "next/link"
 import React from "react"
 import { FaGithub } from "react-icons/fa"
@@ -12,7 +13,7 @@ function page() {
       <div className="w-4xl">
         <DotBackgroundDemo />
 
-        <TracingBeamComp />
+        <NewsPosts/>
       </div>
     </div>
   )

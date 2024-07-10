@@ -11,7 +11,7 @@ export function DotBackgroundDemo() {
         Updates & Aktuelles
       </p>
       <p className="text-sm text-center relative z-20 text-neutral-300 ">
-        Version 0.8 
+        Version 1.0
       </p>
       </p>
     

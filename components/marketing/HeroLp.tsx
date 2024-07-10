@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react"
 import { BiChevronRight } from "react-icons/bi"
 import { VelocityScroll } from "./ui/textXrotate"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 function HeroLp() {
   const variants1 = {
@@ -30,10 +31,16 @@ function HeroLp() {
         </h1>
 
         <div className="flex  justify-center gap-10  mt-8">
-        <button className="  z-40 flex items-center  px-4 p-2  bg-neutral-900 hover:bg-black/70 text-left text-neutral-200 rounded-full">
+        <Link href={"/dashboard"} className="  z-40 flex items-center  px-4 p-2  bg-neutral-900 hover:bg-black/70 text-left text-neutral-200 rounded-full">
         Jetzt Starten <BiChevronRight className='text-neutral-00' size={24}/>
-        </button>
-          <button className="text-neutral-800  z-40 px-4 p-2 rounded-full hover:bg-black/20">Neues</button>
+        </Link>
+       
+          
+        
+          <Link href={"/news"}  className="text-neutral-800  z-40 px-4 p-2 rounded-full hover:bg-black/20">
+          Neues
+          </Link>
+        
         </div>
     
   
