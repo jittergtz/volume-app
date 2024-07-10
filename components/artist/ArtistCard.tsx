@@ -48,7 +48,7 @@ function ArtistCard ({ item, index, data, isPlaying, activeSong}: {
         />
       } </div>
 
-        <Image
+        <img
          className='rounded-full w-16 h-16 '
          height={150}
          width={150}

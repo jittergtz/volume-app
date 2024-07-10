@@ -93,7 +93,7 @@ const FollowComp: React.FC<FollowProps> = ({ artist }) => {
             } flex items-center gap-2 bg-white/20 backdrop-blur-xl  animate-appearance-in shadow-lg p-1 px-3 rounded-lg pointer-events-auto  ring-1 ring-black ring-opacity-5`}
           >
             <div className="flex items-center gap-2 justify-center">
-            <Image
+            <img
             alt="artist img"
             src={artist.picture_medium}
             className="h-10 w-10 rounded-full"

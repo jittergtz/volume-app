@@ -55,7 +55,7 @@ function ArtistTopSongCard ({ item, index, data,}: {
     <div key={item.id} className={twMerge('bg-neutral-800 relative border border-neutral-700 p-2 rounded-xl flex flex-col justify-center animate-appearance-in ',
         isPlaying && activeSong?.id === item.id && 'shadow-lg shadow-neutral-100/40'
       )}>
-       <Image
+       <img
          className='rounded-xl'
          height={270}
          width={270}

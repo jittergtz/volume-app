@@ -89,7 +89,7 @@ const LikedButton: React.FC<LikeButtonProps> = ({ song }) => {
               t.visible ? "animate-enter" : "animate-leave"
             } w-64  flex items-center gap-2 bg-white/20 backdrop-blur-xl shadow-lg  animate-appearance-in rounded-lg pointer-events-auto  ring-1 ring-black ring-opacity-5`}
           >
-            <Image
+            <img
               alt="favoriten img"
               src="/image/favoriten-icon.svg"
               className="h-10 w-10 rounded-md"

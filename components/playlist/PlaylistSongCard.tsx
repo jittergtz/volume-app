@@ -42,7 +42,7 @@ function PlaylistSongCard({index, data, item ,isPlaying, activeSong}: {
 
   return (
     <div key={item.song_id}  className="flex relative  gap-2 w-full sm:hover:bg-neutral-900 rounded-lg">
-    <Image
+    <img
       className="h-16 w-16  md:h-20 md:w-20 rounded-lg"
       src={item.song_img}
     />
