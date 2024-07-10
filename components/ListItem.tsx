@@ -30,7 +30,7 @@ const ListItem: React.FC<ListItem> = ({
         overflow-hidden gap-x-4 bg-neutral-600/20  sm:hover:bg-neutral-400/20
         transition pr-4 ">
             <div className="relative min-h-[64px] min-w-[64px]">
-                <img
+                <Image
                 className="object-cover "
                 src={image}
                 fill
