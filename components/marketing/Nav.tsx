@@ -55,10 +55,10 @@ function Nav() {
       } ${ open ? "  border-t border-x rounded-none rounded-t-2xl " : ""}`}
     >
       <div className="flex items-center justify-between max-w-5xl w-full md:max-w-7xl">
-        <div className="text-neutral-600 text-lg">Volume</div>
+        <div className="text-neutral-200 text-lg">Volume</div>
 
-        <div className="hidden md:flex gap-7 items-center font-light text-neutral-800">
-          <button className="hover:text-neutral-400 transition">Neues</button>
+        <div className="hidden md:flex gap-7 items-center font-light text-neutral-200">
+          <button className="hover:text-neutral-100 transition">Neues</button>
   <button className="bg-gradient-to-l from-pink-600 to-blue-700 hover:bg-white/90 transition p-2 px-4 font-medium text-neutral-200 rounded-full">
           <Link href={"/dashboard"}>
           Jetzt Starten
@@ -69,7 +69,7 @@ function Nav() {
         <div className="md:hidden flex">
           <RxHamburgerMenu
             onClick={() => setOpen(!open)}
-            className="text-neutral-600  hover:scale-105 hover:cursor-pointer transition"
+            className="text-neutral-200  hover:scale-105 hover:cursor-pointer transition"
             size={20}
           />
         </div>
@@ -86,8 +86,8 @@ function Nav() {
             style={{ overflow: "hidden" }} // Verhindert, dass der Inhalt außerhalb der Animation sichtbar ist
             
           >
-            <div className="flex flex-col gap-4  px-5 py-10 text-neutral-400">
-              <button className="w-full text-left ">Neues</button>
+            <div className="flex flex-col gap-4  px-5 py-10 ">
+              <button className="w-full text-left  text-neutral-200">Neues</button>
             
               <button className="w-full flex items-center text-left text-neutral-50 hover:text-neutral-400 rounded-2xl">
                 Jetzt Starten <BiChevronRight className='text-neutral-00' size={26}/>

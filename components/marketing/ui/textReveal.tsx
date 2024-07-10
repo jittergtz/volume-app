@@ -47,7 +47,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
         {/* Überschrift */}
         <p
           className={
-            "flex flex-wrap  text-neutral-800  text-3xl  lg:text-4xl xl:text-5xl"
+            "flex flex-wrap  text-neutral-700  text-3xl  lg:text-4xl xl:text-5xl"
           }
         >
           {titleWords.map((word, i) => (
@@ -61,7 +61,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
         {paragraph && (
           <p
             className={
-              "flex flex-wrap mt-4 text-neutral-600 text-xl  lg:text-2xl xl:text-3xl"
+              "flex flex-wrap mt-4 text-neutral-700 text-xl  lg:text-2xl xl:text-3xl"
             }
           >
             {paragraphWords.map((word, i) => (
@@ -89,7 +89,7 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
       <span className={"absolute opacity-30"}>{children}</span>
       <motion.span
         style={{ opacity: opacity }}
-        className={"text-neutral-800 "}
+        className={"text-neutral-200 "}
       >
         {children}
       </motion.span>
