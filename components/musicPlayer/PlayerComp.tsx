@@ -126,13 +126,14 @@ const Player = () => {
                 <div>
                   <div className="flex md:gap-4 items-center justify-between ">
                     <div className="gap-1 flex">
-                      <Image
+                     { // eslint-disable-next-line @next/next/no-img-element
+                      <img
                         alt="Album cover"
                         className="object-cover rounded-xl "
                         height={48}
                         width={48}
                         src={imageUrl}
-                      />
+                      />}
 
                       <div className="flex flex-col mt-1">
                         <h3 className="w-36   sm:w-full line-clamp-1  text-sm sm:text-small text-foreground/90">
