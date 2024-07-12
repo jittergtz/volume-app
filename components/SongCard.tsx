@@ -57,6 +57,7 @@ function SongCard ({ item, index, data, isPlaying, activeSong}: {
     <div key={item.id} className={twMerge('bg-neutral-800 relative text-neutral-200 border border-neutral-700 p-2 rounded-xl flex flex-col justify-center animate-appearance-in ',
         isPlaying && activeSong?.id === item.id && 'shadow-lg shadow-neutral-100/40'
       )}>
+      { // eslint-disable-next-line @next/next/no-img-element
        <img
          className='rounded-xl'
          height={270}
@@ -64,7 +65,7 @@ function SongCard ({ item, index, data, isPlaying, activeSong}: {
          alt='deezer-pic'
          src={item.album.cover_big}
        />
-
+      }
 
        <span className='overflow-x-hidden line-clamp-1'>{item.title}</span>
        <span className='text-xs overflow-x-hidden line-clamp-1 hover:text-neutral-400 max-w-36  z-50'>  
