@@ -51,7 +51,7 @@ function Nav() {
   return (
     <motion.nav
       className={`h-16 fixed top-2 sm:top-0 z-50 max-w-full left-2 right-2 rounded-2xl flex justify-center items-center px-5 backdropcustom transition-all duration-300  border-neutral-800 ${
-        hasScrolled ? "border bg-black md:border-none md:bg-transparent md:backdrop-blur-md" : ""
+        hasScrolled ? "border bg-black md:border-none" : ""
       } ${ open ? "  border-t border-x rounded-none rounded-t-2xl " : ""}`}
     >
       <div className="flex items-center justify-between max-w-5xl w-full md:max-w-7xl">
@@ -59,11 +59,13 @@ function Nav() {
 
         <div className="hidden md:flex gap-7 items-center font-light text-neutral-200">
           <button className="hover:text-neutral-100 transition">Neues</button>
-  <button className="bg-gradient-to-l from-pink-600 to-blue-700 hover:bg-white/90 transition p-2 px-4 font-medium text-neutral-200 rounded-full">
+          <button className="bg-gradient-to-l from-neutral-800 to-blue-700 hover:bg-white/90 transition p-2 px-4 font-medium text-neutral-200 rounded-full">
           <Link href={"/dashboard"}>
           Jetzt Starten
           </Link>
           </button>
+
+          
         </div>
 
         <div className="md:hidden flex">
@@ -78,7 +80,7 @@ function Nav() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="absolute left-0 right-0 top-[3.9rem] bg-neutral-950/90  z-40 border-x border-b border-neutral-800 text-neutral-300 rounded-b-2xl overflow-hidden md:hidden"
+            className="absolute left-0 right-0 top-[3.9rem] bg-black  z-40 border-x border-b border-neutral-800 text-neutral-300 rounded-b-2xl overflow-hidden md:hidden"
             initial="closed"
             animate="open"
             exit="closed"

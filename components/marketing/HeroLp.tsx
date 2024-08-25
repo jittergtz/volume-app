@@ -18,26 +18,25 @@ function HeroLp() {
 
   return (
     <div className="h-[80vh] relative  w-full  ">
-    <div className="absolute top-0 z-0 h-[80vh] w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,#3C3C3C,rgba(255,255,255,0))]"></div>
 
-       
+    {/* <HeroAnimation/>*/}       
        <motion.div
          initial="hidden"
          animate="visible"
          transition={{ duration: 1 }}
          variants={variants1} className="flex flex-col  justify-center w-full items-center h-full ">
-        <h1 className="text-center  py-2 z-40 leading-tight  text-transparent bg-clip-text tracking-tighter bg-gradient-to-b from-neutral-300 to-neutral-400 text-[42px] md:text-7xl  lg:text-8xl  mx-auto">
-        Volume find Music <br /> you love faster
+        <h1 className="text-center  py-2 z-40  leading-tight  text-transparent bg-clip-text tracking-tight  bg-gradient-to-t from-neutral-400 to-neutral-100 text-[47px] md:text-7xl  lg:text-8xl  mx-auto">
+        Musik die du liebst <br /> schneller entdecken
         </h1>
 
         <div className="flex  justify-center gap-10  mt-8">
-        <Link href={"/dashboard"} className="  z-40 flex items-center  px-4 p-2  bg-neutral-900 hover:bg-white/40 text-left text-neutral-200 rounded-full">
+        <Link href={"/dashboard"} className="  z-40 flex items-center  px-4 p-2  border border-neutral-600 hover:bg-gradient-to-b from-neutral-600 to-neutral-400 hover:border-neutral-700/80  text-left text-neutral-300 rounded-full">
         Jetzt Starten <BiChevronRight className='text-neutral-00' size={24}/>
         </Link>
        
           
         
-          <Link href={"/news"}  className="text-neutral-200  z-40 px-4 p-2 rounded-full hover:bg-white/40">
+          <Link href={"/news"}  className="text-neutral-200  z-40 px-4 p-2 rounded-full hover:bg-neutral-800">
           Neues
           </Link>
         
@@ -45,8 +44,7 @@ function HeroLp() {
     
   
        </motion.div>
-      
-   
+    
 
 
 

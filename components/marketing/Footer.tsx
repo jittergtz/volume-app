@@ -2,7 +2,9 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className='h-20 w-full p-5 bg-zinc-950 border-t border-zinc-700'>
+
+   <footer className='h-20 w-full px-5 bg-neutral-950'>
+    <div className='bg-gradient-to-r from-black via-neutral-400 to-black w-full h-[1px]'></div>
             <div className='flex h-full items-center justify-center'>
             <div className='max-w-5xl text-sm w-full'>
                <div className='flex items-center justify-between text-zinc-500  gap-2'>
@@ -13,12 +15,13 @@ function Footer() {
                 </div>
          
                 <div>
+                  io
                 </div>
          
                </div>
             </div>
-        </div>
-    </div>
+            </div>
+     </footer>
   )
 }
 

@@ -36,10 +36,10 @@ function SectionA() {
 
 
   return (
-    <div className='w-full  z-50 bg-neutral-950  p-5 flex items-center justify-center '>
+    <div className='w-full  z-50 bg-black p-5 flex items-center justify-center '>
     <div className='w-full max-w-5xl flex flex-col gap-20 items-center'>
        
-       <div className='w-full  overflow-hidden bg-black rounded-3xl '>
+       <div className='w-full  overflow-hidden bg-black rounded-xl '>
       <video
         loop
         muted

@@ -1,6 +1,5 @@
 import React from 'react'
-import { VelocityScroll } from './textXrotate'
-import { OrbitingCircleFinal } from './FInalGlobe'
+
 
 interface gridObject {
   name: string,
@@ -36,12 +35,7 @@ function SectionB() {
     <div className='min-h-[80vh] bg-black pb-20 p-5'>
 
       
-            <div className="pt-20">
-            <VelocityScroll
-            text="Schneller besser Musik finden"
-            default_velocity={5}
-            className="font-display  text-center text-4xl  tracking-[-0.02em]  drop-shadow-sm: text-transparent bg-clip-text bg-gradient-to-tr from-orange-300 to-purple-600 md:text-7xl md:leading-[5rem]"/>
-            </div>
+        
 
   
 
