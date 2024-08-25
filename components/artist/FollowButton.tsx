@@ -1,12 +1,8 @@
 "use client"
 import React, { useEffect, useState } from "react"
-import { useCheckbox, Chip, VisuallyHidden, tv, Image } from "@nextui-org/react"
+
 import { CheckIcon } from "../Next-Ui/CheckIcon"
-import { useRouter } from "next/navigation"
-import { useSessionContext } from "@supabase/auth-helpers-react"
-import useAuthModal from "@/hooks/useAuthModal"
-import { useUser } from "@/hooks/useUser"
-import toast from "react-hot-toast"
+import { Chip, tv, useCheckbox, VisuallyHidden } from "@nextui-org/react"
 
 
 
