@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import * as React from "react"
@@ -5,7 +6,23 @@ import { RxHamburgerMenu } from "react-icons/rx"
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 import { BiChevronRight } from "react-icons/bi"
-import Link from "next/link"
+
+import { HoverBorderGradient } from "./ui/SpinningButton"
+
+
+export function StartButton() {
+  return (
+    <div className="flex justify-center text-center">
+      <HoverBorderGradient
+        containerClassName="rounded-full"
+        as="button"
+        className="bg-black text-white flex items-center space-x-2"
+      >
+        <span>Jetzt starten</span>
+      </HoverBorderGradient>
+    </div>
+  );
+}
 
 function Nav() {
   const [open, setOpen] = React.useState(false)
@@ -51,19 +68,21 @@ function Nav() {
   return (
     <motion.nav
       className={`h-16 fixed top-2 sm:top-0 z-50 max-w-full left-2 right-2 rounded-2xl flex justify-center items-center px-5 backdropcustom transition-all duration-300  border-neutral-800 ${
-        hasScrolled ? "border bg-black md:border-none" : ""
+        hasScrolled ? "border bg-black md:bg-transparent md:border-none" : ""
       } ${ open ? "  border-t border-x rounded-none rounded-t-2xl " : ""}`}
     >
       <div className="flex items-center justify-between max-w-5xl w-full md:max-w-7xl">
-        <div className="text-neutral-200 text-lg">Volume</div>
+        <div className="text-neutral-200 flex items-center gap-1 text-lg">
 
-        <div className="hidden md:flex gap-7 items-center font-light text-neutral-200">
-          <button className="hover:text-neutral-100 transition">Neues</button>
-          <button className="bg-gradient-to-l from-neutral-800 to-blue-700 hover:bg-white/90 transition p-2 px-4 font-medium text-neutral-200 rounded-full">
-          <Link href={"/dashboard"}>
-          Jetzt Starten
-          </Link>
-          </button>
+          <img 
+          src="/icons/VolumeLogoV2.png" 
+          alt="logo"
+          className="h-8 pointer-events-none" />
+          </div>
+
+        <div className="hidden md:flex gap-7 items-center font-light text-neutral-300">
+          <button className="hover:text-neutral-50 transition">Neues</button>
+          <StartButton/>
 
           
         </div>
