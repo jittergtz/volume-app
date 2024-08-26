@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     { name: "Sandro Gantze" }
   ],
   icons: [
-    { rel: "apple-touch-icon", url: "icons/volume-icon-pwa.png" },
-    { rel: "icon", url: "icons/volume-icon-pwa512.png" },
+    { rel: "apple-touch-icon", url: "icons/volLogoV3.png" },
+    { rel: "icon", url: "icons/volV3512.png" },
   ],
 };
 

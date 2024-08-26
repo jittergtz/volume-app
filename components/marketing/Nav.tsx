@@ -8,11 +8,13 @@ import { useEffect, useState } from "react"
 import { BiChevronRight } from "react-icons/bi"
 
 import { HoverBorderGradient } from "./ui/SpinningButton"
+import Link from "next/link"
 
 
 export function StartButton() {
   return (
     <div className="flex justify-center text-center">
+      <Link href="/dashboard">
       <HoverBorderGradient
         containerClassName="rounded-full"
         as="button"
@@ -20,6 +22,7 @@ export function StartButton() {
       >
         <span>Jetzt starten</span>
       </HoverBorderGradient>
+      </Link>
     </div>
   );
 }

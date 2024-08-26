@@ -39,7 +39,7 @@ function SectionA() {
     <div className='w-full  z-50 bg-black p-5 flex items-center justify-center '>
     <div className='w-full max-w-5xl flex flex-col gap-20 items-center'>
        
-       <div className='w-full  overflow-hidden bg-black rounded-xl '>
+       <div className='w-full border-2 border-neutral-800  overflow-hidden bg-black rounded-xl '>
       <video
         loop
         muted
