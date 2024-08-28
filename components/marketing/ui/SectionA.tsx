@@ -11,23 +11,12 @@ interface gridObject {
 function SectionA() {
 
 
-    const grid = [
+    const Video = [
         {
+            url: "https://utfs.io/f/19e7054b-9f59-46a5-beac-8e54a333b675-59gbt9.mov",
             name: "Speed",
             description: "lorem inu thus in the taoe de one ah desta in"
         },
-        {
-              name: "Richness",
-            description: "lorem inu thus in the taoe de one ah desta in"
-        },
-        {
-              name: "contrast",
-            description: "lorem inu thus in the taoe de one ah desta in"
-        },
-        {
-              name: "convert",
-            description: "lorem inu thus in the taoe de one ah desta in"
-        }
     ]
 
 
@@ -40,14 +29,17 @@ function SectionA() {
     <div className='w-full max-w-5xl flex flex-col gap-20 items-center'>
        
        <div className='w-full border border-neutral-900  overflow-hidden bg-black rounded-xl '>
-      <video
-        loop
-        muted
-        autoPlay
-        playsInline
-        className='w-full h-auto pointer-events-none'>
-        <source type='video/mp4' src='/image/io.mp4' />
-      </video>
+        {Video.map((vid) => (
+              <video
+              key={vid.name}
+              loop
+              muted
+              autoPlay
+              playsInline
+              className='w-full h-auto pointer-events-none'>
+              <source type='video/mp4' src={vid.url} />
+            </video>
+        ))}
        </div>
 
 

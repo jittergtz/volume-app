@@ -1,10 +1,8 @@
-import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
-import { BellIcon, Share2Icon, Heart } from "lucide-react";
+/* eslint-disable @next/next/no-img-element */
+import { CalendarIcon } from "@radix-ui/react-icons";
+import { Heart } from "lucide-react";
 import { FaLocationArrow } from "react-icons/fa6";
-
-
-
-
+import { CiSearch } from "react-icons/ci";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import Marquee from "@/components/magicui/marquee";
 
@@ -14,35 +12,40 @@ import { AnimatedListDemo } from "./animated-list";
 
 const files = [
   {
-    name: "bitcoin.pdf",
-    body: "Bitcoin is a cryptocurrency invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto.",
+    url: "https://e-cdns-images.dzcdn.net/images/cover/0fd6e3b346b959a8781ccfa89b63607a/250x250-000000-80-0-0.jpg",
+    name: "Sabrina Carpenter",
+    title: "Taste",
   },
   {
-    name: "finances.xlsx",
-    body: "A spreadsheet or worksheet is a file made of rows and columns that help sort data, arrange data easily, and calculate numerical data.",
+    url: "https://e-cdns-images.dzcdn.net/images/cover/89916126647cd6b73c40cc8d53fbd600/250x250-000000-80-0-0.jpg",
+    name: "Post Malone",
+    title: "California Sober",
   },
   {
-    name: "logo.svg",
-    body: "Scalable Vector Graphics is an Extensible Markup Language-based vector image format for two-dimensional graphics with support for interactivity and animation.",
+    url: "https://e-cdns-images.dzcdn.net/images/cover/b5b452c7150eb7587e26701cba015987/250x250-000000-80-0-0.jpg",
+    name: "Jessie Reyez",
+    title: "Ridin",
   },
   {
-    name: "keys.gpg",
-    body: "GPG keys are used to encrypt and decrypt email, files, directories, and whole disk partitions and to authenticate messages.",
+    url: "https://e-cdns-images.dzcdn.net/images/cover/3d1cf81a957caf87b6664fca37ce4864/250x250-000000-80-0-0.jpg",
+    name: "Halsey",
+    title: "Lonely is the Muse",
   },
   {
-    name: "seed.txt",
-    body: "A seed phrase, seed recovery phrase or backup seed phrase is a list of words which store all the information needed to recover Bitcoin funds on-chain.",
+    url: "https://e-cdns-images.dzcdn.net/images/cover/94d1cca66cf68427173920a263d852b9/250x250-000000-80-0-0.jpg",
+    name: "KATSEYE",
+    title: "My Way",
   },
 ];
 
 const features = [
   {
-    Icon: FileTextIcon,
-    name: "Save your files",
+    Icon: CiSearch,
+    name: "Finde wonach du suchst",
     description: "We automatically save your files as you type.",
     href: "#",
     cta: "Learn more",
-    className: "col-span-3 lg:col-span-1",
+    className: "col-span-3 lg:col-span-2",
     background: (
       <Marquee
         pauseOnHover
@@ -52,7 +55,7 @@ const features = [
           <figure
             key={idx}
             className={clsx(
-              "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
+              "relative w-36 h-80 cursor-pointer overflow-hidden rounded-xl border p-1",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
               "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
@@ -60,12 +63,16 @@ const features = [
           >
             <div className="flex flex-row items-center gap-2">
               <div className="flex flex-col">
-                <figcaption className="text-sm font-medium text-white ">
-                  {f.name}
+                <img
+                src={f?.url}
+                alt="cover"
+                className="rounded-xl " />
+                <figcaption className="text-md font-medium text-white ">
+                  {f.title}
                 </figcaption>
               </div>
             </div>
-            <blockquote className="mt-2 text-xs">{f.body}</blockquote>
+            <blockquote className=" text-xs">{f.name}</blockquote>
           </figure>
         ))}
       </Marquee>
@@ -77,9 +84,9 @@ const features = [
     description: "als je zuvor Songs entdecken!",
     href: "#",
     cta: "Learn more",
-    className: "col-span-3 lg:col-span-2",
+    className: "col-span-3 lg:col-span-1",
     background: (
-      <AnimatedListDemo className="absolute  right-2  top-4 h-[300px] w-[300px] sm:w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
+      <AnimatedListDemo className="absolute  right-2  top-4 h-[300px] w-[300px] sm:w-[600px] lg:w-[300px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
@@ -95,7 +102,7 @@ const features = [
   },
   {
     Icon: CalendarIcon,
-    name: "Calendar",
+    name: "Finde was du suchst",
     description: "Use the calendar to filter your files by date.",
     className: "col-span-3 lg:col-span-1",
     href: "#",

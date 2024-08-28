@@ -84,7 +84,9 @@ function Nav() {
           </div>
 
         <div className="hidden md:flex gap-7 items-center font-light text-neutral-300">
-          <button className="hover:text-neutral-50 transition">Neues</button>
+          <button className="hover:text-neutral-50 transition">
+            Anmelden
+            </button>
           <StartButton/>
 
           

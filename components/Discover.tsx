@@ -76,7 +76,7 @@ interface TrackProps {
       );
     };
 
-
+  console.log(mixData)
   
     
     
