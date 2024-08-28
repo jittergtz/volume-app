@@ -47,7 +47,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
         {/* Überschrift */}
         <p
           className={
-            "flex flex-wrap  text-neutral-700  text-3xl  lg:text-4xl xl:text-5xl"
+            "flex flex-wrap  text-blue-700  text-3xl  lg:text-4xl xl:text-5xl"
           }
         >
           {titleWords.map((word, i) => (

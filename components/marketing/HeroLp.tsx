@@ -14,7 +14,7 @@ function HeroLp() {
   };
 
   return (
-    <div className="h-[90vh] relative overflow-hidden w-full bg-[#424895] [background:radial-gradient(130%_125%_at_50%_100%,#000_40%,#424895_100%)] ">
+    <div className="h-[90vh] bg-gradient-to-t from-black to-zinc-900 relative overflow-hidden w-full  ">
     
      
        <motion.div

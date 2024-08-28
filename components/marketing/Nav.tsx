@@ -78,7 +78,7 @@ function Nav() {
         <div className="text-neutral-200 flex items-center gap-1 text-lg">
 
           <img 
-          src="/icons/VolumeLogoV2.png" 
+          src="/icons/volumeProdLogo.png" 
           alt="logo"
           className="h-8 pointer-events-none" />
           </div>

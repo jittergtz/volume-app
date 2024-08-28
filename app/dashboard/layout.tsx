@@ -1,6 +1,5 @@
 import MobileNavbar from "@/components/MobileNav"
 import Player from "@/components/musicPlayer/PlayerComp"
-import PlayerFullCard from "@/components/PlayerFullView/PlayerFullCard"
 import Sidebar from "@/components/Sidebar"
 import { ReduxProvider } from "@/lib/provider"
 import ModalProvider from "@/providers/ModalProvider"
@@ -9,7 +8,7 @@ import SupabaseProvider from "@/providers/SupabaseProvider"
 import ToasterProvider from "@/providers/ToasterProvider"
 import UserProvider from "@/providers/UserProvider"
 import { Metadata } from "next"
-import { Poppins, Mulish, Lato, Nunito_Sans } from "next/font/google"
+import { Nunito_Sans } from "next/font/google"
 
 interface SidebarProps {
   children: React.ReactNode
@@ -34,8 +33,8 @@ export const metadata: Metadata = {
     { name: "Sandro Gantze" }
   ],
   icons: [
-    { rel: "apple-touch-icon", url: "icons/volLogoV3.png" },
-    { rel: "icon", url: "icons/volV3512.png" },
+    { rel: "apple-touch-icon", url: "icons/VolumeProdIcon.png" },
+    { rel: "icon", url: "icons/volumeProdIcon.png" },
   ],
 };
 

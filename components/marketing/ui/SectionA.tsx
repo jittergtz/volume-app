@@ -39,7 +39,7 @@ function SectionA() {
     <div className='w-full  z-50 bg-black p-5 flex items-center justify-center '>
     <div className='w-full max-w-5xl flex flex-col gap-20 items-center'>
        
-       <div className='w-full border-2 border-neutral-800  overflow-hidden bg-black rounded-xl '>
+       <div className='w-full border border-neutral-900  overflow-hidden bg-black rounded-xl '>
       <video
         loop
         muted
@@ -52,10 +52,7 @@ function SectionA() {
 
 
 
-        <section className=' w-full flex flex-col gap-5 '>
-        <TextReveal text="In the new Space" paragraph='Der Jahresabschluss ist in der Betriebswirtschaftslehre und speziell im Rechnungswesen der Abschluss der Buchführung für ein bestimmtes Geschäftsjahr, das am Bilanzstichtag endet. Neben dem Jahresabschluss kann es auch Zwischenberichterstattungen geben, die inhaltlich und formell dem Jahresabschluss ähnlich sind. Wikipedia' />
-         
-        </section>
+       
     </div>
         
     </div>
