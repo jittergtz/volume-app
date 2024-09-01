@@ -20,7 +20,7 @@ export function StartButton() {
         as="button"
         className="bg-black text-white flex items-center space-x-2"
       >
-        <span>Jetzt starten</span>
+        <span>Start now</span>
       </HoverBorderGradient>
       </Link>
     </div>
@@ -85,7 +85,7 @@ function Nav() {
 
         <div className="hidden md:flex gap-7 items-center font-light text-neutral-300">
           <button className="hover:text-neutral-50 transition">
-            Anmelden
+            sign in
             </button>
           <StartButton/>
 

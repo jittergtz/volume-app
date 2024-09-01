@@ -16,7 +16,7 @@ export function LampDemo() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="mt-8 pb-5   bg-gradient-to-br from-neutral-300 to-neutral-100 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+        className="mt-8 pb-5 font-[600] md:font-[400]  bg-gradient-to-t from-neutral-500 to-neutral-100 py-4 bg-clip-text text-center text-4xl tracking-tight text-transparent md:text-7xl"
       >
         Dein Sound <br /> einfacher entdecken
                  

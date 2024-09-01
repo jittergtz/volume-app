@@ -57,7 +57,6 @@ const features = [
             className={clsx(
               "relative w-36 h-80 cursor-pointer overflow-hidden rounded-xl border p-1",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-              "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
               "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
             )}
           >
@@ -108,8 +107,8 @@ const features = [
     href: "#",
     cta: "Learn more",
     background: (
-      <div>
-        hi
+      <div className="">
+       should be white
       </div>
     ),
   },
