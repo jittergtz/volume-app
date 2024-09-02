@@ -17,7 +17,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 bg-neutral-800 border-neutral-700 p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex size-18 bg-neutral-950 items-center justify-center rounded-full border-2  border-neutral-700/40 p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
         className,
       )}
     >
@@ -45,7 +45,7 @@ export function AnimatedBeamMultipleOutputDemo({
   return (
     <div
       className={cn(
-        "relative flex h-[500px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-10 md:shadow-xl",
+        "relative flex h-[500px] w-full items-center justify-center overflow-hidden rounded-lg border  p-10 md:shadow-xl",
         className,
       )}
       ref={containerRef}
@@ -53,11 +53,11 @@ export function AnimatedBeamMultipleOutputDemo({
       <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
      
         <div className="flex flex-col justify-center">
-          <Circle ref={div6Ref} className="size-20 bg-neutral-800">
+          <Circle ref={div6Ref} className="size-24  z-50 bg-neutral-950">
             <img src="/icons/volumeProdLogo.png" alt="volume-logo" />
           </Circle>
         </div>
-        <div className="flex flex-col justify-center gap-2">
+        <div className="flex flex-col  justify-center gap-2">
           <Circle ref={div1Ref}>
             <Icons.googleDrive />
           </Circle>
@@ -116,7 +116,7 @@ export function AnimatedBeamMultipleOutputDemo({
 
 const Icons = {
   notion: () => (
-    <FaAmazon   className="text-cyan-400"  size={30} />
+    <FaAmazon   className="text-neutral-600"  size={30} />
   ),
   openai: () => (
     <svg
@@ -129,13 +129,13 @@ const Icons = {
     </svg>
   ),
   googleDrive: () => (
-    <FaSpotify className="text-emerald-400"  size={30}/>
+    <FaSpotify className="text-neutral-400"  size={30}/>
   ),
   whatsapp: () => (
-    <SiYoutubemusic  className="text-red-400"  size={30} />
+    <SiYoutubemusic  className="text-neutral-400"  size={30} />
   ),
   googleDocs: () => (
-    <FaDeezer  className="text-purple-600"  size={30} />
+    <FaDeezer  className="text-neutral-400"  size={30} />
     
   ),
   user: () => (

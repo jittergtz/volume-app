@@ -27,7 +27,7 @@ function SectionA() {
     <div className='w-full  z-50 bg-black p-5 flex items-center justify-center '>
     <div className='w-full max-w-5xl flex flex-col gap-20 items-center'>
        
-       <div className='w-full p-3 border shadow-[0_0px_37px_8px_rgb(20,20,20)] border-neutral-900  overflow-hidden bg-zinc-950/40 rounded-xl '>
+       <div className='w-full p-1 md:p-3 border shadow-[0_0px_37px_8px_rgb(20,20,20)] border-neutral-900  overflow-hidden bg-zinc-950/40 rounded-xl '>
         {Video.map((vid) => (
               <video
               key={vid.name}

@@ -32,7 +32,7 @@ function SectionB() {
 
 
   return (
-    <div className='min-h-[80vh] bg-black pb-20 p-5'>
+    <div className='min-h-[80vh]  bg-black pb-20 p-5'>
 
       
         
@@ -43,16 +43,7 @@ function SectionB() {
             <div className='w-full max-w-5xl  flex flex-col gap-10 justify-center'>
 
 
-      <div className='w-full mt-12  overflow-hidden bg-black border border-neutral-800 rounded-xl '>
-      <video
-        loop
-        muted
-        autoPlay
-        playsInline
-        className='w-full h-auto pointer-events-none'>
-        <source type='video/mp4' src='/image/io.mp4' />
-      </video>
-       </div>
+
 
 
         <section className=' grid  gap-5 grid-cols-1 sm:grid-cols-2 '>

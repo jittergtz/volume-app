@@ -5,7 +5,7 @@ import Footer from "@/components/marketing/Footer"
 import SectionA from "@/components/marketing/ui/SectionA"
 import SectionB from "@/components/marketing/ui/SectionB"
 import Nav from "@/components/marketing/Nav"
-import { LampDemo } from "@/components/marketing/LampDemo"
+import { LampOne } from "@/components/marketing/LampDemo"
 import ConnectSection from "@/components/marketing/ui/ConnectSection"
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
    
 
       <HeroLp />
-      <LampDemo/>
+      <LampOne/>
 
       <SectionA/>
 

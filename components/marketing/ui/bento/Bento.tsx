@@ -9,6 +9,7 @@ import Marquee from "@/components/magicui/marquee";
 import clsx from "clsx";
 import { AnimatedBeamMultipleOutputDemo } from "./animated-multiple-outputs";
 import { AnimatedListDemo } from "./animated-list";
+import { LampOne, LampTwo } from "../../LampDemo";
 
 const files = [
   {
@@ -42,7 +43,6 @@ const features = [
   {
     Icon: CiSearch,
     name: "Finde wonach du suchst",
-    description: "We automatically save your files as you type.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
@@ -56,8 +56,8 @@ const features = [
             key={idx}
             className={clsx(
               "relative w-36 h-80 cursor-pointer overflow-hidden rounded-xl border p-1",
-              "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
+              "border-gray-950/[.1] bg-neutral-800 bg-gray-950/[.01] hover:bg-neutral-800",
+              "transform-gpu transition-all duration-300 ease-out ",
             )}
           >
             <div className="flex flex-row items-center gap-2">
@@ -79,8 +79,7 @@ const features = [
   },
   {
     Icon: Heart,
-    name: "Schneller,",
-    description: "als je zuvor Songs entdecken!",
+    name: "Schneller",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
@@ -91,23 +90,23 @@ const features = [
   {
     Icon: FaLocationArrow,
     name: "Übertragen",
-    description: "Songs sofort in deiner Streaming app öffnen",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <AnimatedBeamMultipleOutputDemo className="absolute right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
+      <div className="  z-10 absolute  h-full w-full ">
+      <AnimatedBeamMultipleOutputDemo className="   right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_40%)] group-hover:scale-105" />
+      </div>
     ),
   },
   {
     Icon: CalendarIcon,
-    name: "Finde was du suchst",
-    description: "Use the calendar to filter your files by date.",
-    className: "col-span-3 lg:col-span-1",
+    name: "Sofort in deine Apps",
+    className: "col-span-3 bg-gradient-to-tl from-blue-700 to-blue-500 p-1  lg:col-span-1",
     href: "#",
     cta: "Learn more",
     background: (
-      <div className="">
+      <div className="p-4">
        should be white
       </div>
     ),
@@ -116,10 +115,15 @@ const features = [
 
 export function Bento() {
   return (
-    <BentoGrid>
+
+    <div className="relative">
+      <LampTwo/>
+
+    <BentoGrid >
       {features.map((feature, idx) => (
         <BentoCard key={idx} {...feature} />
       ))}
     </BentoGrid>
+    </div>
   );
 }
