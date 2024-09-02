@@ -32,31 +32,42 @@ function SectionB() {
 
 
   return (
-    <div className='min-h-[80vh]  bg-black pb-20 p-5'>
+    <div className='min-h-[80vh] z-40 bg-black pb-20 p-5'>
 
       
         
 
   
 
-            <div className='flex justify-center mt-20'>
-            <div className='w-full max-w-5xl  flex flex-col gap-10 justify-center'>
+            <div className='flex flex-col items-center justify-center mt-20'>
 
-
-
-
-
-        <section className=' grid  gap-5 grid-cols-1 sm:grid-cols-2 '>
-            {grid.map((data: gridObject) => (
-               <div key={data.name} className='bg-gradient-to-bl text-2xl from-neutral-900 to-black hover:from-fuchsia-700/70 hover:to-red-400 hover:animate-appearance-in transition  p-5 text-neutral-200 border border-neutral-800 h-80 w-full rounded-3xl'>
-               {data.name}
-               <p className='text-neutral-400 text-lg '>
-                {data.description}
-               </p>
+              <div>
+                <h1 className='text-4xl text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 via-neutral-500 to-neutral-800 tracking-tight'>
+                  And thats not all
+                </h1>
               </div>
-            ))}
-           
-        </section>
+            <div className='w-full mt-20 max-w-5xl  flex flex-col gap-10 justify-center'>
+
+
+
+
+
+            <section className='grid gap-5 grid-cols-1 sm:grid-cols-2'>
+  {grid.map((data: gridObject) => (
+    <div
+      key={data.name}
+      className='bg-gradient-to-bl text-2xl from-neutral-900 to-black hover:from-blue-700/70 hover:to-blue-400 hover:animate-appearance-in transition p-5 text-neutral-200 border border-neutral-800 h-80 w-full rounded-3xl group'
+    >
+      <h1 className='group-hover:flex'>
+        {data.name}
+        </h1>
+      <p className='text-neutral-400 text-lg hidden group-hover:flex'>
+        {data.description}
+      </p>
+    </div>
+  ))}
+</section>
+
 
 
 
