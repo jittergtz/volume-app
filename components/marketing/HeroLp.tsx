@@ -18,7 +18,7 @@ function HeroLp() {
     <div className="h-[90vh]  bg-gradient-to-t from-black to-black relative overflow-hidden w-full  ">
      
      
-   {/*  <HeroBackground/>*/}
+    <HeroBackground/>
      
        <motion.div
          initial="hidden"
