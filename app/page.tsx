@@ -23,8 +23,6 @@ export default function Home() {
       <SectionA/>
 
       <ConnectSection/>
-
-      <SectionB/>
      
 
      <Footer/>

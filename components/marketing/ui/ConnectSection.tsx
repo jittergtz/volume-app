@@ -1,7 +1,6 @@
-"use client"
 import React from 'react'
 import { Bento } from './bento/Bento'
-import { LampTwo } from '../LampDemo'
+
 
 
 function ConnectSection() {

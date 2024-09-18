@@ -43,7 +43,7 @@ function SectionA() {
 
 
     
-        <h1 className='text-md text-transparent bg-clip-text bg-gradient-to-r from-neutral-700 via-white to-neutral-700 md:text-xl'>
+        <h1 className='text-md font-medium text-transparent bg-clip-text bg-gradient-to-r from-neutral-500 via-white to-neutral-500 md:text-xl'>
           jederzeit und überall
           </h1>
       

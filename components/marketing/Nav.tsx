@@ -20,7 +20,7 @@ export function StartButton() {
         as="button"
         className="bg-black text-white flex items-center space-x-2"
       >
-        <span>Start now</span>
+        <span>Starte jetzt</span>
       </HoverBorderGradient>
       </Link>
     </div>

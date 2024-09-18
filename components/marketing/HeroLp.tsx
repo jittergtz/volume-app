@@ -26,7 +26,7 @@ function HeroLp() {
          transition={{ duration: 1 }}
          variants={variants1} className="flex flex-col  justify-center w-full items-center h-full ">
         <h1 className="text-center  py-2 z-40 font-[600] md:font-[400] leading-tight  text-transparent bg-clip-text tracking-tighter  bg-gradient-to-t from-neutral-400 to-neutral-100 text-[38px] sm:text-[50px] md:text-7xl lg:text-8xl xl:text-[110px]  mx-auto">
-        Find Music <br /> you love faster 
+        Finde Musik die <br /> du liebst schneller
         </h1>
 
         <div className="flex  justify-center gap-10  mt-8">
@@ -35,7 +35,7 @@ function HeroLp() {
           
         
           <Link href={"/news"}  className="text-neutral-200 flex items-center justify-center z-40 px-4 p-2 rounded-full hover:border-[2px] border-neutral-700">
-          news
+          neues
           </Link>
         
         </div>

@@ -5,6 +5,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import Marquee from "@/components/magicui/marquee";
+import { SiStackblitz } from "react-icons/si";
 
 import clsx from "clsx";
 import { AnimatedBeamMultipleOutputDemo } from "./animated-multiple-outputs";
@@ -100,14 +101,14 @@ const features = [
     ),
   },
   {
-    Icon: CalendarIcon,
-    name: "Sofort in deine Apps",
+    Icon: SiStackblitz,
+    name: "",
     className: "col-span-3 bg-gradient-to-tl from-blue-700 to-blue-500 p-1  lg:col-span-1",
     href: "#",
     cta: "Learn more",
     background: (
-      <div className="p-4">
-       should be white
+      <div className="p-4 text-4xl font-medium tracking-wide text-white/50">
+       Deine nächsten Lieblingssongs noch schneller finden!
       </div>
     ),
   },
