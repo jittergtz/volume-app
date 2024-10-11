@@ -33,7 +33,7 @@ function page() {
         </div>
       </Header>
 
-      <div className="px-5 pb-40">
+      <div className="px-3 pb-40">
         <Discover />
       </div>
     </main>
